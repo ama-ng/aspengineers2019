@@ -1,0 +1,2722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SPY Civil Engineering | Class of 2019 | Digital Album</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+/* ===== CSS VARIABLES & RESET ===== */
+:root {
+  --navy: #0a1628;
+  --navy-mid: #112240;
+  --navy-light: #1a3a5c;
+  --gold: #c9a227;
+  --gold-light: #e8c547;
+  --gold-pale: #f5e6a3;
+  --white: #ffffff;
+  --off-white: #f8f6f0;
+  --gray-100: #f0eff0;
+  --gray-200: #e2e0e5;
+  --gray-500: #8b8a90;
+  --gray-700: #4a4a55;
+  --glass: rgba(255,255,255,0.08);
+  --glass-border: rgba(201,162,39,0.25);
+  --shadow-gold: 0 4px 30px rgba(201,162,39,0.18);
+  --shadow-deep: 0 8px 48px rgba(10,22,40,0.45);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  overflow-x:hidden;
+  min-height:100vh;
+}
+img{display:block;max-width:100%;}
+button{cursor:pointer;border:none;outline:none;font-family:inherit;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--navy);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
+
+/* ===== LOADER ===== */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--navy);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  transition:opacity 0.6s ease;
+}
+.loader-logo{width:80px;height:80px;border-radius:50%;border:3px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  animation:pulse 1.5s ease-in-out infinite;}
+.loader-ring{
+  width:60px;height:60px;border:3px solid transparent;
+  border-top-color:var(--gold);border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+.loader-text{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.1rem;letter-spacing:2px;opacity:0.8;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+
+/* ===== NAVBAR ===== */
+#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  padding:0 24px;
+  background:rgba(10,22,40,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(201,162,39,0.15);
+  transition:var(--transition);
+}
+.nav-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;height:68px;
+}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo{
+  width:44px;height:44px;border-radius:50%;
+  object-fit:cover;border:2px solid var(--gold);
+}
+.nav-brand-text{}
+.nav-brand-title{font-family:'Cinzel',serif;font-size:0.85rem;color:var(--gold);font-weight:700;letter-spacing:1px;line-height:1.2;}
+.nav-brand-sub{font-size:0.65rem;color:var(--gray-500);letter-spacing:0.5px;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-link{
+  padding:8px 14px;border-radius:var(--radius-sm);
+  font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.75);
+  transition:var(--transition);cursor:pointer;
+  background:transparent;border:none;
+}
+.nav-link:hover,.nav-link.active{color:var(--gold);background:rgba(201,162,39,0.1);}
+.nav-cta{
+  padding:9px 20px;border-radius:40px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy);font-weight:600;font-size:0.82rem;
+  transition:var(--transition);
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,162,39,0.4);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:var(--gold);border-radius:2px;transition:var(--transition);}
+.mobile-menu{
+  display:none;position:fixed;inset:0;top:68px;z-index:998;
+  background:rgba(10,22,40,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;padding:32px 24px;gap:8px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-link{
+  padding:14px 20px;border-radius:var(--radius);
+  font-size:1rem;font-weight:500;color:rgba(255,255,255,0.8);
+  background:var(--glass);border:1px solid var(--glass-border);
+  cursor:pointer;transition:var(--transition);
+}
+.mobile-link:hover{color:var(--gold);background:rgba(201,162,39,0.1);}
+
+/* ===== PAGE SECTIONS ===== */
+.page{display:none;min-height:100vh;padding-top:68px;}
+.page.active{display:block;}
+
+/* ===== LANDING PAGE ===== */
+#page-home{padding-top:0;position:relative;overflow:hidden;}
+.hero{
+  position:relative;height:100vh;min-height:600px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:20px;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(160deg,#0a1628 0%,#112240 50%,#0d1f3c 100%);
+}
+.hero-bg-pattern{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(201,162,39,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(201,162,39,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(26,58,92,0.5) 0%, transparent 60%);
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(201,162,39,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,162,39,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-slideshow{position:absolute;inset:0;z-index:0;opacity:0.12;}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease;background-size:cover;background-position:center;}
+.slide.active{opacity:1;}
+.hero-content{position:relative;z-index:2;max-width:860px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 20px;border-radius:40px;
+  border:1px solid rgba(201,162,39,0.4);
+  background:rgba(201,162,39,0.08);
+  font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;animation:fadeInDown 0.8s ease forwards;
+}
+.hero-school-logo{
+  width:90px;height:90px;border-radius:50%;
+  object-fit:cover;border:3px solid var(--gold);
+  margin:0 auto 20px;
+  box-shadow:0 0 40px rgba(201,162,39,0.3);
+  animation:fadeInDown 0.9s ease forwards;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,6vw,4.8rem);font-weight:900;
+  line-height:1.1;margin-bottom:16px;
+  animation:fadeInUp 1s ease 0.2s both;
+}
+.hero-title .accent{color:var(--gold);}
+.hero-subtitle{
+  font-size:clamp(1rem,2.5vw,1.35rem);
+  color:rgba(255,255,255,0.65);font-weight:300;
+  margin-bottom:12px;letter-spacing:0.5px;
+  animation:fadeInUp 1s ease 0.35s both;
+}
+.hero-dept{
+  font-family:'Cinzel',serif;font-size:clamp(0.8rem,1.8vw,1rem);
+  color:var(--gold-light);letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:40px;animation:fadeInUp 1s ease 0.5s both;
+}
+.hero-btns{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+  animation:fadeInUp 1s ease 0.65s both;
+}
+.btn-primary{
+  padding:14px 32px;border-radius:40px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy);font-weight:700;font-size:0.95rem;
+  transition:var(--transition);
+  box-shadow:0 4px 24px rgba(201,162,39,0.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(201,162,39,0.5);}
+.btn-outline{
+  padding:13px 32px;border-radius:40px;
+  border:1.5px solid rgba(201,162,39,0.5);
+  color:var(--gold);font-weight:600;font-size:0.95rem;
+  background:transparent;transition:var(--transition);
+}
+.btn-outline:hover{background:rgba(201,162,39,0.1);transform:translateY(-2px);}
+.hero-counters{
+  display:flex;gap:40px;justify-content:center;flex-wrap:wrap;
+  margin-top:60px;padding-top:40px;
+  border-top:1px solid rgba(201,162,39,0.15);
+  animation:fadeInUp 1s ease 0.8s both;
+}
+.counter-item{text-align:center;}
+.counter-num{
+  font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;
+  color:var(--gold);display:block;
+}
+.counter-label{font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;}
+.hero-scroll{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  animation:fadeInUp 1s ease 1s both;
+}
+.scroll-text{font-size:0.7rem;letter-spacing:2px;color:var(--gray-500);text-transform:uppercase;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:scrollPulse 2s ease infinite;}
+@keyframes scrollPulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+
+/* Nigerian Class Album Features Section */
+.section{padding:80px 24px;}
+.section-inner{max-width:1280px;margin:0 auto;}
+.section-label{
+  font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,3rem);font-weight:700;
+  line-height:1.2;margin-bottom:20px;
+}
+.section-title .accent{color:var(--gold);}
+.section-desc{color:rgba(255,255,255,0.6);max-width:560px;line-height:1.7;}
+
+/* Awards Grid */
+.awards-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;
+  margin-top:48px;
+}
+.award-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:28px;
+  transition:var(--transition);position:relative;overflow:hidden;
+}
+.award-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,162,39,0.05),transparent);
+  opacity:0;transition:var(--transition);
+}
+.award-card:hover{transform:translateY(-4px);border-color:rgba(201,162,39,0.4);}
+.award-card:hover::before{opacity:1;}
+.award-emoji{font-size:2rem;margin-bottom:12px;}
+.award-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:6px;}
+.award-name{font-size:0.85rem;color:rgba(255,255,255,0.7);}
+
+/* Prayer Section */
+.prayer-section{
+  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
+  border:1px solid var(--glass-border);border-radius:var(--radius);
+  padding:48px;text-align:center;margin-top:48px;
+}
+.prayer-text{
+  font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.4rem);
+  font-style:italic;color:var(--gold-pale);line-height:1.9;max-width:700px;margin:0 auto;
+}
+
+/* Tribute Section */
+.tribute-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:32px;}
+.tribute-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:20px;text-align:center;
+  transition:var(--transition);
+}
+.tribute-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+.tribute-icon{font-size:2rem;margin-bottom:10px;}
+.tribute-name{font-weight:600;font-size:0.9rem;margin-bottom:4px;}
+.tribute-dept{font-size:0.75rem;color:var(--gray-500);}
+
+/* Engineering Quotes */
+.quotes-strip{
+  display:flex;gap:20px;overflow-x:auto;padding-bottom:16px;
+  scrollbar-width:none;margin-top:32px;
+}
+.quotes-strip::-webkit-scrollbar{display:none;}
+.quote-card{
+  min-width:280px;background:var(--glass);
+  border:1px solid var(--glass-border);border-radius:var(--radius);
+  padding:24px;flex-shrink:0;
+}
+.quote-text{font-style:italic;font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.8);margin-bottom:12px;}
+.quote-author{font-size:0.75rem;color:var(--gold);}
+
+/* ===== DASHBOARD ===== */
+#page-dashboard{}
+.dash-hero{
+  background:linear-gradient(160deg,var(--navy-mid),var(--navy));
+  padding:48px 24px 32px;border-bottom:1px solid rgba(201,162,39,0.1);
+}
+.dash-inner{max-width:1280px;margin:0 auto;}
+.dash-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:6px;}
+.dash-sub{color:var(--gray-500);font-size:0.9rem;}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:16px;margin-top:32px;
+}
+.stat-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:24px;
+  position:relative;overflow:hidden;
+}
+.stat-card::after{
+  content:'';position:absolute;top:-30px;right:-20px;
+  width:80px;height:80px;border-radius:50%;
+  background:rgba(201,162,39,0.06);
+}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--gold);}
+.stat-label{font-size:0.78rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.stat-icon{font-size:1.6rem;margin-bottom:8px;}
+
+/* Search Bar */
+.search-wrap{
+  padding:24px;max-width:1280px;margin:0 auto;
+}
+.search-box{
+  display:flex;align-items:center;gap:12px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:14px 20px;
+  transition:var(--transition);
+}
+.search-box:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,0.1);}
+.search-box input{
+  flex:1;background:none;border:none;outline:none;
+  color:var(--white);font-size:0.95rem;font-family:inherit;
+}
+.search-box input::placeholder{color:var(--gray-500);}
+.search-icon{font-size:1.1rem;color:var(--gold);}
+
+/* Filter Tabs */
+.filter-tabs{
+  display:flex;gap:8px;flex-wrap:wrap;
+  padding:0 24px 20px;max-width:1280px;margin:0 auto;
+}
+.filter-tab{
+  padding:8px 18px;border-radius:40px;font-size:0.8rem;font-weight:500;
+  border:1px solid var(--glass-border);background:var(--glass);
+  color:rgba(255,255,255,0.7);transition:var(--transition);cursor:pointer;
+}
+.filter-tab.active,.filter-tab:hover{
+  background:rgba(201,162,39,0.15);border-color:var(--gold);color:var(--gold);
+}
+
+/* Quote Widget */
+.quote-widget{
+  margin:0 24px 32px;max-width:1280px;
+  background:linear-gradient(135deg,rgba(201,162,39,0.08),rgba(201,162,39,0.04));
+  border:1px solid rgba(201,162,39,0.2);border-radius:var(--radius);
+  padding:24px;display:flex;gap:16px;align-items:flex-start;
+}
+.quote-widget-icon{font-size:2rem;flex-shrink:0;}
+.quote-widget-text{font-style:italic;font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:1.7;}
+.quote-widget-author{font-size:0.78rem;color:var(--gold);margin-top:6px;}
+
+/* ===== CLASSMATES DIRECTORY ===== */
+.classmates-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;padding:24px;max-width:1280px;margin:0 auto;
+}
+.student-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);overflow:hidden;
+  transition:var(--transition);cursor:pointer;
+}
+.student-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(201,162,39,0.5);
+  box-shadow:var(--shadow-gold);
+}
+.student-photo-wrap{
+  position:relative;height:220px;overflow:hidden;
+  background:var(--navy-mid);
+}
+.student-photo{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s ease;
+}
+.student-card:hover .student-photo{transform:scale(1.06);}
+.student-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,22,40,0.9) 0%,transparent 50%);
+}
+.student-badge{
+  position:absolute;top:12px;right:12px;
+  background:rgba(201,162,39,0.9);color:var(--navy);
+  font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:40px;
+  text-transform:uppercase;letter-spacing:0.5px;
+}
+.student-info{padding:16px;}
+.student-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:2px;}
+.student-nickname{font-size:0.78rem;color:var(--gold);font-style:italic;margin-bottom:8px;}
+.student-location{font-size:0.75rem;color:var(--gray-500);display:flex;align-items:center;gap:4px;}
+.student-view-btn{
+  width:100%;margin-top:12px;padding:10px;border-radius:var(--radius-sm);
+  background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.25);
+  color:var(--gold);font-size:0.8rem;font-weight:600;transition:var(--transition);
+}
+.student-view-btn:hover{background:rgba(201,162,39,0.2);}
+
+/* Pagination */
+.pagination{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:32px 24px;
+}
+.page-btn{
+  width:38px;height:38px;border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.85rem;font-weight:600;
+  border:1px solid var(--glass-border);background:var(--glass);
+  color:rgba(255,255,255,0.7);transition:var(--transition);cursor:pointer;
+}
+.page-btn.active,.page-btn:hover{
+  background:rgba(201,162,39,0.15);border-color:var(--gold);color:var(--gold);
+}
+.page-btn:disabled{opacity:0.3;cursor:not-allowed;}
+
+/* No results */
+.no-results{
+  text-align:center;padding:60px 24px;
+  color:var(--gray-500);
+}
+.no-results-icon{font-size:3rem;margin-bottom:16px;}
+
+/* ===== PROFILE MODAL ===== */
+.modal-overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(10,22,40,0.85);
+  backdrop-filter:blur(10px);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:linear-gradient(160deg,var(--navy-mid),var(--navy));
+  border:1px solid var(--glass-border);
+  border-radius:20px;width:100%;max-width:600px;
+  max-height:90vh;overflow-y:auto;
+  position:relative;
+  box-shadow:var(--shadow-deep);
+  animation:modalIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes modalIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+.modal-close{
+  position:sticky;top:0;z-index:2;
+  display:flex;justify-content:flex-end;padding:16px 16px 0;
+  background:linear-gradient(var(--navy-mid),transparent);
+}
+.modal-close-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+  color:var(--white);font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--transition);
+}
+.modal-close-btn:hover{background:rgba(201,162,39,0.2);color:var(--gold);}
+.modal-photo-wrap{
+  width:120px;height:120px;border-radius:50%;overflow:hidden;
+  border:3px solid var(--gold);margin:0 auto 20px;
+  box-shadow:0 0 30px rgba(201,162,39,0.3);
+}
+.modal-photo{width:100%;height:100%;object-fit:cover;}
+.modal-header{text-align:center;padding:0 32px 24px;}
+.modal-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:4px;}
+.modal-nickname{color:var(--gold);font-size:1rem;font-style:italic;margin-bottom:8px;}
+.modal-location{font-size:0.85rem;color:var(--gray-500);}
+.modal-quote{
+  margin:0 32px 24px;padding:20px;
+  background:rgba(201,162,39,0.06);border-left:3px solid var(--gold);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-style:italic;font-size:0.9rem;line-height:1.7;color:var(--gold-pale);
+}
+.modal-details{padding:0 32px 32px;}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.detail-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:16px;}
+.detail-label{font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--gray-500);margin-bottom:4px;}
+.detail-value{font-size:0.9rem;color:var(--white);font-weight:500;}
+.detail-item.full{grid-column:span 2;}
+
+/* ===== GALLERY PAGE ===== */
+#page-gallery .section-inner{}
+.gallery-cats{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;
+}
+.gallery-cat-btn{
+  padding:8px 18px;border-radius:40px;font-size:0.8rem;font-weight:500;
+  border:1px solid var(--glass-border);background:var(--glass);
+  color:rgba(255,255,255,0.7);transition:var(--transition);cursor:pointer;
+}
+.gallery-cat-btn.active,.gallery-cat-btn:hover{
+  background:rgba(201,162,39,0.15);border-color:var(--gold);color:var(--gold);
+}
+.gallery-masonry{
+  columns:3;column-gap:16px;
+}
+.gallery-item{
+  break-inside:avoid;margin-bottom:16px;border-radius:var(--radius-sm);
+  overflow:hidden;cursor:pointer;position:relative;
+  transition:var(--transition);
+}
+.gallery-item:hover{transform:scale(1.02);}
+.gallery-item img{width:100%;display:block;}
+.gallery-item-overlay{
+  position:absolute;inset:0;
+  background:rgba(10,22,40,0.5);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;transition:var(--transition);
+}
+.gallery-item:hover .gallery-item-overlay{opacity:1;}
+.gallery-item-cat{
+  font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;
+  color:var(--gold);background:rgba(10,22,40,0.7);
+  padding:4px 12px;border-radius:40px;border:1px solid rgba(201,162,39,0.4);
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,0.95);
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+.lightbox.open{display:flex;}
+.lightbox-img{max-width:90vw;max-height:85vh;border-radius:var(--radius);object-fit:contain;}
+.lightbox-close{
+  position:fixed;top:20px;right:20px;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:var(--white);font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:var(--transition);
+}
+.lightbox-close:hover{background:rgba(201,162,39,0.3);color:var(--gold);}
+.lightbox-nav{
+  position:fixed;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:var(--white);font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:var(--transition);
+}
+.lightbox-nav:hover{background:rgba(201,162,39,0.3);color:var(--gold);}
+.lightbox-prev{left:16px;}
+.lightbox-next{right:16px;}
+.lightbox-caption{
+  position:fixed;bottom:0;left:0;right:0;
+  padding:16px;text-align:center;
+  font-size:0.85rem;color:rgba(255,255,255,0.6);
+  background:linear-gradient(transparent,rgba(0,0,0,0.8));
+}
+
+/* ===== REUNION PAGE ===== */
+.reunion-section{padding:80px 24px;}
+.countdown-wrap{
+  display:flex;gap:20px;justify-content:center;flex-wrap:wrap;
+  margin:40px 0;
+}
+.countdown-item{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:24px 32px;text-align:center;
+  min-width:120px;
+}
+.countdown-num{
+  font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;
+  color:var(--gold);display:block;line-height:1;
+}
+.countdown-label{font-size:0.75rem;color:var(--gray-500);letter-spacing:1px;text-transform:uppercase;margin-top:8px;}
+
+/* Contact update form */
+.update-form{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:32px;margin-top:40px;
+  max-width:600px;
+}
+.form-group{margin-bottom:20px;}
+.form-label{
+  display:block;font-size:0.8rem;color:var(--gold);
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+}
+.form-input{
+  width:100%;background:rgba(255,255,255,0.05);
+  border:1px solid var(--glass-border);border-radius:var(--radius-sm);
+  padding:12px 16px;color:var(--white);font-family:inherit;font-size:0.9rem;
+  transition:var(--transition);
+}
+.form-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,0.1);}
+.form-input::placeholder{color:var(--gray-500);}
+
+/* ===== ALBUM EXPORT ===== */
+.export-section{padding:80px 24px;}
+.export-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:40px;
+}
+.export-card{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:32px;
+  transition:var(--transition);text-align:center;
+}
+.export-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.export-icon{font-size:3rem;margin-bottom:20px;}
+.export-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:8px;}
+.export-desc{font-size:0.85rem;color:var(--gray-500);margin-bottom:24px;line-height:1.6;}
+.export-btn{
+  width:100%;padding:12px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy);font-weight:700;font-size:0.9rem;
+  transition:var(--transition);
+}
+.export-btn:hover{opacity:0.9;transform:translateY(-1px);}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--navy-mid);border-top:1px solid rgba(201,162,39,0.12);
+  padding:48px 24px 24px;
+}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-top{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:40px;
+  margin-bottom:48px;
+}
+.footer-brand img{width:60px;height:60px;border-radius:50%;border:2px solid var(--gold);margin-bottom:12px;}
+.footer-brand-name{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);font-weight:700;margin-bottom:4px;}
+.footer-brand-sub{font-size:0.8rem;color:var(--gray-500);}
+.footer-col-title{font-weight:600;color:var(--gold);margin-bottom:16px;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;}
+.footer-col-links{display:flex;flex-direction:column;gap:8px;}
+.footer-col-link{font-size:0.85rem;color:var(--gray-500);transition:var(--transition);cursor:pointer;}
+.footer-col-link:hover{color:var(--gold);}
+.footer-bottom{
+  border-top:1px solid rgba(201,162,39,0.1);padding-top:24px;
+  display:flex;flex-direction:column;gap:6px;align-items:center;
+  text-align:center;
+}
+.footer-copy{font-size:0.78rem;color:var(--gray-500);}
+.footer-info{font-size:0.78rem;color:var(--gray-700);}
+
+/* ===== TOAST ===== */
+.toast{
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  background:var(--navy-mid);border:1px solid rgba(201,162,39,0.4);
+  color:var(--white);padding:14px 20px;border-radius:var(--radius);
+  font-size:0.88rem;box-shadow:var(--shadow-deep);
+  transform:translateX(200%);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  display:flex;align-items:center;gap:10px;max-width:320px;
+}
+.toast.show{transform:translateX(0);}
+.toast-icon{font-size:1.1rem;flex-shrink:0;}
+
+/* ===== UTILITY ===== */
+.text-gold{color:var(--gold);}
+.mt-1{margin-top:8px;}.mt-2{margin-top:16px;}.mt-3{margin-top:24px;}.mt-4{margin-top:32px;}.mt-5{margin-top:48px;}
+.mb-2{margin-bottom:16px;}.mb-4{margin-bottom:32px;}
+.text-center{text-align:center;}
+.hidden{display:none!important;}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+
+/* ===== FORM PAGE ===== */
+#page-form{}
+.form-hero{
+  background:linear-gradient(160deg,var(--navy-mid),var(--navy));
+  padding:60px 24px 40px;text-align:center;
+  border-bottom:1px solid rgba(201,162,39,0.1);
+}
+.google-form-frame{
+  width:100%;max-width:720px;margin:0 auto;
+  border:1px solid var(--glass-border);border-radius:var(--radius);
+  overflow:hidden;background:white;min-height:600px;
+}
+.form-alt-link{
+  text-align:center;padding:20px;
+  font-size:0.88rem;color:var(--gray-500);
+}
+.form-alt-link a{color:var(--gold);text-decoration:underline;}
+
+/* ===== WHATSAPP SHARE ===== */
+.share-bar{
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  margin-top:24px;
+}
+.share-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:40px;
+  font-size:0.82rem;font-weight:600;cursor:pointer;
+  transition:var(--transition);border:none;
+}
+.share-wa{background:#25D366;color:white;}
+.share-wa:hover{background:#1ebe5d;transform:translateY(-2px);}
+.share-copy{background:var(--glass);border:1px solid var(--glass-border);color:var(--gold);}
+.share-copy:hover{background:rgba(201,162,39,0.15);}
+
+/* ===== BACK TO TOP ===== */
+#back-to-top{
+  position:fixed;bottom:24px;left:24px;z-index:900;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:var(--navy);font-size:1.1rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;transform:scale(0.8);
+  transition:var(--transition);box-shadow:0 4px 20px rgba(201,162,39,0.4);
+}
+#back-to-top.visible{opacity:1;transform:scale(1);}
+
+/* ===== LOADING SKELETON ===== */
+.skeleton{
+  background:linear-gradient(90deg,rgba(255,255,255,0.05) 25%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.05) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s infinite;
+  border-radius:var(--radius-sm);
+}
+@keyframes shimmer{to{background-position:-200% 0;}}
+
+/* ===== EMPTY STATE ===== */
+.empty-state{
+  text-align:center;padding:80px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.empty-icon{font-size:4rem;}
+.empty-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold);}
+.empty-desc{color:var(--gray-500);max-width:400px;line-height:1.7;}
+
+/* ===== PROFILE SHARE ROW ===== */
+.modal-share-row{
+  display:flex;gap:10px;padding:0 32px 24px;flex-wrap:wrap;
+}
+.modal-share-btn{
+  flex:1;min-width:120px;padding:10px;border-radius:var(--radius-sm);
+  font-size:0.8rem;font-weight:600;cursor:pointer;transition:var(--transition);
+}
+.modal-share-wa{background:#25D366;color:white;border:none;}
+.modal-share-wa:hover{background:#1ebe5d;}
+.modal-share-copy{
+  background:var(--glass);border:1px solid var(--glass-border);color:var(--gold);
+}
+.modal-share-copy:hover{background:rgba(201,162,39,0.15);}
+
+/* ===== STATS BAR ===== */
+.stats-bar-wrap{margin:0 24px 32px;max-width:1280px;}
+.stats-bar-label{display:flex;justify-content:space-between;font-size:0.78rem;margin-bottom:6px;}
+.stats-bar-label span:first-child{color:var(--gray-500);}
+.stats-bar-label span:last-child{color:var(--gold);}
+.stats-bar-track{height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;}
+.stats-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+
+/* ===== MARQUEE ===== */
+.marquee-wrap{overflow:hidden;padding:20px 0;border-top:1px solid rgba(201,162,39,0.1);border-bottom:1px solid rgba(201,162,39,0.1);margin-bottom:0;}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;animation:marquee 30s linear infinite;}
+.marquee-track:hover{animation-play-state:paused;}
+.marquee-item{display:flex;align-items:center;gap:12px;font-size:0.8rem;color:rgba(255,255,255,0.5);flex-shrink:0;}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ===== PHOTO GRID FOR FORM PAGE ===== */
+.form-tip-cards{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:16px;margin-top:32px;
+}
+.form-tip{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:20px;
+}
+.form-tip-num{
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.3);
+  color:var(--gold);font-weight:700;font-size:0.85rem;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;
+}
+.form-tip-title{font-weight:600;margin-bottom:4px;font-size:0.9rem;}
+.form-tip-desc{font-size:0.8rem;color:var(--gray-500);line-height:1.6;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .gallery-masonry{columns:2;}
+  .detail-grid{grid-template-columns:1fr;}
+  .detail-item.full{grid-column:span 1;}
+  .hero-counters{gap:24px;}
+  .section{padding:60px 16px;}
+  .awards-grid{grid-template-columns:1fr 1fr;}
+  .prayer-section{padding:32px 24px;}
+  .classmates-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));padding:16px;}
+  .student-photo-wrap{height:180px;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .gallery-masonry{columns:1;}
+  .awards-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr;}
+  .countdown-wrap{gap:12px;}
+  .countdown-item{padding:16px 20px;min-width:80px;}
+  .countdown-num{font-size:2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">SPY · Class of 2019</div>
+</div>
+
+<!-- Back to Top -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✅</span>
+  <span id="toast-msg">Done!</span>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <!-- School logo stored in code only - admin sets this -->
+      <img class="nav-logo" id="nav-logo-img"
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png"
+        alt="SPY Logo"
+        onerror="this.style.background='var(--gold)';this.src='';this.alt='SPY';"
+      />
+      <div class="nav-brand-text">
+        <div class="nav-brand-title">SPY · Civil Engineering</div>
+        <div class="nav-brand-sub">Class of 2019 · CET</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <button class="nav-link active" onclick="showPage('home')">Home</button>
+      <button class="nav-link" onclick="showPage('dashboard')">Dashboard</button>
+      <button class="nav-link" onclick="showPage('classmates')">Classmates</button>
+      <button class="nav-link" onclick="showPage('gallery')">Gallery</button>
+      <button class="nav-link" onclick="showPage('reunion')">Reunion</button>
+      <button class="nav-link" onclick="showPage('export')">Export Album</button>
+      <button class="nav-link" onclick="showPage('form')">📝 Join Us</button>
+    </div>
+    <button class="nav-cta" onclick="showPage('classmates')">Meet Us</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-link" onclick="showPage('home');closeMobileMenu()">🏠 Home</button>
+  <button class="mobile-link" onclick="showPage('dashboard');closeMobileMenu()">📊 Dashboard</button>
+  <button class="mobile-link" onclick="showPage('classmates');closeMobileMenu()">👥 Classmates</button>
+  <button class="mobile-link" onclick="showPage('gallery');closeMobileMenu()">🖼️ Gallery</button>
+  <button class="mobile-link" onclick="showPage('reunion');closeMobileMenu()">🎉 Reunion</button>
+  <button class="mobile-link" onclick="showPage('export');closeMobileMenu()">📥 Export Album</button>
+  <button class="mobile-link" onclick="showPage('form');closeMobileMenu()">📝 Join the Album</button>
+</div>
+
+<!-- ========================================
+     PAGE: HOME / LANDING
+======================================== -->
+<section id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-slideshow" id="slideshow"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">🎓 Class of 2019 · Digital Album</div>
+      <img class="hero-school-logo"
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png"
+        alt="SPY Logo"
+        onerror="this.style.background='var(--gold)';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';"
+      />
+      <h1 class="hero-title">
+        Adamawa State<br/>
+        <span class="accent">Polytechnic</span>, Yola
+      </h1>
+      <p class="hero-subtitle">Department of Civil Engineering · College of Engineering Technology</p>
+      <p class="hero-dept">Class of 2019 · Building Bridges, Building Futures</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('classmates')">👥 Meet Our Classmates</button>
+        <button class="btn-outline" onclick="showPage('export')">📥 Download Album</button>
+      </div>
+      <div class="hero-counters">
+        <div class="counter-item">
+          <span class="counter-num" data-target="0" id="cnt-total">0</span>
+          <span class="counter-label">Classmates</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num" data-target="0" id="cnt-states">0</span>
+          <span class="counter-label">States</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num" data-target="2019">0</span>
+          <span class="counter-label">Year</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-num" data-target="4">4</span>
+          <span class="counter-label">Years Together</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <!-- Nigerian Class Album Features -->
+  <div class="section" style="background:var(--navy-mid);">
+    <div class="section-inner">
+      <div class="section-label">🏆 Class Awards</div>
+      <h2 class="section-title">Our <span class="accent">SPY Legends</span></h2>
+      <p class="section-desc">Every class has its characters. Here are the stars of Civil Engineering Class of 2019.</p>
+      <div class="awards-grid" id="awards-grid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineering Quotes -->
+  <div class="section">
+    <div class="section-inner">
+      <div class="section-label">💬 Wisdom</div>
+      <h2 class="section-title">Engineering <span class="accent">Quotes</span></h2>
+      <div class="quotes-strip" id="eng-quotes">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CET Memories -->
+  <div class="section" style="background:var(--navy-mid);">
+    <div class="section-inner">
+      <div class="section-label">😂 CET Moments</div>
+      <h2 class="section-title">Funny <span class="accent">CET Memories</span></h2>
+      <div class="awards-grid" id="memories-grid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Prayer -->
+  <div class="section">
+    <div class="section-inner">
+      <div class="prayer-section">
+        <div style="font-size:2rem;margin-bottom:16px;">🙏</div>
+        <p class="prayer-text" id="prayer-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tribute to Lecturers -->
+  <div class="section" style="background:var(--navy-mid);">
+    <div class="section-inner">
+      <div class="section-label">👨‍🏫 Gratitude</div>
+      <h2 class="section-title">Tribute to Our <span class="accent">Lecturers</span></h2>
+      <p class="section-desc">To those who shaped us into engineers. Thank you.</p>
+      <div class="tribute-cards" id="tribute-cards">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee Strip -->
+  <div class="marquee-wrap" style="background:var(--navy);">
+    <div class="marquee-track" id="marquee-track">
+      <!-- filled by JS (doubled for seamless loop) -->
+    </div>
+  </div>
+
+  <!-- Join the Album CTA -->
+  <div class="section" style="text-align:center;">
+    <div class="section-inner" style="max-width:640px;margin:0 auto;">
+      <div class="section-label">📝 Be Part of It</div>
+      <h2 class="section-title">Not in the <span class="accent">Album Yet?</span></h2>
+      <p class="section-desc" style="margin:0 auto 32px;">Fill the class form and join your classmates in this digital memory. Takes less than 2 minutes.</p>
+      <div class="share-bar">
+        <button class="btn-primary" onclick="showPage('form')">📝 Fill the Class Form</button>
+        <button class="share-btn share-wa" onclick="shareWhatsApp()">
+          <span>💬</span> Share via WhatsApp
+        </button>
+        <button class="share-btn share-copy" onclick="copyLink()">
+          <span>🔗</span> Copy Link
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png"
+            alt="SPY"
+            onerror="this.style.display='none';"
+          />
+          <div class="footer-brand-name">SPY · Civil Engineering</div>
+          <div class="footer-brand-sub">College of Engineering Technology</div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-col-links">
+            <span class="footer-col-link" onclick="showPage('home')">Home</span>
+            <span class="footer-col-link" onclick="showPage('dashboard')">Dashboard</span>
+            <span class="footer-col-link" onclick="showPage('classmates')">Classmates</span>
+            <span class="footer-col-link" onclick="showPage('gallery')">Gallery</span>
+            <span class="footer-col-link" onclick="showPage('reunion')">Reunion</span>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Class Info</div>
+          <div class="footer-col-links">
+            <span class="footer-col-link">Class Rep: Yahya Salihu</span>
+            <span class="footer-col-link">Department: Civil Engineering</span>
+            <span class="footer-col-link">College: CET</span>
+            <span class="footer-col-link">Graduating Year: 2019</span>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Add Your Data</div>
+          <div class="footer-col-links">
+            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLScPmd2tf_K_7pr4aFZe63X88BnPB-kGfnDc4XWtEdYagBWwzA/viewform?usp=publish-editor" target="_blank">📝 Fill the Class Form</a>
+            <span class="footer-col-link" onclick="showPage('export')">📥 Download Album</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+</section>
+
+<!-- ========================================
+     PAGE: DASHBOARD
+======================================== -->
+<section id="page-dashboard" class="page">
+  <div class="dash-hero">
+    <div class="dash-inner">
+      <div class="section-label">📊 Overview</div>
+      <h2 class="dash-title">Class <span style="color:var(--gold)">Dashboard</span></h2>
+      <p class="dash-sub">Real-time snapshot of our Civil Engineering family</p>
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-num" id="db-total">—</div>
+          <div class="stat-label">Total Classmates</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-num" id="db-states">—</div>
+          <div class="stat-label">States Represented</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🖼️</div>
+          <div class="stat-num" id="db-gallery">—</div>
+          <div class="stat-label">Gallery Photos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎓</div>
+          <div class="stat-num">2019</div>
+          <div class="stat-label">Graduation Year</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1280px;margin:0 auto;padding:32px 24px;">
+    <!-- Inspirational Quote -->
+    <div class="quote-widget" id="dash-quote">
+      <div class="quote-widget-icon">💡</div>
+      <div>
+        <div class="quote-widget-text" id="dash-quote-text">Loading inspiration...</div>
+        <div class="quote-widget-author" id="dash-quote-author"></div>
+      </div>
+    </div>
+
+    <!-- State Distribution -->
+    <div class="section-label mt-4 mb-2">🗺️ Location Map</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:20px;">Where Are We <span style="color:var(--gold)">Now?</span></h3>
+    <div id="state-distribution" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
+
+    <!-- Recently Added -->
+    <div class="section-label mt-5 mb-2">🆕 Recently Added</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:20px;">New <span style="color:var(--gold)">Classmates</span></h3>
+    <div class="classmates-grid" id="recent-grid" style="padding:0;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));"></div>
+    <div style="text-align:center;margin-top:24px;">
+      <button class="btn-primary" onclick="showPage('classmates')">View All Classmates →</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ========================================
+     PAGE: CLASSMATES DIRECTORY
+======================================== -->
+<section id="page-classmates" class="page">
+  <div class="dash-hero">
+    <div class="dash-inner">
+      <div class="section-label">👥 Directory</div>
+      <h2 class="dash-title">Our <span style="color:var(--gold)">Classmates</span></h2>
+      <p class="dash-sub" id="classmates-count-text">Loading classmates...</p>
+    </div>
+  </div>
+
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="search-wrap">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search by name, nickname, location, state..." oninput="handleSearch()"/>
+        <button onclick="clearSearch()" style="background:none;color:var(--gray-500);font-size:0.85rem;">✕</button>
+      </div>
+    </div>
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="filter-tab active" data-filter="all" onclick="setFilter('all',this)">All</button>
+      <!-- state filters injected by JS -->
+    </div>
+  </div>
+
+  <div class="classmates-grid" id="classmates-grid">
+    <div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--gray-500);">
+      <div style="font-size:2rem;margin-bottom:12px;">⏳</div>
+      Loading classmates from Google Sheets...
+    </div>
+  </div>
+  <div class="pagination" id="pagination"></div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ========================================
+     PAGE: JOIN THE ALBUM (FORM)
+======================================== -->
+<section id="page-form" class="page">
+  <div class="form-hero">
+    <div class="section-label">📝 Join Us</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:8px;">
+      Add Yourself to the <span style="color:var(--gold)">Album</span>
+    </h2>
+    <p style="color:var(--gray-500);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;">
+      Fill in your details below. Your profile will appear in the classmates directory once the admin updates the album.
+    </p>
+    <div style="max-width:720px;margin:0 auto 32px;">
+      <a href="https://forms.gle/your-google-form-link" target="_blank"
+        style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:40px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-weight:700;font-size:1rem;box-shadow:0 4px 24px rgba(201,162,39,0.35);transition:var(--transition);"
+        onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+        📋 Open Google Form
+      </a>
+      <p style="margin-top:12px;font-size:0.78rem;color:var(--gray-700);">Opens in a new tab · Your data is saved directly to Google Sheets</p>
+    </div>
+  </div>
+
+  <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
+    <!-- Embed the form -->
+    <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);overflow:hidden;margin-bottom:40px;">
+      <div style="padding:20px;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;gap:12px;">
+        <span style="font-size:1.3rem;">📋</span>
+        <div>
+          <div style="font-weight:600;font-size:0.95rem;">SPY Civil Engineering Class of 2019 — Profile Form</div>
+          <div style="font-size:0.78rem;color:var(--gray-500);">Powered by Google Forms</div>
+        </div>
+      </div>
+      <div style="padding:24px;text-align:center;">
+        <p style="color:var(--gray-500);margin-bottom:20px;font-size:0.9rem;line-height:1.7;">
+          Click the button below to open the Google Form and fill in your details. Once submitted, your info will be reviewed and added to the class album.
+        </p>
+        <a href="https://forms.gle/your-google-form-link" target="_blank"
+          style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:40px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-weight:700;font-size:0.9rem;">
+          ✍️ Fill the Form Now
+        </a>
+        <div class="form-alt-link" style="margin-top:12px;">
+          Direct link: <a href="https://forms.gle/your-google-form-link" target="_blank">https://forms.gle/your-google-form-link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- What to fill -->
+    <div class="section-label mb-2">📌 What to Prepare</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:24px;">Form <span style="color:var(--gold)">Requirements</span></h3>
+    <div class="form-tip-cards">
+      <div class="form-tip reveal">
+        <div class="form-tip-num">1</div>
+        <div class="form-tip-title">Full Name</div>
+        <div class="form-tip-desc">Your complete name as it should appear in the album.</div>
+      </div>
+      <div class="form-tip reveal reveal-delay-1">
+        <div class="form-tip-num">2</div>
+        <div class="form-tip-title">Nickname</div>
+        <div class="form-tip-desc">What your classmates called you. Keep it real!</div>
+      </div>
+      <div class="form-tip reveal reveal-delay-2">
+        <div class="form-tip-num">3</div>
+        <div class="form-tip-title">Phone Number</div>
+        <div class="form-tip-desc">Active number your classmates can reach you on.</div>
+      </div>
+      <div class="form-tip reveal reveal-delay-3">
+        <div class="form-tip-num">4</div>
+        <div class="form-tip-title">State / Country</div>
+        <div class="form-tip-desc">Where you're from or currently based.</div>
+      </div>
+      <div class="form-tip reveal">
+        <div class="form-tip-num">5</div>
+        <div class="form-tip-title">Passport Photo Link</div>
+        <div class="form-tip-desc">Upload your photo to Google Drive or Imgur and paste the public link.</div>
+      </div>
+      <div class="form-tip reveal reveal-delay-1">
+        <div class="form-tip-num">6</div>
+        <div class="form-tip-title">Current Location</div>
+        <div class="form-tip-desc">City and state/country where you currently live.</div>
+      </div>
+    </div>
+
+    <!-- Photo upload guide -->
+    <div style="margin-top:40px;background:rgba(201,162,39,0.06);border:1px solid rgba(201,162,39,0.2);border-radius:var(--radius);padding:28px;">
+      <div style="font-size:1.2rem;margin-bottom:12px;">📸 How to Get a Photo Link</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="background:rgba(201,162,39,0.2);color:var(--gold);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">1</span>
+          <span style="font-size:0.88rem;color:rgba(255,255,255,0.8);">Upload your photo to <strong style="color:var(--gold);">Google Drive</strong> → Right-click → "Get link" → Change to "Anyone with the link" → Copy link</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="background:rgba(201,162,39,0.2);color:var(--gold);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">2</span>
+          <span style="font-size:0.88rem;color:rgba(255,255,255,0.8);">OR upload to <strong style="color:var(--gold);">imgur.com</strong> → Copy the direct image link (ending in .jpg or .png)</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <span style="background:rgba(201,162,39,0.2);color:var(--gold);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;">3</span>
+          <span style="font-size:0.88rem;color:rgba(255,255,255,0.8);">Paste that link in the form's <strong style="color:var(--gold);">"Passport Photo Link"</strong> field</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share section -->
+    <div style="margin-top:40px;text-align:center;">
+      <div class="section-label mb-2">📣 Tell Your Classmates</div>
+      <p style="color:var(--gray-500);margin-bottom:20px;font-size:0.9rem;">Share this album with the whole class!</p>
+      <div class="share-bar">
+        <button class="share-btn share-wa" onclick="shareWhatsApp()">💬 Share on WhatsApp</button>
+        <button class="share-btn share-copy" onclick="copyLink()">🔗 Copy Album Link</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- Profile Modal -->
+<div class="modal-overlay" id="profile-modal" onclick="closeModal(event)">
+  <div class="modal-box" id="modal-box">
+    <div class="modal-close">
+      <button class="modal-close-btn" onclick="closeProfileModal()">✕</button>
+    </div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE: GALLERY
+======================================== -->
+<section id="page-gallery" class="page">
+  <div class="section">
+    <div class="section-inner">
+      <div class="section-label">🖼️ Memories</div>
+      <h2 class="section-title">Class <span class="accent">Gallery</span></h2>
+      <p class="section-desc">Every photo tells a story. Every moment, a memory.</p>
+      <div class="gallery-cats" id="gallery-cats">
+        <button class="gallery-cat-btn active" data-cat="all" onclick="filterGallery('all',this)">All Photos</button>
+        <!-- categories injected by JS -->
+      </div>
+      <div class="gallery-masonry" id="gallery-grid"></div>
+      <div id="gallery-empty" class="no-results hidden">
+        <div class="no-results-icon">📷</div>
+        <p>No photos in this category yet.</p>
+        <p style="font-size:0.8rem;margin-top:8px;color:var(--gray-700);">Admin: add image links in the <code>galleryImages</code> array in the code.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">‹</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery"/>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">›</button>
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<!-- ========================================
+     PAGE: REUNION
+======================================== -->
+<section id="page-reunion" class="page">
+  <div class="reunion-section">
+    <div style="max-width:860px;margin:0 auto;text-align:center;">
+      <div class="section-label">🎉 Coming Together</div>
+      <h2 class="section-title">Class <span class="accent">Reunion</span> Countdown</h2>
+      <p style="color:var(--gray-500);margin-bottom:40px;">SPY Civil Engineering Class of 2019 — Our next reunion. Mark your calendar.</p>
+
+      <!-- Target date: 1st January 2026 -->
+      <div class="countdown-wrap" id="countdown-wrap">
+        <div class="countdown-item"><span class="countdown-num" id="cd-days">00</span><div class="countdown-label">Days</div></div>
+        <div class="countdown-item"><span class="countdown-num" id="cd-hours">00</span><div class="countdown-label">Hours</div></div>
+        <div class="countdown-item"><span class="countdown-num" id="cd-mins">00</span><div class="countdown-label">Minutes</div></div>
+        <div class="countdown-item"><span class="countdown-num" id="cd-secs">00</span><div class="countdown-label">Seconds</div></div>
+      </div>
+
+      <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:32px;margin-top:40px;text-align:left;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:20px;color:var(--gold);">📍 Reunion Details</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="detail-item"><div class="detail-label">Date</div><div class="detail-value">To Be Announced</div></div>
+          <div class="detail-item"><div class="detail-label">Venue</div><div class="detail-value">Adamawa State Polytechnic, Yola</div></div>
+          <div class="detail-item"><div class="detail-label">Theme</div><div class="detail-value">5 Years of Excellence</div></div>
+          <div class="detail-item"><div class="detail-label">Organized By</div><div class="detail-value">Yahya Salihu (Class Rep)</div></div>
+        </div>
+        <div style="margin-top:20px;padding:16px;background:rgba(201,162,39,0.06);border-radius:var(--radius-sm);">
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.7;">
+            📢 Contact your class representative to confirm attendance and stay updated on reunion plans.
+            Let's come back together and celebrate how far we've come!
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Update -->
+      <div class="update-form mt-4" style="margin:32px auto 0;text-align:left;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:20px;color:var(--gold);">📝 Update Your Contact</h3>
+        <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:24px;">Keep the class updated with your current details.</p>
+        <a href="https://forms.gle/your-google-form-link" target="_blank"
+          style="display:block;width:100%;padding:14px;border-radius:var(--radius);background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-weight:700;text-align:center;font-size:0.95rem;transition:var(--transition);">
+          📋 Fill / Update Your Profile Form
+        </a>
+        <p style="font-size:0.75rem;color:var(--gray-700);margin-top:12px;text-align:center;">Opens Google Form → data saved automatically</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ========================================
+     PAGE: EXPORT ALBUM
+======================================== -->
+<section id="page-export" class="page">
+  <div class="export-section">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div class="section-label">📥 Export</div>
+      <h2 class="section-title">Download <span class="accent">Class Album</span></h2>
+      <p style="color:var(--gray-500);max-width:560px;line-height:1.7;">
+        Generate a professional graduation album in PDF or Word format. Print-ready, elegant, and designed to last forever.
+      </p>
+      <div class="export-grid">
+        <div class="export-card">
+          <div class="export-icon">📄</div>
+          <div class="export-title">PDF Album</div>
+          <div class="export-desc">Professional PDF album with passport photos, names, and details. Print-ready, paginated, with SPY and CET branding.</div>
+          <button class="export-btn" onclick="exportPDF()">Generate PDF Album</button>
+        </div>
+        <div class="export-card">
+          <div class="export-icon">📝</div>
+          <div class="export-title">Word Document</div>
+          <div class="export-desc">Downloadable Word-compatible HTML document. Edit and customize before printing.</div>
+          <button class="export-btn" onclick="exportWord()">Generate Word Album</button>
+        </div>
+        <div class="export-card">
+          <div class="export-icon">🖨️</div>
+          <div class="export-title">Print View</div>
+          <div class="export-desc">Open a print-optimized view of the album directly in your browser for instant printing.</div>
+          <button class="export-btn" onclick="openPrintView()">Open Print View</button>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:32px;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:16px;color:var(--gold);">📌 Album Preview</h3>
+        <p style="color:var(--gray-500);font-size:0.88rem;margin-bottom:24px;">
+          The exported album includes: School logo · SPY & CET branding · Passport photos · Full name · Nickname · Phone · State · Location · Page numbers · Professional borders
+        </p>
+        <div id="album-preview-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;max-height:400px;overflow-y:auto;"></div>
+        <p id="album-preview-empty" style="color:var(--gray-700);font-size:0.85rem;text-align:center;padding:40px;">Loading classmate data for preview...</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+'use strict';
+
+/* ============================================================
+   CONFIGURATION — ADMIN SECTION (hidden from UI)
+   ============================================================ */
+
+// ⚠️ ADMIN: Replace with your actual Google Sheets CSV export URL
+// Format: https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&gid=0
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLQYkuoiO-Jut2_b9_a82lXEoBoNb6L2OE5EmUxdPDdqlOFAWWc9CL8ioVyTo94JWbvo9LBGT5LAIx/pub?gid=1245162313&single=true&output=csv';
+
+// ⚠️ ADMIN: School logo URL (hidden from editable UI)
+const SCHOOL_LOGO = 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png';
+
+// ⚠️ ADMIN: Google Form link for classmates to fill
+const FORM_URL = 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg';
+
+// ⚠️ ADMIN: Reunion date target
+const REUNION_DATE = new Date('2026-12-25T10:00:00');
+
+// ⚠️ ADMIN: Gallery Images — paste your image links here
+// Format: { url: "https://...", category: "Category Name", caption: "Optional caption" }
+const galleryImages = [
+  { url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600', category: 'Convocation', caption: 'Graduation Day 2019' },
+  { url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600', category: 'Classroom Photos', caption: 'In the lecture hall' },
+  { url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600', category: 'Workshop Practical', caption: 'Civil Engineering Workshop' },
+  { url: 'https://images.unsplash.com/photo-1497493292307-31c376b6e479?w=600', category: 'Group Study', caption: 'Study group sessions' },
+  { url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600', category: 'Convocation', caption: 'Proud graduates' },
+  { url: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600', category: 'Casual Campus Moments', caption: 'Campus life' },
+  { url: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600', category: 'Engineering Excursions', caption: 'Field excursion' },
+  { url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600', category: 'SIWES Memories', caption: 'SIWES industrial attachment' },
+  { url: 'https://images.unsplash.com/photo-1562564055-71e051d33c19?w=600', category: 'Final Year Project', caption: 'Final year project presentation' },
+  { url: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600', category: 'Group Study', caption: 'Pre-exam preparation' },
+  { url: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600', category: 'Casual Campus Moments', caption: 'Friends forever' },
+  { url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600', category: 'Classroom Photos', caption: 'Lecture sessions' },
+];
+
+/* ============================================================
+   STATIC DATA
+   ============================================================ */
+
+const classAwards = [
+  { emoji:'🧠', title:'Most Brilliant', name:'To be voted by classmates' },
+  { emoji:'🗣️', title:'Most Talkative', name:'To be voted by classmates' },
+  { emoji:'👗', title:'Most Fashionable', name:'To be voted by classmates' },
+  { emoji:'✈️', title:'Most Likely to Travel Abroad', name:'To be voted by classmates' },
+  { emoji:'💰', title:'Most Likely to Become Rich', name:'To be voted by classmates' },
+  { emoji:'😴', title:'Always Late to Class', name:'To be voted by classmates' },
+  { emoji:'📚', title:'Library Resident', name:'To be voted by classmates' },
+  { emoji:'🤣', title:'Class Clown', name:'To be voted by classmates' },
+  { emoji:'🎯', title:'Most Determined', name:'To be voted by classmates' },
+  { emoji:'🤝', title:'Most Helpful', name:'To be voted by classmates' },
+  { emoji:'💪', title:'Most Hardworking', name:'To be voted by classmates' },
+  { emoji:'🎤', title:'Best Presenter', name:'To be voted by classmates' },
+];
+
+const classMemories = [
+  { emoji:'😂', title:'That Survey 101 exam', desc:'Nobody read but somehow we all passed' },
+  { emoji:'🏗️', title:'The Workshop Disaster', desc:'When the concrete mix refused to set properly' },
+  { emoji:'⚡', title:'Power Cut During CAD', desc:'NEPA strikes again, and we lost 3 hours of work' },
+  { emoji:'🚌', title:'The Excursion Bus', desc:'That bus that broke down on the way to site visit' },
+  { emoji:'🍲', title:'Mama Titi\'s Canteen', desc:'The unofficial class meeting point every afternoon' },
+  { emoji:'📋', title:'SIWES Report Writing', desc:'Copying each other\'s reports at 2am before submission' },
+  { emoji:'🎓', title:'Final Year Nerves', desc:'The anxiety before FYP defense was unreal' },
+  { emoji:'📱', title:'WhatsApp Group Wahala', desc:'The group chat that never slept — especially before exams' },
+];
+
+const engineeringQuotes = [
+  { text: 'An engineer is someone who is good at what he does, but even better at what he learns.', author: 'Engineering Wisdom' },
+  { text: 'Civil Engineering is the art of directing the great sources of power in nature for the use and convenience of man.', author: 'Thomas Tredgold' },
+  { text: 'Engineers like to solve problems. If there are no problems handily available, they will create their own problems.', author: 'Scott Adams' },
+  { text: 'The hardest thing in the world to understand is the income tax.', author: 'Albert Einstein (CET Motto)', caption:'😂' },
+  { text: 'We build the bridges that connect dreams to reality. That is civil engineering.', author: 'SPY CET 2019' },
+  { text: 'Every great engineer once was a student who refused to give up when the calculations were wrong.', author: 'Unknown Lecturer' },
+];
+
+const tributeLecturers = [
+  { icon:'👨‍🏫', name:'Dr. [Name]', dept:'Structural Engineering' },
+  { icon:'👩‍🏫', name:'Engr. [Name]', dept:'Fluid Mechanics' },
+  { icon:'👨‍🏫', name:'Dr. [Name]', dept:'Soil Mechanics' },
+  { icon:'👩‍🏫', name:'Engr. [Name]', dept:'Engineering Mathematics' },
+  { icon:'👨‍🏫', name:'Dr. [Name]', dept:'Engineering Drawing' },
+  { icon:'👩‍🏫', name:'Engr. [Name]', dept:'Building Construction' },
+];
+
+const prayerText = `
+  May the Almighty Allah bless every son and daughter of SPY Civil Engineering Class of 2019.
+  May our degrees open doors that our efforts deserve.
+  May we build bridges — not just of concrete and steel — but of friendship, love, and opportunity.
+  May every project we lead stand strong. May every family we build know peace.
+  As we scatter across Nigeria and beyond, may we carry the spirit of CET with us.
+  Class of 2019 — we went in as students, we came out as Engineers. 
+  And by His grace, we shall become the best. Amin. 🙏
+`;
+
+const inspirationalQuotes = [
+  { text: 'The future belongs to those who believe in the beauty of their dreams.', author: 'Eleanor Roosevelt' },
+  { text: 'Success is not final, failure is not fatal: it is the courage to continue that counts.', author: 'Winston Churchill' },
+  { text: 'An engineer is the closest thing to a magician that exists in the real world.', author: 'Engineering Proverb' },
+  { text: 'Education is the most powerful weapon which you can use to change the world.', author: 'Nelson Mandela' },
+  { text: 'The secret of getting ahead is getting started.', author: 'Mark Twain' },
+  { text: 'Engineering is not only a study of 45 subjects but it is moral studies of intellectual life.', author: 'Prakhar Srivastav' },
+  { text: 'Iron rusts from disuse; stagnant water loses its purity and in cold weather becomes frozen; even so does inaction sap the vigors of the mind.', author: 'Leonardo da Vinci' },
+];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let allClassmates = [];
+let filteredClassmates = [];
+let currentPage = 1;
+const perPage = 12;
+let currentFilter = 'all';
+let searchQuery = '';
+let lightboxIndex = 0;
+let galleryFiltered = [...galleryImages];
+const PLACEHOLDER = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzFhM2E1YyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7wn5uAPC90ZXh0Pjwvc3ZnPg==';
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.getElementById('loader').style.opacity = '0';
+    setTimeout(() => document.getElementById('loader').style.display = 'none', 600);
+  }, 1800);
+
+  buildStaticSections();
+  fetchClassmates();
+  startCountdown();
+  buildGallery('all');
+  animateHeroCounters();
+});
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => {
+    if (l.textContent.toLowerCase().includes(id.replace('-','')) ||
+        (id === 'home' && l.textContent === 'Home') ||
+        (id === 'classmates' && l.textContent === 'Classmates') ||
+        (id === 'gallery' && l.textContent === 'Gallery') ||
+        (id === 'dashboard' && l.textContent === 'Dashboard') ||
+        (id === 'reunion' && l.textContent === 'Reunion') ||
+        (id === 'export' && l.textContent.includes('Export'))) {
+      l.classList.add('active');
+    }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (id === 'export') buildAlbumPreview();
+  if (id === 'dashboard') buildDashboard();
+}
+
+function toggleMobileMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+/* ============================================================
+   STATIC SECTIONS
+   ============================================================ */
+function buildStaticSections() {
+  // Awards
+  const ag = document.getElementById('awards-grid');
+  if (ag) ag.innerHTML = classAwards.map(a =>
+    `<div class="award-card">
+      <div class="award-emoji">${a.emoji}</div>
+      <div class="award-title">${a.title}</div>
+      <div class="award-name">${a.name}</div>
+    </div>`).join('');
+
+  // Memories
+  const mg = document.getElementById('memories-grid');
+  if (mg) mg.innerHTML = classMemories.map(m =>
+    `<div class="award-card">
+      <div class="award-emoji">${m.emoji}</div>
+      <div class="award-title">${m.title}</div>
+      <div class="award-name">${m.desc}</div>
+    </div>`).join('');
+
+  // Engineering Quotes
+  const eq = document.getElementById('eng-quotes');
+  if (eq) eq.innerHTML = engineeringQuotes.map(q =>
+    `<div class="quote-card">
+      <div class="quote-text">"${q.text}"</div>
+      <div class="quote-author">— ${q.author}</div>
+    </div>`).join('');
+
+  // Prayer
+  const pr = document.getElementById('prayer-text');
+  if (pr) pr.textContent = prayerText;
+
+  // Tribute
+  const tr = document.getElementById('tribute-cards');
+  if (tr) tr.innerHTML = tributeLecturers.map(t =>
+    `<div class="tribute-card">
+      <div class="tribute-icon">${t.icon}</div>
+      <div class="tribute-name">${t.name}</div>
+      <div class="tribute-dept">${t.dept}</div>
+    </div>`).join('');
+
+  // Dashboard quote
+  const rq = inspirationalQuotes[Math.floor(Math.random() * inspirationalQuotes.length)];
+  const dqt = document.getElementById('dash-quote-text');
+  const dqa = document.getElementById('dash-quote-author');
+  if (dqt) dqt.textContent = '"' + rq.text + '"';
+  if (dqa) dqa.textContent = '— ' + rq.author;
+}
+
+/* ============================================================
+   HERO COUNTERS ANIMATION
+   ============================================================ */
+function animateHeroCounters() {
+  // Year counter animate
+  animateCount(document.querySelector('[data-target="2019"]'), 2019, 1600);
+}
+function animateCount(el, target, duration = 1200) {
+  if (!el) return;
+  const start = Date.now();
+  const startVal = 0;
+  function tick() {
+    const elapsed = Date.now() - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(startVal + (target - startVal) * eased);
+    if (progress < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ============================================================
+   GOOGLE SHEETS — FETCH CLASSMATES
+   ============================================================ */
+async function fetchClassmates() {
+  try {
+    // Use a CORS proxy for Google Sheets CSV
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const sheetCsv = encodeURIComponent(SHEET_URL);
+    const res = await fetch(proxyUrl + sheetCsv);
+    if (!res.ok) throw new Error('Network error');
+    const text = await res.text();
+    allClassmates = parseCSV(text);
+    onClassmatesLoaded();
+  } catch (err) {
+    console.warn('Google Sheets fetch failed, using demo data:', err);
+    allClassmates = getDemoClassmates();
+    onClassmatesLoaded();
+  }
+}
+
+function parseCSV(text) {
+  const lines = text.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return [];
+  // Skip header row (row 0)
+  const data = [];
+  for (let i = 1; i < lines.length; i++) {
+    const cols = parseCSVLine(lines[i]);
+    // Expected columns (0-indexed, skip timestamp if present):
+    // Detect if first col is timestamp (contains ':' typically)
+    let offset = 0;
+    if (cols[0] && (cols[0].includes('/') || cols[0].includes('-')) && cols[0].includes(':')) offset = 1;
+
+    const student = {
+      fullName:    (cols[offset + 0] || '').trim(),
+      nickname:    (cols[offset + 1] || '').trim(),
+      phone:       (cols[offset + 2] || '').trim(),
+      state:       (cols[offset + 3] || '').trim(),
+      photoUrl:    (cols[offset + 4] || '').trim(),
+      quote:       (cols[offset + 5] || '').trim(),
+      ambition:    (cols[offset + 6] || '').trim(),
+      location:    (cols[offset + 7] || '').trim(),
+      skills:      (cols[offset + 8] || '').trim(),
+      hobby:       (cols[offset + 9] || '').trim(),
+      bestFriend:  (cols[offset + 10] || '').trim(),
+    };
+    if (student.fullName) data.push(student);
+  }
+  return data;
+}
+
+function parseCSVLine(line) {
+  const result = [];
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') { inQuotes = !inQuotes; continue; }
+    if (c === ',' && !inQuotes) { result.push(current); current = ''; continue; }
+    current += c;
+  }
+  result.push(current);
+  return result;
+}
+
+function getDemoClassmates() {
+  // Demo data for when Google Sheets is not yet connected
+  return [
+    { fullName:'Yahya Salihu', nickname:'Class Rep', phone:'+234 800 000 0001', state:'Adamawa', photoUrl:'', quote:'Lead with purpose, build with excellence.', ambition:'Civil Engineering Consultant', location:'Yola, Adamawa', skills:'Leadership, Structural Design', hobby:'Football', bestFriend:'The whole class' },
+    { fullName:'Amina Bello', nickname:'Ami', phone:'+234 800 000 0002', state:'Adamawa', photoUrl:'', quote:'She builds bridges where others see walls.', ambition:'Structural Engineer', location:'Maiduguri, Borno', skills:'AutoCAD, Surveying', hobby:'Reading', bestFriend:'Fatima' },
+    { fullName:'Ibrahim Musa', nickname:'Ibro', phone:'+234 800 000 0003', state:'Gombe', photoUrl:'', quote:'Hard work beats talent when talent doesn\'t work hard.', ambition:'Site Engineer', location:'Abuja, FCT', skills:'Project Management', hobby:'Chess', bestFriend:'Ahmed' },
+    { fullName:'Fatima Aliyu', nickname:'Fati', phone:'+234 800 000 0004', state:'Taraba', photoUrl:'', quote:'The future is built today.', ambition:'Urban Planner', location:'Lagos', skills:'GIS, AutoCAD', hobby:'Cooking', bestFriend:'Amina' },
+    { fullName:'Ahmed Usman', nickname:'Archie', phone:'+234 800 000 0005', state:'Adamawa', photoUrl:'', quote:'Think big, start small, scale fast.', ambition:'Entrepreneur', location:'Kano', skills:'Excel, Estimating', hobby:'Gaming', bestFriend:'Ibrahim' },
+    { fullName:'Khadija Mohammed', nickname:'KJ', phone:'+234 800 000 0006', state:'Bauchi', photoUrl:'', quote:'Success is the sum of small efforts repeated daily.', ambition:'Consultant Engineer', location:'Kaduna', skills:'Geotechnical', hobby:'Traveling', bestFriend:'Amina' },
+    { fullName:'Usman Garba', nickname:'Garbs', phone:'+234 800 000 0007', state:'Borno', photoUrl:'', quote:'A smooth sea never made a skilled sailor.', ambition:'Transportation Engineer', location:'Lagos', skills:'Road Design', hobby:'Jogging', bestFriend:'Ibrahim' },
+    { fullName:'Maryam Isa', nickname:'Mary', phone:'+234 800 000 0008', state:'Adamawa', photoUrl:'', quote:'Grace under pressure is the mark of a true engineer.', ambition:'Environmental Engineer', location:'Abuja', skills:'Water resources', hobby:'Photography', bestFriend:'Fatima' },
+    { fullName:'Abdullahi Buba', nickname:'Ablo', phone:'+234 800 000 0009', state:'Adamawa', photoUrl:'', quote:'Nothing great was ever achieved without enthusiasm.', ambition:'Quantity Surveyor', location:'Yola', skills:'Cost Estimation', hobby:'Music', bestFriend:'Yahya' },
+    { fullName:'Hajiya Ngozi', nickname:'Queen', phone:'+234 800 000 0010', state:'Anambra', photoUrl:'', quote:'I didn\'t come this far to only come this far.', ambition:'Site Manager', location:'Port Harcourt', skills:'Construction Management', hobby:'Dancing', bestFriend:'Khadija' },
+    { fullName:'Bashir Abubakar', nickname:'Bashi', phone:'+234 800 000 0011', state:'Yobe', photoUrl:'', quote:'Every expert was once a beginner.', ambition:'Structural Consultant', location:'Damaturu', skills:'Structural Analysis', hobby:'Football', bestFriend:'Usman' },
+    { fullName:'Zainab Suleiman', nickname:'Zee', phone:'+234 800 000 0012', state:'Niger', photoUrl:'', quote:'Build your dreams or someone else will hire you to build theirs.', ambition:'Project Director', location:'Minna', skills:'Planning, CAD', hobby:'Art', bestFriend:'Maryam' },
+  ];
+}
+
+function onClassmatesLoaded() {
+  filteredClassmates = [...allClassmates];
+  buildClassmatesGrid();
+  buildFilterTabs();
+  updateCounters();
+  buildDashboard();
+  buildAlbumPreview();
+}
+
+/* ============================================================
+   CLASSMATES GRID
+   ============================================================ */
+function buildClassmatesGrid() {
+  const grid = document.getElementById('classmates-grid');
+  if (!grid) return;
+
+  const totalFiltered = filteredClassmates.length;
+  const totalPages = Math.ceil(totalFiltered / perPage);
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+  const pageData = filteredClassmates.slice(start, end);
+
+  const countText = document.getElementById('classmates-count-text');
+  if (countText) countText.textContent = `${totalFiltered} classmate${totalFiltered !== 1 ? 's' : ''} found`;
+
+  if (pageData.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;" class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>No classmates found matching your search.</p>
+      <button class="btn-outline mt-3" onclick="clearSearch()" style="margin-top:16px;padding:10px 24px;border-radius:40px;border:1px solid var(--gold);color:var(--gold);background:none;cursor:pointer;">Clear Search</button>
+    </div>`;
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+
+  grid.innerHTML = pageData.map((s, i) => buildStudentCard(s, start + i)).join('');
+  buildPagination(totalPages);
+
+  // Lazy load images
+  grid.querySelectorAll('img[data-src]').forEach(img => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const i = e.target;
+          i.src = i.dataset.src;
+          i.onerror = () => { i.src = PLACEHOLDER; };
+          observer.unobserve(i);
+        }
+      });
+    });
+    observer.observe(img);
+  });
+}
+
+function buildStudentCard(student, index) {
+  const photo = student.photoUrl || PLACEHOLDER;
+  const initial = student.fullName ? student.fullName[0].toUpperCase() : '?';
+  return `
+    <div class="student-card" onclick="openProfile(${index})">
+      <div class="student-photo-wrap">
+        <img class="student-photo"
+          src="${PLACEHOLDER}"
+          data-src="${photo}"
+          alt="${student.fullName}"
+          onerror="this.src='${PLACEHOLDER}'"
+        />
+        <div class="student-photo-overlay"></div>
+        <div class="student-badge">Civil Eng.</div>
+      </div>
+      <div class="student-info">
+        <div class="student-name">${student.fullName || 'Unknown'}</div>
+        <div class="student-nickname">${student.nickname ? '"' + student.nickname + '"' : ''}</div>
+        <div class="student-location">📍 ${student.location || student.state || 'Nigeria'}</div>
+        <button class="student-view-btn">View Profile →</button>
+      </div>
+    </div>`;
+}
+
+function buildPagination(totalPages) {
+  const pg = document.getElementById('pagination');
+  if (!pg || totalPages <= 1) { if(pg) pg.innerHTML = ''; return; }
+  let html = `<button class="page-btn" onclick="goPage(${currentPage - 1})" ${currentPage <= 1 ? 'disabled' : ''}>‹</button>`;
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 2) {
+      html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+    } else if (Math.abs(i - currentPage) === 3) {
+      html += `<span style="color:var(--gray-500);padding:0 4px;">…</span>`;
+    }
+  }
+  html += `<button class="page-btn" onclick="goPage(${currentPage + 1})" ${currentPage >= totalPages ? 'disabled' : ''}>›</button>`;
+  pg.innerHTML = html;
+}
+
+function goPage(p) {
+  const totalPages = Math.ceil(filteredClassmates.length / perPage);
+  if (p < 1 || p > totalPages) return;
+  currentPage = p;
+  buildClassmatesGrid();
+  document.getElementById('page-classmates').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ============================================================
+   SEARCH & FILTER
+   ============================================================ */
+function buildFilterTabs() {
+  const tabs = document.getElementById('filter-tabs');
+  if (!tabs) return;
+  const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))].sort();
+  const stateTabsHtml = states.map(st =>
+    `<button class="filter-tab" data-filter="${st}" onclick="setFilter('${st}',this)">${st}</button>`
+  ).join('');
+  // Keep "All" button, append state tabs
+  const allBtn = tabs.querySelector('[data-filter="all"]');
+  tabs.innerHTML = '';
+  tabs.appendChild(allBtn);
+  tabs.insertAdjacentHTML('beforeend', stateTabsHtml);
+}
+
+function setFilter(filter, btn) {
+  currentFilter = filter;
+  currentPage = 1;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function handleSearch() {
+  searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+  currentPage = 1;
+  applyFilters();
+}
+
+function clearSearch() {
+  document.getElementById('search-input').value = '';
+  searchQuery = '';
+  applyFilters();
+}
+
+function applyFilters() {
+  filteredClassmates = allClassmates.filter(s => {
+    const matchesFilter = currentFilter === 'all' || s.state === currentFilter;
+    const matchesSearch = !searchQuery ||
+      (s.fullName && s.fullName.toLowerCase().includes(searchQuery)) ||
+      (s.nickname && s.nickname.toLowerCase().includes(searchQuery)) ||
+      (s.state && s.state.toLowerCase().includes(searchQuery)) ||
+      (s.location && s.location.toLowerCase().includes(searchQuery));
+    return matchesFilter && matchesSearch;
+  });
+  buildClassmatesGrid();
+}
+
+/* ============================================================
+   PROFILE MODAL
+   ============================================================ */
+function openProfile(index) {
+  const allVisible = filteredClassmates;
+  const s = allVisible[index];
+  if (!s) return;
+  const photo = s.photoUrl || PLACEHOLDER;
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-header" style="padding-top:8px;">
+      <div class="modal-photo-wrap">
+        <img class="modal-photo" src="${photo}" onerror="this.src='${PLACEHOLDER}'" alt="${s.fullName}"/>
+      </div>
+      <div class="modal-name">${s.fullName || 'Unknown'}</div>
+      <div class="modal-nickname">${s.nickname ? '"' + s.nickname + '"' : ''}</div>
+      <div class="modal-location">📍 ${s.location || 'Nigeria'}</div>
+    </div>
+    ${s.quote ? `<div class="modal-quote">"${s.quote}"</div>` : ''}
+    <div class="modal-details">
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="detail-label">📱 Phone</div>
+          <div class="detail-value">${s.phone || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">🌍 State</div>
+          <div class="detail-value">${s.state || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">📍 Location</div>
+          <div class="detail-value">${s.location || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">🎯 Ambition</div>
+          <div class="detail-value">${s.ambition || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">⚡ Skills</div>
+          <div class="detail-value">${s.skills || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">🎮 Hobby</div>
+          <div class="detail-value">${s.hobby || '—'}</div>
+        </div>
+        <div class="detail-item full">
+          <div class="detail-label">❤️ Best Friend in Class</div>
+          <div class="detail-value">${s.bestFriend || '—'}</div>
+        </div>
+      </div>
+    </div>`;
+  document.getElementById('profile-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProfileModal() {
+  document.getElementById('profile-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('profile-modal')) closeProfileModal();
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+function buildDashboard() {
+  const total = allClassmates.length;
+  const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))];
+
+  const dbTotal = document.getElementById('db-total');
+  const dbStates = document.getElementById('db-states');
+  const dbGallery = document.getElementById('db-gallery');
+  if (dbTotal) dbTotal.textContent = total;
+  if (dbStates) dbStates.textContent = states.length;
+  if (dbGallery) dbGallery.textContent = galleryImages.length;
+
+  // Update hero counters
+  const cntTotal = document.getElementById('cnt-total');
+  const cntStates = document.getElementById('cnt-states');
+  if (cntTotal) animateCount(cntTotal, total, 1500);
+  if (cntStates) animateCount(cntStates, states.length, 1500);
+
+  // State distribution
+  const sd = document.getElementById('state-distribution');
+  if (sd) {
+    const stateCount = {};
+    allClassmates.forEach(s => { if (s.state) stateCount[s.state] = (stateCount[s.state] || 0) + 1; });
+    sd.innerHTML = Object.entries(stateCount)
+      .sort((a,b) => b[1] - a[1])
+      .map(([state, count]) =>
+        `<div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:40px;padding:8px 16px;display:flex;align-items:center;gap:8px;">
+          <span style="color:var(--gold);font-size:0.8rem;">🏙️</span>
+          <span style="font-size:0.85rem;">${state}</span>
+          <span style="background:rgba(201,162,39,0.2);color:var(--gold);border-radius:40px;padding:2px 8px;font-size:0.75rem;font-weight:700;">${count}</span>
+        </div>`
+      ).join('');
+  }
+
+  // Recently added (last 6)
+  const rg = document.getElementById('recent-grid');
+  if (rg) {
+    const recent = allClassmates.slice(-6).reverse();
+    rg.innerHTML = recent.map((s, i) => buildStudentCard(s, allClassmates.length - 1 - i)).join('');
+  }
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+function buildGallery(cat) {
+  const grid = document.getElementById('gallery-grid');
+  const empty = document.getElementById('gallery-empty');
+  if (!grid) return;
+
+  galleryFiltered = cat === 'all' ? [...galleryImages] : galleryImages.filter(img => img.category === cat);
+
+  if (galleryFiltered.length === 0) {
+    grid.innerHTML = '';
+    if (empty) empty.classList.remove('hidden');
+    return;
+  }
+  if (empty) empty.classList.add('hidden');
+
+  grid.innerHTML = galleryFiltered.map((img, i) =>
+    `<div class="gallery-item" onclick="openLightbox(${i})" data-cat="${img.category}">
+      <img
+        src="${PLACEHOLDER}"
+        data-src="${img.url}"
+        alt="${img.caption || img.category}"
+        loading="lazy"
+        style="width:100%;display:block;"
+        onerror="this.src='${PLACEHOLDER}'"
+      />
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-cat">${img.category}</div>
+      </div>
+    </div>`
+  ).join('');
+
+  // Lazy load
+  grid.querySelectorAll('img[data-src]').forEach(img => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.src = e.target.dataset.src;
+          obs.unobserve(e.target);
+        }
+      });
+    });
+    obs.observe(img);
+  });
+
+  // Build category buttons
+  buildGalleryCats();
+}
+
+function buildGalleryCats() {
+  const catsEl = document.getElementById('gallery-cats');
+  if (!catsEl) return;
+  const cats = [...new Set(galleryImages.map(g => g.category))];
+  const allBtn = catsEl.querySelector('[data-cat="all"]');
+  catsEl.innerHTML = '';
+  catsEl.appendChild(allBtn);
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'gallery-cat-btn';
+    btn.dataset.cat = cat;
+    btn.textContent = cat;
+    btn.onclick = function() { filterGallery(cat, this); };
+    catsEl.appendChild(btn);
+  });
+}
+
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.gallery-cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  buildGallery(cat);
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+function openLightbox(index) {
+  lightboxIndex = index;
+  const img = galleryFiltered[index];
+  document.getElementById('lightbox-img').src = img.url;
+  document.getElementById('lightbox-caption').textContent = `${img.caption || ''} — ${img.category}`;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navLightbox(dir) {
+  lightboxIndex = (lightboxIndex + dir + galleryFiltered.length) % galleryFiltered.length;
+  const img = galleryFiltered[lightboxIndex];
+  document.getElementById('lightbox-img').src = img.url;
+  document.getElementById('lightbox-caption').textContent = `${img.caption || ''} — ${img.category}`;
+}
+document.addEventListener('keydown', e => {
+  if (document.getElementById('lightbox').classList.contains('open')) {
+    if (e.key === 'ArrowRight') navLightbox(1);
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'Escape') closeLightbox();
+  }
+  if (document.getElementById('profile-modal').classList.contains('open') && e.key === 'Escape') {
+    closeProfileModal();
+  }
+});
+
+/* ============================================================
+   COUNTDOWN TIMER
+   ============================================================ */
+function startCountdown() {
+  function update() {
+    const now = new Date();
+    const diff = REUNION_DATE - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+  update();
+  setInterval(update, 1000);
+}
+
+/* ============================================================
+   COUNTERS UPDATE
+   ============================================================ */
+function updateCounters() {
+  const total = allClassmates.length;
+  const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))].length;
+  const cntTotal = document.getElementById('cnt-total');
+  const cntStates = document.getElementById('cnt-states');
+  if (cntTotal) animateCount(cntTotal, total, 1500);
+  if (cntStates) animateCount(cntStates, states, 1500);
+}
+
+/* ============================================================
+   ALBUM EXPORT
+   ============================================================ */
+function buildAlbumPreview() {
+  const preview = document.getElementById('album-preview-grid');
+  const empty = document.getElementById('album-preview-empty');
+  if (!preview) return;
+  if (allClassmates.length === 0) {
+    if (empty) empty.style.display = 'block';
+    return;
+  }
+  if (empty) empty.style.display = 'none';
+  preview.innerHTML = allClassmates.slice(0, 24).map(s =>
+    `<div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:12px;text-align:center;">
+      <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;margin:0 auto 8px;border:2px solid var(--gold);">
+        <img src="${s.photoUrl || PLACEHOLDER}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='${PLACEHOLDER}'"/>
+      </div>
+      <div style="font-size:0.8rem;font-weight:600;color:var(--white);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.fullName}</div>
+      <div style="font-size:0.7rem;color:var(--gold);">${s.nickname || ''}</div>
+    </div>`
+  ).join('');
+}
+
+function exportPDF() {
+  showToast('⏳ Generating PDF Album...');
+
+  // Build album HTML for PDF
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+  const pageW = 210, pageH = 297;
+  const margin = 15;
+  const cols = 3;
+  const rows = 4;
+  const cardW = (pageW - margin * 2 - (cols - 1) * 8) / cols;
+  const cardH = 60;
+
+  let x = margin, y = margin + 30;
+  let pageNum = 1;
+  let cardOnPage = 0;
+
+  function addHeader() {
+    doc.setFillColor(10, 22, 40);
+    doc.rect(0, 0, pageW, 25, 'F');
+    doc.setTextColor(201, 162, 39);
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'bold');
+    doc.text('ADAMAWA STATE POLYTECHNIC, YOLA', pageW / 2, 9, { align: 'center' });
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(180, 180, 180);
+    doc.text('Civil Engineering Dept. | College of Engineering Technology | Class of 2019', pageW / 2, 15, { align: 'center' });
+    doc.setDrawColor(201, 162, 39);
+    doc.setLineWidth(0.5);
+    doc.line(margin, 22, pageW - margin, 22);
+  }
+
+  function addFooter(num) {
+    doc.setFontSize(7);
+    doc.setTextColor(120, 120, 120);
+    doc.text(`SPY Civil Engineering Class of 2019 | Class Rep: Yahya Salihu | © 2026 Engr. Arabo Modibbo`, pageW / 2, pageH - 6, { align: 'center' });
+    doc.text(`Page ${num}`, pageW - margin, pageH - 6, { align: 'right' });
+  }
+
+  addHeader();
+  addFooter(pageNum);
+
+  // Cover page title
+  doc.setFontSize(18);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(201, 162, 39);
+  doc.text('CLASS OF 2019', pageW / 2, y, { align: 'center' });
+  y += 8;
+  doc.setFontSize(10);
+  doc.setTextColor(255, 255, 255);
+  doc.text('Department of Civil Engineering', pageW / 2, y, { align: 'center' });
+  y += 6;
+  doc.text('College of Engineering Technology (CET)', pageW / 2, y, { align: 'center' });
+  y += 15;
+
+  allClassmates.forEach((s, idx) => {
+    if (cardOnPage === cols * rows || (idx > 0 && cardOnPage === 0)) {
+      if (idx > 0) { // Not first page trigger from counter
+        doc.addPage();
+        pageNum++;
+        addHeader();
+        addFooter(pageNum);
+        y = margin + 30;
+        x = margin;
+        cardOnPage = 0;
+      }
+    }
+
+    const col = cardOnPage % cols;
+    const row = Math.floor(cardOnPage / cols);
+    const cx = margin + col * (cardW + 8);
+    const cy = y + row * (cardH + 6);
+
+    // Card background
+    doc.setFillColor(17, 34, 64);
+    doc.roundedRect(cx, cy, cardW, cardH, 3, 3, 'F');
+    doc.setDrawColor(201, 162, 39);
+    doc.setLineWidth(0.3);
+    doc.roundedRect(cx, cy, cardW, cardH, 3, 3, 'S');
+
+    // Photo placeholder circle
+    doc.setFillColor(26, 58, 92);
+    doc.circle(cx + 14, cy + cardH / 2, 11, 'F');
+    doc.setDrawColor(201, 162, 39);
+    doc.setLineWidth(0.5);
+    doc.circle(cx + 14, cy + cardH / 2, 11, 'S');
+
+    // Text
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(255, 255, 255);
+    const textX = cx + 28;
+    const maxW = cardW - 30;
+    doc.text(s.fullName || '—', textX, cy + 14, { maxWidth: maxW });
+    doc.setFontSize(7);
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(201, 162, 39);
+    doc.text(s.nickname ? `"${s.nickname}"` : '', textX, cy + 21, { maxWidth: maxW });
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(160, 160, 170);
+    doc.text(`📍 ${s.location || s.state || 'Nigeria'}`, textX, cy + 29, { maxWidth: maxW });
+    doc.text(`📱 ${s.phone || '—'}`, textX, cy + 36, { maxWidth: maxW });
+    doc.text(`🌍 ${s.state || '—'}`, textX, cy + 43, { maxWidth: maxW });
+
+    cardOnPage++;
+    if (cardOnPage === cols * rows) {
+      doc.addPage();
+      pageNum++;
+      addHeader();
+      addFooter(pageNum);
+      y = margin + 30;
+      x = margin;
+      cardOnPage = 0;
+    }
+  });
+
+  doc.save('SPY-Civil-Engineering-Class-2019-Album.pdf');
+  showToast('✅ PDF Album downloaded!');
+}
+
+function exportWord() {
+  showToast('⏳ Generating Word Document...');
+  const rows = allClassmates.map(s => `
+    <tr>
+      <td style="padding:10px;border:1px solid #e2e0e5;text-align:center;">
+        <img src="${s.photoUrl || ''}" width="60" height="60" style="border-radius:50%;object-fit:cover;" onerror="this.style.display='none'"/>
+      </td>
+      <td style="padding:10px;border:1px solid #e2e0e5;font-weight:bold;">${s.fullName || '—'}</td>
+      <td style="padding:10px;border:1px solid #e2e0e5;color:#c9a227;">${s.nickname || '—'}</td>
+      <td style="padding:10px;border:1px solid #e2e0e5;">${s.phone || '—'}</td>
+      <td style="padding:10px;border:1px solid #e2e0e5;">${s.state || '—'}</td>
+      <td style="padding:10px;border:1px solid #e2e0e5;">${s.location || '—'}</td>
+    </tr>`).join('');
+
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"/>
+    <style>
+      body{font-family:Arial,sans-serif;margin:40px;color:#0a1628;}
+      h1{color:#0a1628;text-align:center;}
+      h2{color:#c9a227;text-align:center;}
+      .header{text-align:center;padding:20px;border-bottom:3px solid #c9a227;margin-bottom:30px;}
+      table{width:100%;border-collapse:collapse;font-size:12px;}
+      th{background:#0a1628;color:#c9a227;padding:10px;border:1px solid #0a1628;}
+      tr:nth-child(even){background:#f8f6f0;}
+      .footer{text-align:center;margin-top:40px;font-size:11px;color:#8b8a90;border-top:1px solid #e2e0e5;padding-top:20px;}
+    </style></head><body>
+    <div class="header">
+      <h1>ADAMAWA STATE POLYTECHNIC, YOLA</h1>
+      <h2>Department of Civil Engineering · College of Engineering Technology</h2>
+      <p style="font-size:14px;">Class of 2019 · Digital Album</p>
+    </div>
+    <table>
+      <thead><tr>
+        <th>Photo</th><th>Full Name</th><th>Nickname</th>
+        <th>Phone</th><th>State</th><th>Location</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="footer">
+      SPY Class of 2019 · CET Civil Engineering · Class Rep: Yahya Salihu<br/>
+      © 2026 Engr. Arabo Modibbo. All Rights Reserved.
+    </div>
+    </body></html>`;
+
+  const blob = new Blob(['\ufeff' + html], { type: 'application/msword' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'SPY-Civil-Engineering-Class-2019-Album.doc';
+  link.click();
+  showToast('✅ Word document downloaded!');
+}
+
+function openPrintView() {
+  showToast('📄 Opening print view...');
+  const printWin = window.open('', '_blank');
+  const cards = allClassmates.map(s => `
+    <div style="break-inside:avoid;display:inline-block;width:180px;border:1px solid #c9a227;border-radius:8px;padding:12px;margin:8px;text-align:center;background:#f8f6f0;">
+      <div style="width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid #c9a227;margin:0 auto 8px;">
+        <img src="${s.photoUrl || ''}" width="70" height="70" style="object-fit:cover;" onerror="this.style.display='none'"/>
+      </div>
+      <div style="font-weight:bold;font-size:12px;margin-bottom:3px;">${s.fullName || '—'}</div>
+      <div style="color:#c9a227;font-size:11px;font-style:italic;margin-bottom:4px;">${s.nickname ? '"'+s.nickname+'"' : ''}</div>
+      <div style="font-size:10px;color:#666;">📍 ${s.location || s.state || ''}</div>
+      <div style="font-size:10px;color:#666;">📱 ${s.phone || ''}</div>
+    </div>`).join('');
+
+  printWin.document.write(`<!DOCTYPE html><html><head>
+    <title>SPY Civil Engineering Class of 2019</title>
+    <style>
+      @media print { body { margin: 0; } }
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      .header { text-align: center; border-bottom: 3px solid #c9a227; padding: 20px; margin-bottom: 20px; }
+      h1 { color: #0a1628; margin: 0 0 8px; }
+      .subtitle { color: #c9a227; font-size: 14px; }
+    </style>
+  </head><body>
+    <div class="header">
+      <h1>ADAMAWA STATE POLYTECHNIC, YOLA</h1>
+      <div class="subtitle">Department of Civil Engineering · CET · Class of 2019</div>
+    </div>
+    <div>${cards}</div>
+    <div style="text-align:center;margin-top:30px;font-size:11px;color:#888;border-top:1px solid #ddd;padding-top:12px;">
+      SPY Class of 2019 · Class Rep: Yahya Salihu · © 2026 Engr. Arabo Modibbo
+    </div>
+  </body></html>`);
+  printWin.document.close();
+  printWin.print();
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+function showToast(msg, duration = 3000) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toast-msg');
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), duration);
+}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+function initScrollReveal() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+document.addEventListener('DOMContentLoaded', initScrollReveal);
+
+/* ============================================================
+   BACK TO TOP BUTTON
+   ============================================================ */
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('back-to-top');
+  if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+});
+
+/* ============================================================
+   MARQUEE — fill with class names & slogans
+   ============================================================ */
+function buildMarquee() {
+  const track = document.getElementById('marquee-track');
+  if (!track) return;
+  const items = [
+    '🎓 SPY Civil Engineering Class of 2019',
+    '🏗️ Building Bridges, Building Futures',
+    '⚡ CET — College of Engineering Technology',
+    '🌍 Scattered Across Nigeria, United Forever',
+    '📐 From Survey to Structure — We Delivered',
+    '🔧 Engineers by Degree, Engineers by Heart',
+    '🏆 Class Rep: Yahya Salihu',
+    '🎯 Class of 2019 — The Real Engineers',
+    '🇳🇬 Adamawa State Polytechnic, Yola',
+    '💛 Once CET, Always CET',
+  ];
+  // Double for seamless loop
+  const doubled = [...items, ...items];
+  track.innerHTML = doubled.map(item =>
+    `<div class="marquee-item"><div class="marquee-dot"></div><span>${item}</span></div>`
+  ).join('');
+}
+
+/* ============================================================
+   SHARE FUNCTIONS
+   ============================================================ */
+function shareWhatsApp() {
+  const text = encodeURIComponent(
+    '🎓 *SPY Civil Engineering Class of 2019 — Digital Album*\n\n' +
+    'Check out our class album and add your profile!\n\n' +
+    '📝 Fill the form: ' + FORM_URL + '\n\n' +
+    'Album by Engr. Arabo Modibbo · Class Rep: Yahya Salihu 🏗️'
+  );
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
+
+function copyLink() {
+  const url = window.location.href;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(() => showToast('🔗 Link copied to clipboard!'));
+  } else {
+    const el = document.createElement('textarea');
+    el.value = url;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    showToast('🔗 Link copied!');
+  }
+}
+
+function shareProfile(name, nickname, location) {
+  const text = encodeURIComponent(
+    `🎓 *${name}* ${nickname ? '("' + nickname + '")' : ''}\n` +
+    `📍 ${location}\n\n` +
+    `SPY Civil Engineering Class of 2019 · CET\n` +
+    `View the full class album 👆`
+  );
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
+
+/* ============================================================
+   STATE DISTRIBUTION BARS (Dashboard)
+   ============================================================ */
+function buildStateBars() {
+  const el = document.getElementById('state-distribution');
+  if (!el) return;
+  const stateCount = {};
+  allClassmates.forEach(s => { if (s.state) stateCount[s.state] = (stateCount[s.state] || 0) + 1; });
+  const sorted = Object.entries(stateCount).sort((a,b) => b[1] - a[1]);
+  const max = sorted[0]?.[1] || 1;
+
+  el.innerHTML = sorted.map(([state, count]) => {
+    const pct = Math.round((count / max) * 100);
+    return `
+      <div style="flex:1;min-width:200px;">
+        <div class="stats-bar-wrap" style="margin:0 0 12px;">
+          <div class="stats-bar-label">
+            <span>🏙️ ${state}</span>
+            <span>${count} student${count !== 1 ? 's' : ''}</span>
+          </div>
+          <div class="stats-bar-track">
+            <div class="stats-bar-fill" style="width:0%" data-width="${pct}%"></div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Animate bars
+  setTimeout(() => {
+    el.querySelectorAll('.stats-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.width;
+    });
+  }, 200);
+}
+
+/* ============================================================
+   ENHANCED SHOW PAGE — add form support + rebuild reveals
+   ============================================================ */
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) target.classList.add('active');
+
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => {
+    const txt = l.textContent.toLowerCase();
+    if ((id === 'home' && txt === 'home') ||
+        (id === 'dashboard' && txt === 'dashboard') ||
+        (id === 'classmates' && txt === 'classmates') ||
+        (id === 'gallery' && txt === 'gallery') ||
+        (id === 'reunion' && txt === 'reunion') ||
+        (id === 'export' && txt.includes('export')) ||
+        (id === 'form' && txt.includes('join'))) {
+      l.classList.add('active');
+    }
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (id === 'export') buildAlbumPreview();
+  if (id === 'dashboard') { buildDashboard(); buildStateBars(); }
+  if (id === 'form') setTimeout(initScrollReveal, 100);
+}
+
+/* ============================================================
+   ENHANCED OPEN PROFILE — with share buttons inside modal
+   ============================================================ */
+function openProfile(index) {
+  const s = filteredClassmates[index];
+  if (!s) return;
+  const photo = s.photoUrl || PLACEHOLDER;
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-header" style="padding-top:8px;">
+      <div class="modal-photo-wrap">
+        <img class="modal-photo" src="${photo}" onerror="this.src='${PLACEHOLDER}'" alt="${s.fullName}"/>
+      </div>
+      <div class="modal-name">${s.fullName || 'Unknown'}</div>
+      <div class="modal-nickname">${s.nickname ? '"' + s.nickname + '"' : ''}</div>
+      <div class="modal-location">📍 ${s.location || 'Nigeria'}</div>
+    </div>
+    ${s.quote ? `<div class="modal-quote">"${s.quote}"</div>` : ''}
+    <div class="modal-details">
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="detail-label">📱 Phone</div>
+          <div class="detail-value">${s.phone || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">🌍 State</div>
+          <div class="detail-value">${s.state || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">📍 Location</div>
+          <div class="detail-value">${s.location || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">🎯 Future Ambition</div>
+          <div class="detail-value">${s.ambition || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">⚡ Skills / Talent</div>
+          <div class="detail-value">${s.skills || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">🎮 Hobby</div>
+          <div class="detail-value">${s.hobby || '—'}</div>
+        </div>
+        <div class="detail-item full">
+          <div class="detail-label">❤️ Best Friend in Class</div>
+          <div class="detail-value">${s.bestFriend || '—'}</div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-share-row">
+      <button class="modal-share-btn modal-share-wa"
+        onclick="shareProfile('${(s.fullName||'').replace(/'/g,"\\'")}','${(s.nickname||'').replace(/'/g,"\\'")}','${(s.location||'').replace(/'/g,"\\'")}')">
+        💬 Share Profile
+      </button>
+      <button class="modal-share-btn modal-share-copy" onclick="copyLink()">
+        🔗 Copy Link
+      </button>
+    </div>`;
+  document.getElementById('profile-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+/* ============================================================
+   DASHBOARD — build with state bars
+   ============================================================ */
+function buildDashboard() {
+  const total = allClassmates.length;
+  const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))];
+
+  const dbTotal = document.getElementById('db-total');
+  const dbStates = document.getElementById('db-states');
+  const dbGallery = document.getElementById('db-gallery');
+  if (dbTotal) { animateCount(dbTotal, total, 1200); }
+  if (dbStates) { animateCount(dbStates, states.length, 1200); }
+  if (dbGallery) dbGallery.textContent = galleryImages.length;
+
+  const cntTotal = document.getElementById('cnt-total');
+  const cntStates = document.getElementById('cnt-states');
+  if (cntTotal) animateCount(cntTotal, total, 1500);
+  if (cntStates) animateCount(cntStates, states.length, 1500);
+
+  buildStateBars();
+
+  // Dashboard quote rotation
+  const rq = inspirationalQuotes[Math.floor(Math.random() * inspirationalQuotes.length)];
+  const dqt = document.getElementById('dash-quote-text');
+  const dqa = document.getElementById('dash-quote-author');
+  if (dqt) dqt.textContent = '"' + rq.text + '"';
+  if (dqa) dqa.textContent = '— ' + rq.author;
+
+  // Recently added
+  const rg = document.getElementById('recent-grid');
+  if (rg && allClassmates.length > 0) {
+    const recent = allClassmates.slice(-6).reverse();
+    rg.innerHTML = recent.map((s, i) => {
+      const globalIdx = allClassmates.length - 1 - i;
+      const photo = s.photoUrl || PLACEHOLDER;
+      return `<div class="student-card" onclick="showPage('classmates')">
+        <div class="student-photo-wrap" style="height:160px;">
+          <img class="student-photo" src="${PLACEHOLDER}" data-src="${photo}"
+            onerror="this.src='${PLACEHOLDER}'" alt="${s.fullName}"/>
+          <div class="student-photo-overlay"></div>
+          <div class="student-badge">New</div>
+        </div>
+        <div class="student-info">
+          <div class="student-name" style="font-size:0.9rem;">${s.fullName || '—'}</div>
+          <div class="student-nickname">${s.nickname ? '"' + s.nickname + '"' : ''}</div>
+          <div class="student-location">📍 ${s.location || s.state || 'Nigeria'}</div>
+        </div>
+      </div>`;
+    }).join('');
+    // Lazy load
+    rg.querySelectorAll('img[data-src]').forEach(img => {
+      const obs = new IntersectionObserver(e => {
+        e.forEach(en => { if (en.isIntersecting) { en.target.src = en.target.dataset.src; obs.unobserve(en.target); }});
+      });
+      obs.observe(img);
+    });
+  }
+}
+
+/* ============================================================
+   INIT EXTRAS ON DOM READY
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  buildMarquee();
+
+  // Slideshow background
+  const slides = galleryImages.slice(0, 5);
+  const ss = document.getElementById('slideshow');
+  if (ss && slides.length > 0) {
+    slides.forEach((img, i) => {
+      const div = document.createElement('div');
+      div.className = 'slide' + (i === 0 ? ' active' : '');
+      div.style.backgroundImage = `url(${img.url})`;
+      ss.appendChild(div);
+    });
+    let current = 0;
+    setInterval(() => {
+      const allSlides = ss.querySelectorAll('.slide');
+      allSlides[current].classList.remove('active');
+      current = (current + 1) % allSlides.length;
+      allSlides[current].classList.add('active');
+    }, 5000);
+  }
+});
+
+</script>
+</body>
+</html>
