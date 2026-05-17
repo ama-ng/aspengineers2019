@@ -838,11 +838,11 @@ footer{
 <nav id="navbar">
   <div class="nav-inner">
     <div class="nav-brand">
-      <!-- School logo stored in code only - admin sets this -->
+      <!-- School logo — src is set by JS from SCHOOL_LOGO constant above -->
       <img class="nav-logo" id="nav-logo-img"
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png"
+        src=""
         alt="SPY Logo"
-        onerror="this.style.background='var(--gold)';this.src='';this.alt='SPY';"
+        onerror="this.style.background='var(--gold)';this.removeAttribute('src');"
       />
       <div class="nav-brand-text">
         <div class="nav-brand-title">SPY · Civil Engineering</div>
@@ -890,10 +890,10 @@ footer{
 
     <div class="hero-content">
       <div class="hero-badge">🎓 Class of 2019 · Digital Album</div>
-      <img class="hero-school-logo"
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png"
+      <img class="hero-school-logo" id="hero-logo-img"
+        src=""
         alt="SPY Logo"
-        onerror="this.style.background='var(--gold)';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';"
+        onerror="this.style.background='var(--gold)';"
       />
       <h1 class="hero-title">
         Adamawa State<br/>
@@ -1016,9 +1016,10 @@ footer{
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Adamawa_State_Polytechnic_logo.png/200px-Adamawa_State_Polytechnic_logo.png"
+          <img id="footer-logo-img"
+            src=""
             alt="SPY"
+            style="width:60px;height:60px;border-radius:50%;border:2px solid var(--gold);margin-bottom:12px;"
             onerror="this.style.display='none';"
           />
           <div class="footer-brand-name">SPY · Civil Engineering</div>
@@ -1046,7 +1047,7 @@ footer{
         <div>
           <div class="footer-col-title">Add Your Data</div>
           <div class="footer-col-links">
-            <a class="footer-col-link" href="https://docs.google.com/forms/d/e/1FAIpQLScPmd2tf_K_7pr4aFZe63X88BnPB-kGfnDc4XWtEdYagBWwzA/viewform?usp=publish-editor" target="_blank">📝 Fill the Class Form</a>
+            <a class="footer-col-link" id="footer-form-link" href="#" target="_blank">📝 Fill the Class Form</a>
             <span class="footer-col-link" onclick="showPage('export')">📥 Download Album</span>
           </div>
         </div>
@@ -1185,7 +1186,7 @@ footer{
       Fill in your details below. Your profile will appear in the classmates directory once the admin updates the album.
     </p>
     <div style="max-width:720px;margin:0 auto 32px;">
-      <a href="https://forms.gle/your-google-form-link" target="_blank"
+      <a id="form-hero-btn" href="#" target="_blank"
         style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:40px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-weight:700;font-size:1rem;box-shadow:0 4px 24px rgba(201,162,39,0.35);transition:var(--transition);"
         onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
         📋 Open Google Form
@@ -1195,7 +1196,6 @@ footer{
   </div>
 
   <div style="max-width:860px;margin:0 auto;padding:40px 24px;">
-    <!-- Embed the form -->
     <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);overflow:hidden;margin-bottom:40px;">
       <div style="padding:20px;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;gap:12px;">
         <span style="font-size:1.3rem;">📋</span>
@@ -1208,12 +1208,12 @@ footer{
         <p style="color:var(--gray-500);margin-bottom:20px;font-size:0.9rem;line-height:1.7;">
           Click the button below to open the Google Form and fill in your details. Once submitted, your info will be reviewed and added to the class album.
         </p>
-        <a href="https://forms.gle/your-google-form-link" target="_blank"
+        <a id="form-card-btn" href="#" target="_blank"
           style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:40px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-weight:700;font-size:0.9rem;">
           ✍️ Fill the Form Now
         </a>
         <div class="form-alt-link" style="margin-top:12px;">
-          Direct link: <a href="https://forms.gle/your-google-form-link" target="_blank">https://forms.gle/your-google-form-link</a>
+          Direct link: <a id="form-direct-link" href="#" target="_blank" id="form-direct-link">—</a>
         </div>
       </div>
     </div>
@@ -1367,7 +1367,7 @@ footer{
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div class="detail-item"><div class="detail-label">Date</div><div class="detail-value">To Be Announced</div></div>
           <div class="detail-item"><div class="detail-label">Venue</div><div class="detail-value">Adamawa State Polytechnic, Yola</div></div>
-          <div class="detail-item"><div class="detail-label">Theme</div><div class="detail-value">5 Years of Excellence</div></div>
+          <div class="detail-item"><div class="detail-label">Theme</div><div class="detail-value">2 Years of Excellence</div></div>
           <div class="detail-item"><div class="detail-label">Organized By</div><div class="detail-value">Yahya Salihu (Class Rep)</div></div>
         </div>
         <div style="margin-top:20px;padding:16px;background:rgba(201,162,39,0.06);border-radius:var(--radius-sm);">
@@ -1382,7 +1382,7 @@ footer{
       <div class="update-form mt-4" style="margin:32px auto 0;text-align:left;">
         <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:20px;color:var(--gold);">📝 Update Your Contact</h3>
         <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:24px;">Keep the class updated with your current details.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScPmd2tf_K_7pr4aFZe63X88BnPB-kGfnDc4XWtEdYagBWwzA/viewform?usp=sharing&ouid=114376901188088355752" target="_blank"
+        <a id="reunion-form-link" href="#" target="_blank"
           style="display:block;width:100%;padding:14px;border-radius:var(--radius);background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-weight:700;text-align:center;font-size:0.95rem;transition:var(--transition);">
           📋 Fill / Update Your Profile Form
         </a>
@@ -1459,37 +1459,94 @@ footer{
 'use strict';
 
 /* ============================================================
-   CONFIGURATION — ADMIN SECTION (hidden from UI)
+   ╔══════════════════════════════════════════════════════════╗
+   ║           ADMIN CONFIGURATION — PASTE YOUR LINKS HERE   ║
+   ╚══════════════════════════════════════════════════════════╝
    ============================================================ */
 
-// ⚠️ ADMIN: Replace with your actual Google Sheets CSV export URL
-// Format: https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&gid=0
+// ─────────────────────────────────────────────────────────────
+// 1️⃣  GOOGLE SHEETS CSV LINK
+//     HOW TO GET IT:
+//     → Open your Google Sheet
+//     → Click File → Share → Publish to web
+//     → Choose "Sheet1" and "Comma-separated values (.csv)"
+//     → Click Publish → Copy the link → Paste it below
+// ─────────────────────────────────────────────────────────────
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLQYkuoiO-Jut2_b9_a82lXEoBoNb6L2OE5EmUxdPDdqlOFAWWc9CL8ioVyTo94JWbvo9LBGT5LAIx/pub?gid=1245162313&single=true&output=csv';
+//  Example: 'https://docs.google.com/spreadsheets/d/e/2PACX-abc.../pub?output=csv'
 
-// ⚠️ ADMIN: School logo URL (hidden from editable UI)
+// ─────────────────────────────────────────────────────────────
+// 2️⃣  SCHOOL LOGO LINK
+//     Upload school logo to postimages.org → copy Direct Link
+// ─────────────────────────────────────────────────────────────
 const SCHOOL_LOGO = 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg';
+//  Example: 'https://i.postimg.cc/xxxx/spy-logo.jpg'
 
-// ⚠️ ADMIN: Google Form link for classmates to fill
-const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScPmd2tf_K_7pr4aFZe63X88BnPB-kGfnDc4XWtEdYagBWwzA/viewform?usp=sharing&ouid=114376901188088355752';
+// ─────────────────────────────────────────────────────────────
+// 3️⃣  GOOGLE FORM LINK
+//     Create your Google Form → click Send → copy the link
+// ─────────────────────────────────────────────────────────────
+const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScPmd2tf_K_7pr4aFZe63X88BnPB-kGfnDc4XWtEdYagBWwzA/viewform?usp=dialog';
+//  Example: 'https://forms.gle/xxxxxxxxx'
 
-// ⚠️ ADMIN: Reunion date target
+// ─────────────────────────────────────────────────────────────
+// 4️⃣  REUNION DATE — change to your actual reunion date/time
+// ─────────────────────────────────────────────────────────────
 const REUNION_DATE = new Date('2026-06-01T10:00:00');
 
-// ⚠️ ADMIN: Gallery Images — paste your image links here
-// Format: { url: "https://...", category: "Category Name", caption: "Optional caption" }
+// ─────────────────────────────────────────────────────────────
+// 5️⃣  GALLERY IMAGES
+//     HOW TO ADD YOUR PHOTOS:
+//     → Go to https://postimages.org
+//     → Upload your photo → choose "Direct link"
+//     → Copy the link (ends in .jpg or .png)
+//     → Add a new line below following the same format
+//
+//     CATEGORIES you can use:
+//     'Classroom Photos' | 'Workshop Practical' | 'SIWES Memories'
+//     'Group Study' | 'Convocation' | 'Engineering Excursions'
+//     'Casual Campus Moments' | 'Final Year Project'
+//
+//     FORMAT FOR EACH IMAGE:
+//     { url: 'YOUR_POSTIMAGES_DIRECT_LINK', category: 'CATEGORY', caption: 'Your caption here' },
+// ─────────────────────────────────────────────────────────────
 const galleryImages = [
-  { url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600', category: 'Convocation', caption: 'Graduation Day 2019' },
-  { url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600', category: 'Classroom Photos', caption: 'In the lecture hall' },
-  { url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600', category: 'Workshop Practical', caption: 'Civil Engineering Workshop' },
-  { url: 'https://images.unsplash.com/photo-1497493292307-31c376b6e479?w=600', category: 'Group Study', caption: 'Study group sessions' },
-  { url: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600', category: 'Convocation', caption: 'Proud graduates' },
-  { url: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=600', category: 'Casual Campus Moments', caption: 'Campus life' },
-  { url: 'https://images.unsplash.com/photo-1519452575417-564c1401ecc0?w=600', category: 'Engineering Excursions', caption: 'Field excursion' },
-  { url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600', category: 'SIWES Memories', caption: 'SIWES industrial attachment' },
-  { url: 'https://images.unsplash.com/photo-1562564055-71e051d33c19?w=600', category: 'Final Year Project', caption: 'Final year project presentation' },
-  { url: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600', category: 'Group Study', caption: 'Pre-exam preparation' },
-  { url: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600', category: 'Casual Campus Moments', caption: 'Friends forever' },
-  { url: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600', category: 'Classroom Photos', caption: 'Lecture sessions' },
+
+  // ── CONVOCATION ──────────────────────────────────────────
+  { url: 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg', category: 'Convocation', caption: 'Graduation Day 2019' },
+  { url: 'https://i.postimg.cc/x1ZmW9vw/Gemini-Generated-Image-3ccj5b3ccj5b3ccj-(2).png', category: 'Convocation', caption: 'Proud graduates' },
+
+  // ── CLASSROOM PHOTOS ─────────────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Classroom Photos', caption: 'In the lecture hall' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Classroom Photos', caption: 'Lecture sessions' },
+
+  // ── WORKSHOP PRACTICAL ───────────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Workshop Practical', caption: 'Civil Engineering workshop' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Workshop Practical', caption: 'Workshop session' },
+
+  // ── SIWES MEMORIES ───────────────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'SIWES Memories', caption: 'SIWES industrial attachment' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'SIWES Memories', caption: 'Industrial training' },
+
+  // ── GROUP STUDY ──────────────────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Group Study', caption: 'Study group sessions' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Group Study', caption: 'Pre-exam preparation' },
+
+  // ── ENGINEERING EXCURSIONS ───────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Engineering Excursions', caption: 'Field excursion' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Engineering Excursions', caption: 'Site visit' },
+
+  // ── CASUAL CAMPUS MOMENTS ────────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Casual Campus Moments', caption: 'Campus life' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Casual Campus Moments', caption: 'Friends forever' },
+
+  // ── FINAL YEAR PROJECT ───────────────────────────────────
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Final Year Project', caption: 'FYP presentation' },
+  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Final Year Project', caption: 'Final year project' },
+
+  // ── ADD MORE IMAGES BELOW ─────────────────────────────────
+  // Just copy any line above, paste it here, and change the link, category, and caption.
+
 ];
 
 /* ============================================================
@@ -1532,17 +1589,17 @@ const engineeringQuotes = [
 ];
 
 const tributeLecturers = [
-  { icon:'👨‍🏫', name:'Dr. [Name]', dept:'Structural Engineering' },
-  { icon:'👩‍🏫', name:'Engr. [Name]', dept:'Fluid Mechanics' },
+  { icon:'👨‍🏫', name:'Engr. Abana', dept:'Structural Engineering' },
+  { icon:'👩‍🏫', name:'Engr. Sulaiman', dept:'Fluid Mechanics' },
   { icon:'👨‍🏫', name:'Dr. [Name]', dept:'Soil Mechanics' },
   { icon:'👩‍🏫', name:'Engr. [Name]', dept:'Engineering Mathematics' },
-  { icon:'👨‍🏫', name:'Dr. [Name]', dept:'Engineering Drawing' },
-  { icon:'👩‍🏫', name:'Engr. [Name]', dept:'Building Construction' },
+  { icon:'👨‍🏫', name:'Mal. Baba TD', dept:'Engineering Drawing' },
+  { icon:'👩‍🏫', name:'Engr. Sulaiman Sanusi', dept:'Building Construction' },
 ];
 
 const prayerText = `
   May the Almighty Allah bless every son and daughter of SPY Civil Engineering Class of 2019.
-  May our degrees open doors that our efforts deserve.
+  May our Diplomas open doors that our efforts deserve.
   May we build bridges — not just of concrete and steel — but of friendship, love, and opportunity.
   May every project we lead stand strong. May every family we build know peace.
   As we scatter across Nigeria and beyond, may we carry the spirit of CET with us.
@@ -1574,9 +1631,54 @@ let galleryFiltered = [...galleryImages];
 const PLACEHOLDER = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzFhM2E1YyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj7wn5uAPC90ZXh0Pjwvc3ZnPg==';
 
 /* ============================================================
-   INIT
+   APPLY DYNAMIC LINKS FROM JS CONSTANTS
+   Sets all logo src and form hrefs from the config above
+   ============================================================ */
+function applyDynamicLinks() {
+
+  // ── School logo (all instances) ──────────────────────────
+  const logoIds = ['nav-logo-img', 'hero-logo-img', 'footer-logo-img'];
+  logoIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && SCHOOL_LOGO && SCHOOL_LOGO !== 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg') {
+      el.src = SCHOOL_LOGO;
+    }
+  });
+
+  // ── Google Form links (all instances) ───────────────────
+  const formIds = [
+    'footer-form-link',
+    'form-hero-btn',
+    'form-card-btn',
+    'form-direct-link',
+    'reunion-form-link',
+  ];
+  formIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      if (FORM_URL && FORM_URL !== 'PASTE_YOUR_GOOGLE_FORM_LINK_HERE') {
+        el.href = FORM_URL;
+        if (id === 'form-direct-link') el.textContent = FORM_URL;
+      } else {
+        el.href = '#';
+        el.onclick = (e) => {
+          e.preventDefault();
+          showToast('⚠️ Paste your Google Form link into FORM_URL in the code.');
+        };
+        if (id === 'form-direct-link') el.textContent = 'Not configured yet';
+      }
+    }
+  });
+}
+
+/* ============================================================
+   INIT — runs everything on page load
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  // Apply logo and form links from config
+  applyDynamicLinks();
+
+  // Loader fade out
   setTimeout(() => {
     document.getElementById('loader').style.opacity = '0';
     setTimeout(() => document.getElementById('loader').style.display = 'none', 600);
@@ -1587,6 +1689,38 @@ document.addEventListener('DOMContentLoaded', () => {
   startCountdown();
   buildGallery('all');
   animateHeroCounters();
+  buildMarquee();
+
+  // Slideshow background — only use real image links
+  const realSlides = galleryImages.filter(img =>
+    img.url && img.url !== 'PASTE_IMAGE_LINK_HERE' && img.url.startsWith('http')
+  ).slice(0, 5);
+  const ss = document.getElementById('slideshow');
+  if (ss && realSlides.length > 0) {
+    realSlides.forEach((img, i) => {
+      const div = document.createElement('div');
+      div.className = 'slide' + (i === 0 ? ' active' : '');
+      div.style.backgroundImage = `url(${img.url})`;
+      ss.appendChild(div);
+    });
+    if (realSlides.length > 1) {
+      let current = 0;
+      setInterval(() => {
+        const allSlides = ss.querySelectorAll('.slide');
+        allSlides[current].classList.remove('active');
+        current = (current + 1) % allSlides.length;
+        allSlides[current].classList.add('active');
+      }, 5000);
+    }
+  }
+
+  // Back to top button visibility
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('back-to-top');
+    if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  initScrollReveal();
 });
 
 /* ============================================================
@@ -1696,20 +1830,82 @@ function animateCount(el, target, duration = 1200) {
    GOOGLE SHEETS — FETCH CLASSMATES
    ============================================================ */
 async function fetchClassmates() {
-  try {
-    // Use a CORS proxy for Google Sheets CSV
-    const proxyUrl = 'https://api.allorigins.win/raw?url=';
-    const sheetCsv = encodeURIComponent(SHEET_URL);
-    const res = await fetch(proxyUrl + sheetCsv);
-    if (!res.ok) throw new Error('Network error');
-    const text = await res.text();
-    allClassmates = parseCSV(text);
-    onClassmatesLoaded();
-  } catch (err) {
-    console.warn('Google Sheets fetch failed, using demo data:', err);
-    allClassmates = getDemoClassmates();
-    onClassmatesLoaded();
+  // Show loading state
+  const grid = document.getElementById('classmates-grid');
+  if (grid) grid.innerHTML = `
+    <div style="grid-column:1/-1;text-align:center;padding:60px 24px;color:var(--gray-500);">
+      <div style="font-size:2.5rem;margin-bottom:16px;">⏳</div>
+      <p style="font-size:1rem;margin-bottom:8px;">Loading classmates...</p>
+      <p style="font-size:0.82rem;color:var(--gray-700);">Fetching data from Google Sheets</p>
+    </div>`;
+
+  // Check if admin has set the SHEET_URL
+  if (!SHEET_URL || SHEET_URL === 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLQYkuoiO-Jut2_b9_a82lXEoBoNb6L2OE5EmUxdPDdqlOFAWWc9CL8ioVyTo94JWbvo9LBGT5LAIx/pub?gid=1245162313&single=true&output=csv') {
+    showSheetNotConfigured();
+    return;
   }
+
+  // Try two CORS proxies — if one fails, use the other
+  const proxies = [
+    'https://api.allorigins.win/raw?url=',
+    'https://corsproxy.io/?',
+  ];
+
+  for (let i = 0; i < proxies.length; i++) {
+    try {
+      const res = await fetch(proxies[i] + encodeURIComponent(SHEET_URL), {
+        cache: 'no-cache'
+      });
+      if (!res.ok) continue;
+      const text = await res.text();
+      if (!text || text.trim().length < 10) continue;
+      allClassmates = parseCSV(text);
+      if (allClassmates.length > 0) {
+        onClassmatesLoaded();
+        return; // success — stop trying
+      }
+    } catch (err) {
+      console.warn(`Proxy ${i + 1} failed:`, err);
+    }
+  }
+
+  // All proxies failed
+  showFetchError();
+}
+
+function showSheetNotConfigured() {
+  allClassmates = [];
+  onClassmatesLoaded();
+  const grid = document.getElementById('classmates-grid');
+  if (grid) grid.innerHTML = `
+    <div style="grid-column:1/-1;text-align:center;padding:60px 24px;">
+      <div style="font-size:3rem;margin-bottom:16px;">🔗</div>
+      <p style="font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">Google Sheet Not Connected Yet</p>
+      <p style="font-size:0.85rem;color:var(--gray-500);max-width:420px;margin:0 auto;line-height:1.7;">
+        Open <strong style="color:var(--white);">index.html</strong> in a text editor,
+        find <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;color:var(--gold);">SHEET_URL</code>
+        near the top, and paste your Google Sheets published CSV link there.
+      </p>
+    </div>`;
+}
+
+function showFetchError() {
+  allClassmates = [];
+  onClassmatesLoaded();
+  const grid = document.getElementById('classmates-grid');
+  if (grid) grid.innerHTML = `
+    <div style="grid-column:1/-1;text-align:center;padding:60px 24px;">
+      <div style="font-size:3rem;margin-bottom:16px;">⚠️</div>
+      <p style="font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">Could Not Load Data</p>
+      <p style="font-size:0.85rem;color:var(--gray-500);max-width:480px;margin:0 auto 20px;line-height:1.7;">
+        Make sure your Google Sheet is published as CSV and the link in
+        <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;color:var(--gold);">SHEET_URL</code>
+        is correct. Also check your internet connection.
+      </p>
+      <button onclick="fetchClassmates()" style="padding:10px 28px;border-radius:40px;background:rgba(201,162,39,0.15);border:1px solid var(--gold);color:var(--gold);cursor:pointer;font-size:0.88rem;">
+        🔄 Retry
+      </button>
+    </div>`;
 }
 
 function parseCSV(text) {
@@ -1757,21 +1953,11 @@ function parseCSVLine(line) {
 }
 
 function getDemoClassmates() {
-  // Demo data for when Google Sheets is not yet connected
-  return [
-    { fullName:'Yahya Salihu', nickname:'Class Rep', phone:'+234 800 000 0001', state:'Adamawa', photoUrl:'', quote:'Lead with purpose, build with excellence.', ambition:'Civil Engineering Consultant', location:'Yola, Adamawa', skills:'Leadership, Structural Design', hobby:'Football', bestFriend:'The whole class' },
-    { fullName:'Amina Bello', nickname:'Ami', phone:'+234 800 000 0002', state:'Adamawa', photoUrl:'', quote:'She builds bridges where others see walls.', ambition:'Structural Engineer', location:'Maiduguri, Borno', skills:'AutoCAD, Surveying', hobby:'Reading', bestFriend:'Fatima' },
-    { fullName:'Ibrahim Musa', nickname:'Ibro', phone:'+234 800 000 0003', state:'Gombe', photoUrl:'', quote:'Hard work beats talent when talent doesn\'t work hard.', ambition:'Site Engineer', location:'Abuja, FCT', skills:'Project Management', hobby:'Chess', bestFriend:'Ahmed' },
-    { fullName:'Fatima Aliyu', nickname:'Fati', phone:'+234 800 000 0004', state:'Taraba', photoUrl:'', quote:'The future is built today.', ambition:'Urban Planner', location:'Lagos', skills:'GIS, AutoCAD', hobby:'Cooking', bestFriend:'Amina' },
-    { fullName:'Ahmed Usman', nickname:'Archie', phone:'+234 800 000 0005', state:'Adamawa', photoUrl:'', quote:'Think big, start small, scale fast.', ambition:'Entrepreneur', location:'Kano', skills:'Excel, Estimating', hobby:'Gaming', bestFriend:'Ibrahim' },
-    { fullName:'Khadija Mohammed', nickname:'KJ', phone:'+234 800 000 0006', state:'Bauchi', photoUrl:'', quote:'Success is the sum of small efforts repeated daily.', ambition:'Consultant Engineer', location:'Kaduna', skills:'Geotechnical', hobby:'Traveling', bestFriend:'Amina' },
-    { fullName:'Usman Garba', nickname:'Garbs', phone:'+234 800 000 0007', state:'Borno', photoUrl:'', quote:'A smooth sea never made a skilled sailor.', ambition:'Transportation Engineer', location:'Lagos', skills:'Road Design', hobby:'Jogging', bestFriend:'Ibrahim' },
-    { fullName:'Maryam Isa', nickname:'Mary', phone:'+234 800 000 0008', state:'Adamawa', photoUrl:'', quote:'Grace under pressure is the mark of a true engineer.', ambition:'Environmental Engineer', location:'Abuja', skills:'Water resources', hobby:'Photography', bestFriend:'Fatima' },
-    { fullName:'Abdullahi Buba', nickname:'Ablo', phone:'+234 800 000 0009', state:'Adamawa', photoUrl:'', quote:'Nothing great was ever achieved without enthusiasm.', ambition:'Quantity Surveyor', location:'Yola', skills:'Cost Estimation', hobby:'Music', bestFriend:'Yahya' },
-    { fullName:'Hajiya Ngozi', nickname:'Queen', phone:'+234 800 000 0010', state:'Anambra', photoUrl:'', quote:'I didn\'t come this far to only come this far.', ambition:'Site Manager', location:'Port Harcourt', skills:'Construction Management', hobby:'Dancing', bestFriend:'Khadija' },
-    { fullName:'Bashir Abubakar', nickname:'Bashi', phone:'+234 800 000 0011', state:'Yobe', photoUrl:'', quote:'Every expert was once a beginner.', ambition:'Structural Consultant', location:'Damaturu', skills:'Structural Analysis', hobby:'Football', bestFriend:'Usman' },
-    { fullName:'Zainab Suleiman', nickname:'Zee', phone:'+234 800 000 0012', state:'Niger', photoUrl:'', quote:'Build your dreams or someone else will hire you to build theirs.', ambition:'Project Director', location:'Minna', skills:'Planning, CAD', hobby:'Art', bestFriend:'Maryam' },
-  ];
+  // ─────────────────────────────────────────────────────────
+  // No demo data. The app will show an empty state until
+  // your Google Sheet CSV link is pasted into SHEET_URL above.
+  // ─────────────────────────────────────────────────────────
+  return [];
 }
 
 function onClassmatesLoaded() {
@@ -2039,11 +2225,33 @@ function buildGallery(cat) {
   const empty = document.getElementById('gallery-empty');
   if (!grid) return;
 
-  galleryFiltered = cat === 'all' ? [...galleryImages] : galleryImages.filter(img => img.category === cat);
+  // Filter out unconfigured placeholder links
+  const realImages = galleryImages.filter(img =>
+    img.url && img.url !== 'PASTE_IMAGE_LINK_HERE' && img.url.startsWith('http')
+  );
+
+  galleryFiltered = cat === 'all'
+    ? [...realImages]
+    : realImages.filter(img => img.category === cat);
 
   if (galleryFiltered.length === 0) {
     grid.innerHTML = '';
-    if (empty) empty.classList.remove('hidden');
+    if (empty) {
+      empty.classList.remove('hidden');
+      // Show helpful message if no real images added yet
+      if (realImages.length === 0) {
+        empty.innerHTML = `
+          <div class="no-results-icon">📷</div>
+          <p style="font-weight:600;color:var(--gold);margin-bottom:8px;">No Gallery Photos Yet</p>
+          <p style="font-size:0.82rem;color:var(--gray-500);max-width:400px;margin:0 auto;line-height:1.7;">
+            Upload your class photos to
+            <a href="https://postimages.org" target="_blank" style="color:var(--gold);text-decoration:underline;">postimages.org</a>,
+            copy each <strong>Direct link</strong>, then paste them into the
+            <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:3px;">galleryImages</code>
+            array inside <strong>index.html</strong>.
+          </p>`;
+      }
+    }
     return;
   }
   if (empty) empty.classList.add('hidden');
@@ -2077,7 +2285,6 @@ function buildGallery(cat) {
     obs.observe(img);
   });
 
-  // Build category buttons
   buildGalleryCats();
 }
 
@@ -2420,7 +2627,7 @@ function showToast(msg, duration = 3000) {
 }
 
 /* ============================================================
-   SCROLL REVEAL
+   SCROLL REVEAL INIT (also called when switching to form page)
    ============================================================ */
 function initScrollReveal() {
   const observer = new IntersectionObserver(entries => {
@@ -2431,17 +2638,10 @@ function initScrollReveal() {
       }
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (!el.classList.contains('visible')) observer.observe(el);
+  });
 }
-document.addEventListener('DOMContentLoaded', initScrollReveal);
-
-/* ============================================================
-   BACK TO TOP BUTTON
-   ============================================================ */
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('back-to-top');
-  if (btn) btn.classList.toggle('visible', window.scrollY > 400);
-});
 
 /* ============================================================
    MARQUEE — fill with class names & slogans
@@ -2691,31 +2891,6 @@ function buildDashboard() {
   }
 }
 
-/* ============================================================
-   INIT EXTRAS ON DOM READY
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-  buildMarquee();
-
-  // Slideshow background
-  const slides = galleryImages.slice(0, 5);
-  const ss = document.getElementById('slideshow');
-  if (ss && slides.length > 0) {
-    slides.forEach((img, i) => {
-      const div = document.createElement('div');
-      div.className = 'slide' + (i === 0 ? ' active' : '');
-      div.style.backgroundImage = `url(${img.url})`;
-      ss.appendChild(div);
-    });
-    let current = 0;
-    setInterval(() => {
-      const allSlides = ss.querySelectorAll('.slide');
-      allSlides[current].classList.remove('active');
-      current = (current + 1) % allSlides.length;
-      allSlides[current].classList.add('active');
-    }, 5000);
-  }
-});
 
 </script>
 </body>
