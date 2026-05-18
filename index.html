@@ -6,7 +6,7 @@
 <title>SPY Civil Engineering | Class of 2019 | Digital Album</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
@@ -160,7 +160,7 @@ ul{list-style:none;}
   border:1px solid rgba(201,162,39,0.4);
   background:rgba(201,162,39,0.08);
   font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
-  margin-bottom:24px;animation:fadeInDown 0.8s ease forwards;
+  margin-bottom:24px;margin-top: 15px;animation:fadeInDown 0.8s ease forwards;
 }
 .hero-school-logo{
   width:90px;height:90px;border-radius:50%;
@@ -229,7 +229,7 @@ ul{list-style:none;}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeInDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
 
-/* Nigerian Class Album Features Section */
+/* Class Awards */
 .section{padding:80px 24px;}
 .section-inner{max-width:1280px;margin:0 auto;}
 .section-label{
@@ -495,6 +495,173 @@ ul{list-style:none;}
 .detail-label{font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--gray-500);margin-bottom:4px;}
 .detail-value{font-size:0.9rem;color:var(--white);font-weight:500;}
 .detail-item.full{grid-column:span 2;}
+
+/* ===== CERTIFICATE SYSTEM STYLES ===== */
+.certificate-preview-box {
+  background: #ffffff;
+  color: #111111;
+  width: 850px;
+  height: 600px;
+  padding: 40px;
+  position: relative;
+  border: 12px double #c9a227;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+}
+.cert-pattern-overlay {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  border: 2px solid #0a1628;
+  margin: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+.certificate-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+}
+.cert-left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.cert-right {
+  flex: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-header {
+  border-bottom: 2px solid #c9a227;
+  padding-bottom: 12px;
+  text-align: left;
+}
+.cert-main-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #0a1628;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.cert-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #c9a227;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.cert-award-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #1a3a5c;
+  font-weight: 900;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
+.cert-presented-badge {
+  display: inline-block;
+  background: #ff3366; /* Solid fallback color to avoid html2canvas addColorStop gradient engine bug */
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+.cert-recipient {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.4rem;
+  color: #ff3366;
+  margin-top: 15px;
+  line-height: 1;
+  text-align: left;
+}
+.cert-reason {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #4a4a55;
+  margin-top: 15px;
+  max-width: 440px;
+  text-align: left;
+}
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  align-items: flex-end;
+}
+.cert-sign-col {
+  text-align: center;
+  width: 140px;
+}
+.cert-signature-line {
+  border-bottom: 1px solid #8b8a90;
+  margin-bottom: 6px;
+  height: 40px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-sign-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8b8a90;
+}
+.cert-date-col {
+  text-align: left;
+}
+.cert-date-val {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0a1628;
+}
+
+/* Plexus Wireframe Graphic Right side of Cert */
+.cert-plexus-svg {
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  top: -5%;
+  right: -10%;
+  pointer-events: none;
+}
+
+/* Modal sizing for certificate view */
+.cert-modal-box {
+  width: 900px;
+  max-width: 95vw;
+  background: var(--navy-mid);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-deep);
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  text-align: center;
+}
+.cert-scale-wrapper {
+  overflow-x: auto;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 /* ===== GALLERY PAGE ===== */
 #page-gallery .section-inner{}
@@ -838,7 +1005,6 @@ footer{
 <nav id="navbar">
   <div class="nav-inner">
     <div class="nav-brand">
-      <!-- School logo — src is set by JS from SCHOOL_LOGO constant above -->
       <img class="nav-logo" id="nav-logo-img"
         src="https://i.postimg.cc/XvX2RNP1/spy-logo.jpg"
         alt="SPY Logo"
@@ -853,6 +1019,7 @@ footer{
       <button class="nav-link active" onclick="showPage('home')">Home</button>
       <button class="nav-link" onclick="showPage('dashboard')">Dashboard</button>
       <button class="nav-link" onclick="showPage('classmates')">Classmates</button>
+      <button class="nav-link" onclick="showPage('awards')">🎖️ Honors</button>
       <button class="nav-link" onclick="showPage('gallery')">Gallery</button>
       <button class="nav-link" onclick="showPage('reunion')">Reunion</button>
       <button class="nav-link" onclick="showPage('export')">Export Album</button>
@@ -870,6 +1037,7 @@ footer{
   <button class="mobile-link" onclick="showPage('home');closeMobileMenu()">🏠 Home</button>
   <button class="mobile-link" onclick="showPage('dashboard');closeMobileMenu()">📊 Dashboard</button>
   <button class="mobile-link" onclick="showPage('classmates');closeMobileMenu()">👥 Classmates</button>
+  <button class="mobile-link" onclick="showPage('awards');closeMobileMenu()">🎖️ Class Honors</button>
   <button class="mobile-link" onclick="showPage('gallery');closeMobileMenu()">🖼️ Gallery</button>
   <button class="mobile-link" onclick="showPage('reunion');closeMobileMenu()">🎉 Reunion</button>
   <button class="mobile-link" onclick="showPage('export');closeMobileMenu()">📥 Export Album</button>
@@ -927,6 +1095,16 @@ footer{
     <div class="hero-scroll">
       <span class="scroll-text">Scroll</span>
       <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <!-- Featured Certificate Preview Banner -->
+  <div class="section" style="background: linear-gradient(135deg, var(--navy-mid), var(--navy-light)); border-bottom: 1px solid var(--glass-border);">
+    <div class="section-inner text-center">
+      <div class="section-label">🎖️ SPECIAL HONORS</div>
+      <h2 class="section-title">Class <span class="accent">Awards & Certificates</span></h2>
+      <p class="section-desc" style="margin: 0 auto 30px;">To preserve the memory of leaders and key contributors in our engineering family, we present digital certificates of appreciation.</p>
+      <button class="btn-primary" onclick="showPage('awards')">🎖️ View & Download Certificates</button>
     </div>
   </div>
 
@@ -1172,6 +1350,123 @@ footer{
     </div>
   </footer>
 </section>
+
+<!-- ========================================
+     PAGE: CLASS AWARDS & CERTIFICATES (HONORS)
+======================================== -->
+<section id="page-awards" class="page">
+  <div class="dash-hero">
+    <div class="dash-inner">
+      <div class="section-label">🎖️ SPECIAL RECOGNITION</div>
+      <h2 class="dash-title">Class <span style="color:var(--gold)">Honors & Certificates</span></h2>
+      <p class="dash-sub">Recognizing dedication, outstanding leadership, and technical innovation within our set.</p>
+    </div>
+  </div>
+
+  <div style="max-width:1280px;margin:0 auto;padding:40px 24px;">
+    <div class="classmates-grid" id="cert-recipients-grid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <div class="footer-copy">SPY Class of 2019 · CET Civil Engineering · Class Rep: Engr. Yahya Saleh</div>
+        <div class="footer-info">© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- Certificate Modal -->
+<div class="modal-overlay" id="cert-modal" onclick="closeCertModalOutside(event)">
+  <div class="cert-modal-box">
+    <div class="modal-close" style="background: none; position: absolute; right: 15px; top: 15px; z-index: 99;">
+      <button class="modal-close-btn" onclick="closeCertModal()">✕</button>
+    </div>
+    
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--white);margin-bottom:15px;text-align:left;">🏆 Digital Certificate Preview</h3>
+    
+    <div class="cert-scale-wrapper">
+      <!-- RENDER TARGET FOR HTML2CANVAS -->
+      <div class="certificate-preview-box" id="certificate-render-target">
+        <div class="cert-pattern-overlay"></div>
+        <div class="certificate-inner">
+          <div class="cert-left">
+            <div class="cert-header">
+              <div class="cert-main-title">SPY Civil Engineering</div>
+              <div class="cert-subtitle">College of Engineering Technology</div>
+            </div>
+            
+            <div>
+              <div class="cert-award-title" id="lbl-cert-award-title">INNOVATION AWARD</div>
+              <div class="cert-presented-badge">PROUDLY PRESENTED TO</div>
+              <div class="cert-recipient" id="lbl-cert-name">Engr. Yahya Saleh</div>
+              <div class="cert-reason" id="lbl-cert-reason">
+                For outstanding dedication and selflessness in successfully organizing the SPY Civil Engineering Class of 2019 get-together program and preserving lifelong connections.
+              </div>
+            </div>
+            
+            <div class="cert-footer">
+              <div class="cert-date-col">
+                <div class="cert-sign-title">Date of Issue</div>
+                <div class="cert-date-val" id="lbl-cert-date">May 18, 2026</div>
+              </div>
+              <div class="cert-sign-col">
+                <div class="cert-signature-line" id="lbl-cert-sig1">Yahya Saleh</div>
+                <div class="cert-sign-title" id="lbl-cert-sig1-title">Class Representative</div>
+              </div>
+              <div class="cert-sign-col">
+                <div class="cert-signature-line" id="lbl-cert-sig2">Dr. Zakari</div>
+                <div class="cert-sign-title" id="lbl-cert-sig2-title">Coordinator</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cert-right">
+            <!-- NATIVE plexuses networks abstract lines graphic representation avoiding copyright -->
+            <svg class="cert-plexus-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="#00c6ff" stroke-width="1.5" fill="none" opacity="0.85">
+                <!-- Outer complex web plexus paths with simple solid-color strokes -->
+                <path d="M 280,50 L 340,110 L 320,180 L 260,200 L 220,130 L 280,50 Z" />
+                <path d="M 220,130 L 250,260 L 310,290 L 370,220 L 320,180 Z" />
+                <path d="M 180,210 L 230,340 L 310,290 L 250,260 L 180,210 Z" />
+                <path d="M 280,50 L 380,80 L 370,220" />
+                <path d="M 340,110 L 370,220 L 310,290" opacity="0.6" stroke="#f35588" />
+                <!-- Inner helper node lines -->
+                <line x1="280" y1="50" x2="320" y2="180" stroke="#0072ff" />
+                <line x1="220" y1="130" x2="320" y2="180" stroke="#0072ff" />
+                <line x1="220" y1="130" x2="260" y2="200" stroke="#f35588" />
+                <line x1="260" y1="200" x2="250" y2="260" stroke="#f35588" />
+                <line x1="250" y1="260" x2="320" y2="180" stroke="#ff3366" />
+                <line x1="320" y1="180" x2="370" y2="220" stroke="#ff3366" />
+                <line x1="180" y1="210" x2="250" y2="260" stroke="#00c6ff" />
+                <!-- Geometric Network Intersection Points -->
+                <circle cx="280" cy="50" r="4.5" fill="#00c6ff" />
+                <circle cx="340" cy="110" r="4.5" fill="#0072ff" />
+                <circle cx="320" cy="180" r="5" fill="#ff3366" />
+                <circle cx="260" cy="200" r="4" fill="#0072ff" />
+                <circle cx="220" cy="130" r="4.5" fill="#00c6ff" />
+                <circle cx="250" cy="260" r="5.5" fill="#f35588" />
+                <circle cx="310" cy="290" r="4.5" fill="#ff3366" />
+                <circle cx="370" cy="220" r="4" fill="#f35588" />
+                <circle cx="180" cy="210" r="4" fill="#00c6ff" />
+                <circle cx="230" cy="340" r="4" fill="#f35588" />
+                <circle cx="380" cy="80" r="3.5" fill="#0072ff" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+      <button class="btn-primary" onclick="downloadCertificatePDF()">📥 Download Print-Ready PDF</button>
+      <button class="btn-outline" style="border-color: #ff3366; color: #ff3366;" onclick="closeCertModal()">Close Preview</button>
+    </div>
+  </div>
+</div>
 
 <!-- ========================================
      PAGE: JOIN THE ALBUM (FORM)
@@ -1464,89 +1759,68 @@ footer{
    ╚══════════════════════════════════════════════════════════╝
    ============================================================ */
 
-// ─────────────────────────────────────────────────────────────
 // 1️⃣  GOOGLE SHEETS CSV LINK
-//     HOW TO GET IT:
-//     → Open your Google Sheet
-//     → Click File → Share → Publish to web
-//     → Choose "Sheet1" and "Comma-separated values (.csv)"
-//     → Click Publish → Copy the link → Paste it below
-// ─────────────────────────────────────────────────────────────
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLQYkuoiO-Jut2_b9_a82lXEoBoNb6L2OE5EmUxdPDdqlOFAWWc9CL8ioVyTo94JWbvo9LBGT5LAIx/pub?gid=1245162313&single=true&output=csv';
-//  Example: 'https://docs.google.com/spreadsheets/d/e/2PACX-abc.../pub?output=csv'
 
-// ─────────────────────────────────────────────────────────────
 // 2️⃣  SCHOOL LOGO LINK
-//     Upload school logo to postimages.org → copy Direct Link
-// ─────────────────────────────────────────────────────────────
 const SCHOOL_LOGO = 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg';
-//  Example: 'https://i.postimg.cc/xxxx/spy-logo.jpg'
 
-// ─────────────────────────────────────────────────────────────
 // 3️⃣  GOOGLE FORM LINK
-//     Create your Google Form → click Send → copy the link
-// ─────────────────────────────────────────────────────────────
 const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScPmd2tf_K_7pr4aFZe63X88BnPB-kGfnDc4XWtEdYagBWwzA/viewform?usp=dialog';
-//  Example: 'https://forms.gle/xxxxxxxxx'
 
-// ─────────────────────────────────────────────────────────────
-// 4️⃣  REUNION DATE — change to your actual reunion date/time
-// ─────────────────────────────────────────────────────────────
+// 4️⃣  REUNION DATE 
 const REUNION_DATE = new Date('2026-06-01T10:00:00');
 
-// ─────────────────────────────────────────────────────────────
 // 5️⃣  GALLERY IMAGES
-//     HOW TO ADD YOUR PHOTOS:
-//     → Go to https://postimages.org
-//     → Upload your photo → choose "Direct link"
-//     → Copy the link (ends in .jpg or .png)
-//     → Add a new line below following the same format
-//
-//     CATEGORIES you can use:
-//     'Classroom Photos' | 'Workshop Practical' | 'SIWES Memories'
-//     'Group Study' | 'Convocation' | 'Engineering Excursions'
-//     'Casual Campus Moments' | 'Final Year Project'
-//
-//     FORMAT FOR EACH IMAGE:
-//     { url: 'YOUR_POSTIMAGES_DIRECT_LINK', category: 'CATEGORY', caption: 'Your caption here' },
-// ─────────────────────────────────────────────────────────────
 const galleryImages = [
-
-  // ── CONVOCATION ──────────────────────────────────────────
   { url: 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg', category: 'Convocation', caption: 'Graduation Day 2019' },
   { url: 'https://i.postimg.cc/x1ZmW9vw/Gemini-Generated-Image-3ccj5b3ccj5b3ccj-(2).png', category: 'Convocation', caption: 'Proud graduates' },
-
-  // ── CLASSROOM PHOTOS ─────────────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'Classroom Photos', caption: 'In the lecture hall' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Classroom Photos', caption: 'Lecture sessions' },
-
-  // ── WORKSHOP PRACTICAL ───────────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'Workshop Practical', caption: 'Civil Engineering workshop' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Workshop Practical', caption: 'Workshop session' },
-
-  // ── SIWES MEMORIES ───────────────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'SIWES Memories', caption: 'SIWES industrial attachment' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'SIWES Memories', caption: 'Industrial training' },
-
-  // ── GROUP STUDY ──────────────────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'Group Study', caption: 'Study group sessions' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Group Study', caption: 'Pre-exam preparation' },
-
-  // ── ENGINEERING EXCURSIONS ───────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'Engineering Excursions', caption: 'Field excursion' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Engineering Excursions', caption: 'Site visit' },
-
-  // ── CASUAL CAMPUS MOMENTS ────────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'Casual Campus Moments', caption: 'Campus life' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Casual Campus Moments', caption: 'Friends forever' },
-
-  // ── FINAL YEAR PROJECT ───────────────────────────────────
   { url: 'PASTE_IMAGE_LINK_HERE', category: 'Final Year Project', caption: 'FYP presentation' },
-  { url: 'PASTE_IMAGE_LINK_HERE', category: 'Final Year Project', caption: 'Final year project' },
+];
 
-  // ── ADD MORE IMAGES BELOW ─────────────────────────────────
-  // Just copy any line above, paste it here, and change the link, category, and caption.
-
+/* ============================================================
+   CERTIFICATE AWARDEES LIST (Configured In Code)
+   ============================================================ */
+const certifiedAwards = [
+  {
+    name: "Engr. Yahya Saleh",
+    awardTitle: "OUTSTANDING LEADERSHIP AWARD",
+    reason: "For exceptional dedication, structural thinking, and selflessness in successfully organizing the SPY Civil Engineering Class of 2019 get-together reunion program.",
+    date: "May 18, 2026",
+    sig1: "Arabo Modibbo",
+    sig1Title: "Coordinator",
+    sig2: "Dr. Zakari",
+    sig2Title: "Department Coordinator",
+    photoUrl: "https://i.postimg.cc/XvX2RNP1/spy-logo.jpg"
+  },
+  {
+    name: "Engr. Arabo Modibbo",
+    awardTitle: "TECHNICAL INNOVATION AWARD",
+    reason: "For pioneering the development of the SPY Civil Engineering Class of 2019 Digital Album Web Application, bridging technology and classmate memories.",
+    date: "May 18, 2026",
+    sig1: "Yahya Saleh",
+    sig1Title: "Class Representative",
+    sig2: "Dr. Zakari",
+    sig2Title: "Department Coordinator",
+    photoUrl: "https://i.postimg.cc/XvX2RNP1/spy-logo.jpg"
+  },
+  {
+    name: "Engr. Fatima Bello",
+    awardTitle: "ACADEMIC EXCELLENCE HONOUR",
+    reason: "For outstanding academic achievements, Structural Analysis brilliance, and dedicated peer mentoring throughout her years at Adamawa State Polytechnic.",
+    date: "May 18, 2026",
+    sig1: "Yahya Saleh",
+    sig1Title: "Class Representative",
+    sig2: "Dr. Zakari",
+    sig2Title: "Department Coordinator",
+    photoUrl: "https://i.postimg.cc/XvX2RNP1/spy-logo.jpg"
+  }
 ];
 
 /* ============================================================
@@ -1614,7 +1888,7 @@ const inspirationalQuotes = [
   { text: 'Education is the most powerful weapon which you can use to change the world.', author: 'Nelson Mandela' },
   { text: 'The secret of getting ahead is getting started.', author: 'Mark Twain' },
   { text: 'Engineering is not only a study of 45 subjects but it is moral studies of intellectual life.', author: 'Prakhar Srivastav' },
-  { text: 'Iron rusts from disuse; stagnant water loses its purity and in cold weather becomes frozen; even so does inaction sap the vigors of the mind.', author: 'Leonardo da Vinci' },
+  { text: 'Iron rusts from disuse; stagnant water loses careers purity and in cold weather becomes frozen; even so does inaction sap the vigors of the mind.', author: 'Leonardo da Vinci' },
 ];
 
 /* ============================================================
@@ -1632,40 +1906,21 @@ const PLACEHOLDER = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53M
 
 /* ============================================================
    APPLY DYNAMIC LINKS FROM JS CONSTANTS
-   Sets all logo src and form hrefs from the config above
    ============================================================ */
 function applyDynamicLinks() {
-
-  // ── School logo (all instances) ──────────────────────────
   const logoIds = ['nav-logo-img', 'hero-logo-img', 'footer-logo-img'];
   logoIds.forEach(id => {
     const el = document.getElementById(id);
-    if (el && SCHOOL_LOGO && SCHOOL_LOGO !== 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg') {
-      el.src = SCHOOL_LOGO;
-    }
+    if (el && SCHOOL_LOGO) el.src = SCHOOL_LOGO;
   });
 
-  // ── Google Form links (all instances) ───────────────────
-  const formIds = [
-    'footer-form-link',
-    'form-hero-btn',
-    'form-card-btn',
-    'form-direct-link',
-    'reunion-form-link',
-  ];
+  const formIds = ['footer-form-link', 'form-hero-btn', 'form-card-btn', 'form-direct-link', 'reunion-form-link'];
   formIds.forEach(id => {
     const el = document.getElementById(id);
     if (el) {
-      if (FORM_URL && FORM_URL !== 'https://forms.gle/Nn6hK9scKkkvti7M7') {
+      if (FORM_URL) {
         el.href = FORM_URL;
         if (id === 'form-direct-link') el.textContent = FORM_URL;
-      } else {
-        el.href = '#';
-        el.onclick = (e) => {
-          e.preventDefault();
-          showToast('⚠️ Paste your Google Form link into FORM_URL in the code.');
-        };
-        if (id === 'form-direct-link') el.textContent = 'Not configured yet';
       }
     }
   });
@@ -1675,26 +1930,22 @@ function applyDynamicLinks() {
    INIT — runs everything on page load
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply logo and form links from config
   applyDynamicLinks();
 
-  // Loader fade out
   setTimeout(() => {
     document.getElementById('loader').style.opacity = '0';
     setTimeout(() => document.getElementById('loader').style.display = 'none', 600);
   }, 1800);
 
   buildStaticSections();
+  buildHonorsPortal();
   fetchClassmates();
   startCountdown();
   buildGallery('all');
   animateHeroCounters();
   buildMarquee();
 
-  // Slideshow background — only use real image links
-  const realSlides = galleryImages.filter(img =>
-    img.url && img.url !== 'https://i.postimg.cc/XvX2RNP1/spy-logo.jpg' && img.url.startsWith('http')
-  ).slice(0, 5);
+  const realSlides = galleryImages.filter(img => img.url && img.url !== 'PASTE_IMAGE_LINK_HERE' && img.url.startsWith('http')).slice(0, 5);
   const ss = document.getElementById('slideshow');
   if (ss && realSlides.length > 0) {
     realSlides.forEach((img, i) => {
@@ -1714,7 +1965,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Back to top button visibility
   window.addEventListener('scroll', () => {
     const btn = document.getElementById('back-to-top');
     if (btn) btn.classList.toggle('visible', window.scrollY > 400);
@@ -1734,6 +1984,7 @@ function showPage(id) {
     if (l.textContent.toLowerCase().includes(id.replace('-','')) ||
         (id === 'home' && l.textContent === 'Home') ||
         (id === 'classmates' && l.textContent === 'Classmates') ||
+        (id === 'awards' && l.textContent.includes('Honors')) ||
         (id === 'gallery' && l.textContent === 'Gallery') ||
         (id === 'dashboard' && l.textContent === 'Dashboard') ||
         (id === 'reunion' && l.textContent === 'Reunion') ||
@@ -1743,72 +1994,29 @@ function showPage(id) {
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (id === 'export') buildAlbumPreview();
-  if (id === 'dashboard') buildDashboard();
+  if (id === 'dashboard') { buildDashboard(); buildStateBars(); }
 }
 
-function toggleMobileMenu() {
-  document.getElementById('mobile-menu').classList.toggle('open');
-}
-function closeMobileMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-}
+function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
 
 /* ============================================================
-   STATIC SECTIONS
+   STATIC SECTIONS & ANIMATION
    ============================================================ */
 function buildStaticSections() {
-  // Awards
   const ag = document.getElementById('awards-grid');
-  if (ag) ag.innerHTML = classAwards.map(a =>
-    `<div class="award-card">
-      <div class="award-emoji">${a.emoji}</div>
-      <div class="award-title">${a.title}</div>
-      <div class="award-name">${a.name}</div>
-    </div>`).join('');
-
-  // Memories
+  if (ag) ag.innerHTML = classAwards.map(a => `<div class="award-card"><div class="award-emoji">${a.emoji}</div><div class="award-title">${a.title}</div><div class="award-name">${a.name}</div></div>`).join('');
   const mg = document.getElementById('memories-grid');
-  if (mg) mg.innerHTML = classMemories.map(m =>
-    `<div class="award-card">
-      <div class="award-emoji">${m.emoji}</div>
-      <div class="award-title">${m.title}</div>
-      <div class="award-name">${m.desc}</div>
-    </div>`).join('');
-
-  // Engineering Quotes
+  if (mg) mg.innerHTML = classMemories.map(m => `<div class="award-card"><div class="award-emoji">${m.emoji}</div><div class="award-title">${m.title}</div><div class="award-name">${m.desc}</div></div>`).join('');
   const eq = document.getElementById('eng-quotes');
-  if (eq) eq.innerHTML = engineeringQuotes.map(q =>
-    `<div class="quote-card">
-      <div class="quote-text">"${q.text}"</div>
-      <div class="quote-author">— ${q.author}</div>
-    </div>`).join('');
-
-  // Prayer
+  if (eq) eq.innerHTML = engineeringQuotes.map(q => `<div class="quote-card"><div class="quote-text">"${q.text}"</div><div class="quote-author">— ${q.author}</div></div>`).join('');
   const pr = document.getElementById('prayer-text');
   if (pr) pr.textContent = prayerText;
-
-  // Tribute
   const tr = document.getElementById('tribute-cards');
-  if (tr) tr.innerHTML = tributeLecturers.map(t =>
-    `<div class="tribute-card">
-      <div class="tribute-icon">${t.icon}</div>
-      <div class="tribute-name">${t.name}</div>
-      <div class="tribute-dept">${t.dept}</div>
-    </div>`).join('');
-
-  // Dashboard quote
-  const rq = inspirationalQuotes[Math.floor(Math.random() * inspirationalQuotes.length)];
-  const dqt = document.getElementById('dash-quote-text');
-  const dqa = document.getElementById('dash-quote-author');
-  if (dqt) dqt.textContent = '"' + rq.text + '"';
-  if (dqa) dqa.textContent = '— ' + rq.author;
+  if (tr) tr.innerHTML = tributeLecturers.map(t => `<div class="tribute-card"><div class="tribute-icon">${t.icon}</div><div class="tribute-name">${t.name}</div><div class="tribute-dept">${t.dept}</div></div>`).join('');
 }
 
-/* ============================================================
-   HERO COUNTERS ANIMATION
-   ============================================================ */
 function animateHeroCounters() {
-  // Year counter animate
   animateCount(document.querySelector('[data-target="2019"]'), 2019, 1600);
 }
 function animateCount(el, target, duration = 1200) {
@@ -1827,138 +2035,119 @@ function animateCount(el, target, duration = 1200) {
 }
 
 /* ============================================================
-   GOOGLE SHEETS — FETCH CLASSMATES
+   GOOGLE SHEETS — ROBUST FETCH & PARSE
    ============================================================ */
 async function fetchClassmates() {
-  // Show loading state
   const grid = document.getElementById('classmates-grid');
-  if (grid) grid.innerHTML = `
-    <div style="grid-column:1/-1;text-align:center;padding:60px 24px;color:var(--gray-500);">
-      <div style="font-size:2.5rem;margin-bottom:16px;">⏳</div>
-      <p style="font-size:1rem;margin-bottom:8px;">Loading classmates...</p>
-      <p style="font-size:0.82rem;color:var(--gray-700);">Fetching data from Google Sheets</p>
-    </div>`;
+  if (grid) grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 24px;color:var(--gray-500);"><div style="font-size:2.5rem;margin-bottom:16px;">⏳</div><p style="font-size:1rem;margin-bottom:8px;">Loading classmates...</p><p style="font-size:0.82rem;color:var(--gray-700);">Fetching data from Google Sheets</p></div>`;
 
-  // Check if admin has set the SHEET_URL
-  if (!SHEET_URL || SHEET_URL === 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLQYkuoiO-Jut2_b9_a82lXEoBoNb6L2OE5EmUxdPDdqlOFAWWc9CL8ioVyTo94JWbvo9LBGT5LAIx/pub?gid=1245162313&single=true&output=csv') {
+  if (!SHEET_URL || SHEET_URL === '') {
     showSheetNotConfigured();
     return;
   }
 
-  // Try two CORS proxies — if one fails, use the other
-  const proxies = [
-    'https://api.allorigins.win/raw?url=',
-    'https://corsproxy.io/?',
+  // Attempt direct fetch first, then fallback to proxies
+  const urlsToTry = [
+    SHEET_URL,
+    'https://api.allorigins.win/raw?url=' + encodeURIComponent(SHEET_URL),
+    'https://corsproxy.io/?' + encodeURIComponent(SHEET_URL)
   ];
 
-  for (let i = 0; i < proxies.length; i++) {
+  for (let url of urlsToTry) {
     try {
-      const res = await fetch(proxies[i] + encodeURIComponent(SHEET_URL), {
-        cache: 'no-cache'
-      });
+      const res = await fetch(url, { cache: 'no-cache' });
       if (!res.ok) continue;
       const text = await res.text();
-      if (!text || text.trim().length < 10) continue;
-      allClassmates = parseCSV(text);
+      if (!text || text.trim().length < 10 || text.trim().startsWith('<!DOCTYPE html>')) continue;
+      
+      allClassmates = parseFullCSV(text);
       if (allClassmates.length > 0) {
         onClassmatesLoaded();
-        return; // success — stop trying
+        return; 
       }
     } catch (err) {
-      console.warn(`Proxy ${i + 1} failed:`, err);
+      console.warn(`Fetch failed for ${url}:`, err);
     }
   }
-
-  // All proxies failed
   showFetchError();
 }
 
 function showSheetNotConfigured() {
-  allClassmates = [];
-  onClassmatesLoaded();
+  allClassmates = []; onClassmatesLoaded();
   const grid = document.getElementById('classmates-grid');
-  if (grid) grid.innerHTML = `
-    <div style="grid-column:1/-1;text-align:center;padding:60px 24px;">
-      <div style="font-size:3rem;margin-bottom:16px;">🔗</div>
-    </div>`;
+  if (grid) grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 24px;"><div style="font-size:3rem;margin-bottom:16px;">🔗</div></div>`;
 }
 
 function showFetchError() {
-  allClassmates = [];
-  onClassmatesLoaded();
+  allClassmates = []; onClassmatesLoaded();
   const grid = document.getElementById('classmates-grid');
   if (grid) grid.innerHTML = `
     <div style="grid-column:1/-1;text-align:center;padding:60px 24px;">
       <div style="font-size:3rem;margin-bottom:16px;">⚠️</div>
       <p style="font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:8px;">Could Not Load Data</p>
       <p style="font-size:0.85rem;color:var(--gray-500);max-width:480px;margin:0 auto 20px;line-height:1.7;">
-        Make sure your Google Sheet is published as CSV and the link in
-        <code style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;color:var(--gold);">SHEET_URL</code>
-        is correct. Also check your internet connection.
+        Please make sure your Google Sheet is published to the web as a CSV.
       </p>
-      <button onclick="fetchClassmates()" style="padding:10px 28px;border-radius:40px;background:rgba(201,162,39,0.15);border:1px solid var(--gold);color:var(--gold);cursor:pointer;font-size:0.88rem;">
-        🔄 Retry
-      </button>
+      <button onclick="fetchClassmates()" style="padding:10px 28px;border-radius:40px;background:rgba(201,162,39,0.15);border:1px solid var(--gold);color:var(--gold);cursor:pointer;font-size:0.88rem;">🔄 Retry</button>
     </div>`;
 }
 
-function parseCSV(text) {
-  const lines = text.split('\n').filter(l => l.trim());
-  if (lines.length < 2) return [];
-  // Skip header row (row 0)
-  const data = [];
-  for (let i = 1; i < lines.length; i++) {
-    const cols = parseCSVLine(lines[i]);
-    // Expected columns (0-indexed, skip timestamp if present):
-    // Detect if first col is timestamp (contains ':' typically)
-    let offset = 0;
-    if (cols[0] && (cols[0].includes('/') || cols[0].includes('-')) && cols[0].includes(':')) offset = 1;
+function parseFullCSV(text) {
+  const result = [];
+  let row = [];
+  let inQuotes = false;
+  let val = '';
+  for (let i = 0; i < text.length; i++) {
+      let c = text[i];
+      let nc = text[i+1];
+      if (c === '"' && inQuotes && nc === '"') { val += '"'; i++; } 
+      else if (c === '"') { inQuotes = !inQuotes; }
+      else if (c === ',' && !inQuotes) { row.push(val.trim()); val = ''; }
+      else if ((c === '\n' || c === '\r') && !inQuotes) {
+          row.push(val.trim());
+          if (row.length > 1 || row[0] !== '') result.push(row);
+          row = []; val = '';
+          if (c === '\r' && nc === '\n') i++; 
+      }
+      else { val += c; }
+  }
+  if (val || row.length > 0) {
+      row.push(val.trim());
+      result.push(row);
+  }
 
-    const student = {
-      fullName:    (cols[offset + 0] || '').trim(),
-      nickname:    (cols[offset + 1] || '').trim(),
-      phone:       (cols[offset + 2] || '').trim(),
-      state:       (cols[offset + 3] || '').trim(),
-      photoUrl:    (cols[offset + 4] || '').trim(),
-      quote:       (cols[offset + 5] || '').trim(),
-      ambition:    (cols[offset + 6] || '').trim(),
-      location:    (cols[offset + 7] || '').trim(),
-      skills:      (cols[offset + 8] || '').trim(),
-      hobby:       (cols[offset + 9] || '').trim(),
-      bestFriend:  (cols[offset + 10] || '').trim(),
-    };
-    if (student.fullName) data.push(student);
+  if (result.length < 2) return [];
+  const data = [];
+  
+  for (let i = 1; i < result.length; i++) {
+      const cols = result[i];
+      let offset = 0;
+      if (cols[0] && (cols[0].includes('/') || cols[0].includes('-')) && (cols[0].includes(':') || cols[0].length > 14)) {
+          offset = 1;
+      }
+
+      const student = {
+          fullName:    (cols[offset + 0] || '').trim(),
+          nickname:    (cols[offset + 1] || '').trim(),
+          phone:       (cols[offset + 2] || '').trim(),
+          state:       (cols[offset + 3] || '').trim(),
+          photoUrl:    (cols[offset + 4] || '').trim(),
+          quote:       (cols[offset + 5] || '').trim(),
+          ambition:    (cols[offset + 6] || '').trim(),
+          location:    (cols[offset + 7] || '').trim(),
+          skills:      (cols[offset + 8] || '').trim(),
+          hobby:       (cols[offset + 9] || '').trim(),
+          bestFriend:  (cols[offset + 10] || '').trim(),
+      };
+      if (student.fullName) data.push(student);
   }
   return data;
-}
-
-function parseCSVLine(line) {
-  const result = [];
-  let current = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (c === '"') { inQuotes = !inQuotes; continue; }
-    if (c === ',' && !inQuotes) { result.push(current); current = ''; continue; }
-    current += c;
-  }
-  result.push(current);
-  return result;
-}
-
-function getDemoClassmates() {
-  // ─────────────────────────────────────────────────────────
-  // No demo data. The app will show an empty state until
-  // your Google Sheet CSV link is pasted into SHEET_URL above.
-  // ─────────────────────────────────────────────────────────
-  return [];
 }
 
 function onClassmatesLoaded() {
   filteredClassmates = [...allClassmates];
   buildClassmatesGrid();
   buildFilterTabs();
-  updateCounters();
   buildDashboard();
   buildAlbumPreview();
 }
@@ -1980,11 +2169,7 @@ function buildClassmatesGrid() {
   if (countText) countText.textContent = `${totalFiltered} classmate${totalFiltered !== 1 ? 's' : ''} found`;
 
   if (pageData.length === 0) {
-    grid.innerHTML = `<div style="grid-column:1/-1;" class="no-results">
-      <div class="no-results-icon">🔍</div>
-      <p>No classmates found matching your search.</p>
-      <button class="btn-outline mt-3" onclick="clearSearch()" style="margin-top:16px;padding:10px 24px;border-radius:40px;border:1px solid var(--gold);color:var(--gold);background:none;cursor:pointer;">Clear Search</button>
-    </div>`;
+    grid.innerHTML = `<div style="grid-column:1/-1;" class="no-results"><div class="no-results-icon">🔍</div><p>No classmates found matching your search.</p><button class="btn-outline mt-3" onclick="clearSearch()" style="margin-top:16px;padding:10px 24px;border-radius:40px;border:1px solid var(--gold);color:var(--gold);background:none;cursor:pointer;">Clear Search</button></div>`;
     document.getElementById('pagination').innerHTML = '';
     return;
   }
@@ -1992,7 +2177,6 @@ function buildClassmatesGrid() {
   grid.innerHTML = pageData.map((s, i) => buildStudentCard(s, start + i)).join('');
   buildPagination(totalPages);
 
-  // Lazy load images
   grid.querySelectorAll('img[data-src]').forEach(img => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
@@ -2010,16 +2194,10 @@ function buildClassmatesGrid() {
 
 function buildStudentCard(student, index) {
   const photo = student.photoUrl || PLACEHOLDER;
-  const initial = student.fullName ? student.fullName[0].toUpperCase() : '?';
   return `
     <div class="student-card" onclick="openProfile(${index})">
       <div class="student-photo-wrap">
-        <img class="student-photo"
-          src="${PLACEHOLDER}"
-          data-src="${photo}"
-          alt="${student.fullName}"
-          onerror="this.src='${PLACEHOLDER}'"
-        />
+        <img class="student-photo" src="${PLACEHOLDER}" data-src="${photo}" alt="${student.fullName}" onerror="this.src='${PLACEHOLDER}'"/>
         <div class="student-photo-overlay"></div>
         <div class="student-badge">Civil Eng.</div>
       </div>
@@ -2062,10 +2240,7 @@ function buildFilterTabs() {
   const tabs = document.getElementById('filter-tabs');
   if (!tabs) return;
   const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))].sort();
-  const stateTabsHtml = states.map(st =>
-    `<button class="filter-tab" data-filter="${st}" onclick="setFilter('${st}',this)">${st}</button>`
-  ).join('');
-  // Keep "All" button, append state tabs
+  const stateTabsHtml = states.map(st => `<button class="filter-tab" data-filter="${st}" onclick="setFilter('${st}',this)">${st}</button>`).join('');
   const allBtn = tabs.querySelector('[data-filter="all"]');
   tabs.innerHTML = '';
   tabs.appendChild(allBtn);
@@ -2073,8 +2248,7 @@ function buildFilterTabs() {
 }
 
 function setFilter(filter, btn) {
-  currentFilter = filter;
-  currentPage = 1;
+  currentFilter = filter; currentPage = 1;
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   applyFilters();
@@ -2082,14 +2256,12 @@ function setFilter(filter, btn) {
 
 function handleSearch() {
   searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
-  currentPage = 1;
-  applyFilters();
+  currentPage = 1; applyFilters();
 }
 
 function clearSearch() {
   document.getElementById('search-input').value = '';
-  searchQuery = '';
-  applyFilters();
+  searchQuery = ''; applyFilters();
 }
 
 function applyFilters() {
@@ -2109,665 +2281,6 @@ function applyFilters() {
    PROFILE MODAL
    ============================================================ */
 function openProfile(index) {
-  const allVisible = filteredClassmates;
-  const s = allVisible[index];
-  if (!s) return;
-  const photo = s.photoUrl || PLACEHOLDER;
-  document.getElementById('modal-content').innerHTML = `
-    <div class="modal-header" style="padding-top:8px;">
-      <div class="modal-photo-wrap">
-        <img class="modal-photo" src="${photo}" onerror="this.src='${PLACEHOLDER}'" alt="${s.fullName}"/>
-      </div>
-      <div class="modal-name">${s.fullName || 'Unknown'}</div>
-      <div class="modal-nickname">${s.nickname ? '"' + s.nickname + '"' : ''}</div>
-      <div class="modal-location">📍 ${s.location || 'Nigeria'}</div>
-    </div>
-    ${s.quote ? `<div class="modal-quote">"${s.quote}"</div>` : ''}
-    <div class="modal-details">
-      <div class="detail-grid">
-        <div class="detail-item">
-          <div class="detail-label">📱 Phone</div>
-          <div class="detail-value">${s.phone || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">🌍 State</div>
-          <div class="detail-value">${s.state || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">📍 Location</div>
-          <div class="detail-value">${s.location || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">🎯 Ambition</div>
-          <div class="detail-value">${s.ambition || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">⚡ Skills</div>
-          <div class="detail-value">${s.skills || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">🎮 Hobby</div>
-          <div class="detail-value">${s.hobby || '—'}</div>
-        </div>
-        <div class="detail-item full">
-          <div class="detail-label">❤️ Best Friend in Class</div>
-          <div class="detail-value">${s.bestFriend || '—'}</div>
-        </div>
-      </div>
-    </div>`;
-  document.getElementById('profile-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeProfileModal() {
-  document.getElementById('profile-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeModal(e) {
-  if (e.target === document.getElementById('profile-modal')) closeProfileModal();
-}
-
-/* ============================================================
-   DASHBOARD
-   ============================================================ */
-function buildDashboard() {
-  const total = allClassmates.length;
-  const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))];
-
-  const dbTotal = document.getElementById('db-total');
-  const dbStates = document.getElementById('db-states');
-  const dbGallery = document.getElementById('db-gallery');
-  if (dbTotal) dbTotal.textContent = total;
-  if (dbStates) dbStates.textContent = states.length;
-  if (dbGallery) dbGallery.textContent = galleryImages.length;
-
-  // Update hero counters
-  const cntTotal = document.getElementById('cnt-total');
-  const cntStates = document.getElementById('cnt-states');
-  if (cntTotal) animateCount(cntTotal, total, 1500);
-  if (cntStates) animateCount(cntStates, states.length, 1500);
-
-  // State distribution
-  const sd = document.getElementById('state-distribution');
-  if (sd) {
-    const stateCount = {};
-    allClassmates.forEach(s => { if (s.state) stateCount[s.state] = (stateCount[s.state] || 0) + 1; });
-    sd.innerHTML = Object.entries(stateCount)
-      .sort((a,b) => b[1] - a[1])
-      .map(([state, count]) =>
-        `<div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:40px;padding:8px 16px;display:flex;align-items:center;gap:8px;">
-          <span style="color:var(--gold);font-size:0.8rem;">🏙️</span>
-          <span style="font-size:0.85rem;">${state}</span>
-          <span style="background:rgba(201,162,39,0.2);color:var(--gold);border-radius:40px;padding:2px 8px;font-size:0.75rem;font-weight:700;">${count}</span>
-        </div>`
-      ).join('');
-  }
-
-  // Recently added (last 6)
-  const rg = document.getElementById('recent-grid');
-  if (rg) {
-    const recent = allClassmates.slice(-6).reverse();
-    rg.innerHTML = recent.map((s, i) => buildStudentCard(s, allClassmates.length - 1 - i)).join('');
-  }
-}
-
-/* ============================================================
-   GALLERY
-   ============================================================ */
-function buildGallery(cat) {
-  const grid = document.getElementById('gallery-grid');
-  const empty = document.getElementById('gallery-empty');
-  if (!grid) return;
-
-  // Filter out unconfigured placeholder links
-  const realImages = galleryImages.filter(img =>
-    img.url && img.url !== 'PASTE_IMAGE_LINK_HERE' && img.url.startsWith('http')
-  );
-
-  galleryFiltered = cat === 'all'
-    ? [...realImages]
-    : realImages.filter(img => img.category === cat);
-
-  if (galleryFiltered.length === 0) {
-    grid.innerHTML = '';
-    if (empty) {
-      empty.classList.remove('hidden');
-      // Show helpful message if no real images added yet
-      if (realImages.length === 0) {
-        empty.innerHTML = `
-          <div class="no-results-icon">📷</div>
-          <p style="font-weight:600;color:var(--gold);margin-bottom:8px;">No Gallery Photos Yet</p>
-          <p style="font-size:0.82rem;color:var(--gray-500);max-width:400px;margin:0 auto;line-height:1.7;">
-            Upload your class photos to
-            <a href="https://postimages.org" target="_blank" style="color:var(--gold);text-decoration:underline;">postimages.org</a>,
-            copy each <strong>Direct link</strong>, then paste them into the
-            <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:3px;">galleryImages</code>
-            array inside <strong>index.html</strong>.
-          </p>`;
-      }
-    }
-    return;
-  }
-  if (empty) empty.classList.add('hidden');
-
-  grid.innerHTML = galleryFiltered.map((img, i) =>
-    `<div class="gallery-item" onclick="openLightbox(${i})" data-cat="${img.category}">
-      <img
-        src="${PLACEHOLDER}"
-        data-src="${img.url}"
-        alt="${img.caption || img.category}"
-        loading="lazy"
-        style="width:100%;display:block;"
-        onerror="this.src='${PLACEHOLDER}'"
-      />
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">${img.category}</div>
-      </div>
-    </div>`
-  ).join('');
-
-  // Lazy load
-  grid.querySelectorAll('img[data-src]').forEach(img => {
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.src = e.target.dataset.src;
-          obs.unobserve(e.target);
-        }
-      });
-    });
-    obs.observe(img);
-  });
-
-  buildGalleryCats();
-}
-
-function buildGalleryCats() {
-  const catsEl = document.getElementById('gallery-cats');
-  if (!catsEl) return;
-  const cats = [...new Set(galleryImages.map(g => g.category))];
-  const allBtn = catsEl.querySelector('[data-cat="all"]');
-  catsEl.innerHTML = '';
-  catsEl.appendChild(allBtn);
-  cats.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'gallery-cat-btn';
-    btn.dataset.cat = cat;
-    btn.textContent = cat;
-    btn.onclick = function() { filterGallery(cat, this); };
-    catsEl.appendChild(btn);
-  });
-}
-
-function filterGallery(cat, btn) {
-  document.querySelectorAll('.gallery-cat-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  buildGallery(cat);
-}
-
-/* ============================================================
-   LIGHTBOX
-   ============================================================ */
-function openLightbox(index) {
-  lightboxIndex = index;
-  const img = galleryFiltered[index];
-  document.getElementById('lightbox-img').src = img.url;
-  document.getElementById('lightbox-caption').textContent = `${img.caption || ''} — ${img.category}`;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function navLightbox(dir) {
-  lightboxIndex = (lightboxIndex + dir + galleryFiltered.length) % galleryFiltered.length;
-  const img = galleryFiltered[lightboxIndex];
-  document.getElementById('lightbox-img').src = img.url;
-  document.getElementById('lightbox-caption').textContent = `${img.caption || ''} — ${img.category}`;
-}
-document.addEventListener('keydown', e => {
-  if (document.getElementById('lightbox').classList.contains('open')) {
-    if (e.key === 'ArrowRight') navLightbox(1);
-    if (e.key === 'ArrowLeft') navLightbox(-1);
-    if (e.key === 'Escape') closeLightbox();
-  }
-  if (document.getElementById('profile-modal').classList.contains('open') && e.key === 'Escape') {
-    closeProfileModal();
-  }
-});
-
-/* ============================================================
-   COUNTDOWN TIMER
-   ============================================================ */
-function startCountdown() {
-  function update() {
-    const now = new Date();
-    const diff = REUNION_DATE - now;
-    if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '00';
-      document.getElementById('cd-hours').textContent = '00';
-      document.getElementById('cd-mins').textContent = '00';
-      document.getElementById('cd-secs').textContent = '00';
-      return;
-    }
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
-    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
-    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
-  }
-  update();
-  setInterval(update, 1000);
-}
-
-/* ============================================================
-   COUNTERS UPDATE
-   ============================================================ */
-function updateCounters() {
-  const total = allClassmates.length;
-  const states = [...new Set(allClassmates.map(s => s.state).filter(Boolean))].length;
-  const cntTotal = document.getElementById('cnt-total');
-  const cntStates = document.getElementById('cnt-states');
-  if (cntTotal) animateCount(cntTotal, total, 1500);
-  if (cntStates) animateCount(cntStates, states, 1500);
-}
-
-/* ============================================================
-   ALBUM EXPORT
-   ============================================================ */
-function buildAlbumPreview() {
-  const preview = document.getElementById('album-preview-grid');
-  const empty = document.getElementById('album-preview-empty');
-  if (!preview) return;
-  if (allClassmates.length === 0) {
-    if (empty) empty.style.display = 'block';
-    return;
-  }
-  if (empty) empty.style.display = 'none';
-  preview.innerHTML = allClassmates.slice(0, 24).map(s =>
-    `<div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:12px;text-align:center;">
-      <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;margin:0 auto 8px;border:2px solid var(--gold);">
-        <img src="${s.photoUrl || PLACEHOLDER}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='${PLACEHOLDER}'"/>
-      </div>
-      <div style="font-size:0.8rem;font-weight:600;color:var(--white);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.fullName}</div>
-      <div style="font-size:0.7rem;color:var(--gold);">${s.nickname || ''}</div>
-    </div>`
-  ).join('');
-}
-
-function exportPDF() {
-  showToast('⏳ Generating PDF Album...');
-
-  // Build album HTML for PDF
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-
-  const pageW = 210, pageH = 297;
-  const margin = 15;
-  const cols = 3;
-  const rows = 4;
-  const cardW = (pageW - margin * 2 - (cols - 1) * 8) / cols;
-  const cardH = 60;
-
-  let x = margin, y = margin + 30;
-  let pageNum = 1;
-  let cardOnPage = 0;
-
-  function addHeader() {
-    doc.setFillColor(10, 22, 40);
-    doc.rect(0, 0, pageW, 25, 'F');
-    doc.setTextColor(201, 162, 39);
-    doc.setFontSize(11);
-    doc.setFont('helvetica', 'bold');
-    doc.text('ADAMAWA STATE POLYTECHNIC, YOLA', pageW / 2, 9, { align: 'center' });
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'normal');
-    doc.setTextColor(180, 180, 180);
-    doc.text('Civil Engineering Dept. | College of Engineering Technology | Class of 2019', pageW / 2, 15, { align: 'center' });
-    doc.setDrawColor(201, 162, 39);
-    doc.setLineWidth(0.5);
-    doc.line(margin, 22, pageW - margin, 22);
-  }
-
-  function addFooter(num) {
-    doc.setFontSize(7);
-    doc.setTextColor(120, 120, 120);
-    doc.text(`SPY Civil Engineering Class of 2019 | Class Rep: Engr. Yahya Saleh | © 2026 Engr. Arabo Modibbo`, pageW / 2, pageH - 6, { align: 'center' });
-    doc.text(`Page ${num}`, pageW - margin, pageH - 6, { align: 'right' });
-  }
-
-  addHeader();
-  addFooter(pageNum);
-
-  // Cover page title
-  doc.setFontSize(18);
-  doc.setFont('helvetica', 'bold');
-  doc.setTextColor(201, 162, 39);
-  doc.text('CLASS OF 2019', pageW / 2, y, { align: 'center' });
-  y += 8;
-  doc.setFontSize(10);
-  doc.setTextColor(255, 255, 255);
-  doc.text('Department of Civil Engineering', pageW / 2, y, { align: 'center' });
-  y += 6;
-  doc.text('College of Engineering Technology (CET)', pageW / 2, y, { align: 'center' });
-  y += 15;
-
-  allClassmates.forEach((s, idx) => {
-    if (cardOnPage === cols * rows || (idx > 0 && cardOnPage === 0)) {
-      if (idx > 0) { // Not first page trigger from counter
-        doc.addPage();
-        pageNum++;
-        addHeader();
-        addFooter(pageNum);
-        y = margin + 30;
-        x = margin;
-        cardOnPage = 0;
-      }
-    }
-
-    const col = cardOnPage % cols;
-    const row = Math.floor(cardOnPage / cols);
-    const cx = margin + col * (cardW + 8);
-    const cy = y + row * (cardH + 6);
-
-    // Card background
-    doc.setFillColor(17, 34, 64);
-    doc.roundedRect(cx, cy, cardW, cardH, 3, 3, 'F');
-    doc.setDrawColor(201, 162, 39);
-    doc.setLineWidth(0.3);
-    doc.roundedRect(cx, cy, cardW, cardH, 3, 3, 'S');
-
-    // Photo placeholder circle
-    doc.setFillColor(26, 58, 92);
-    doc.circle(cx + 14, cy + cardH / 2, 11, 'F');
-    doc.setDrawColor(201, 162, 39);
-    doc.setLineWidth(0.5);
-    doc.circle(cx + 14, cy + cardH / 2, 11, 'S');
-
-    // Text
-    doc.setFontSize(8);
-    doc.setFont('helvetica', 'bold');
-    doc.setTextColor(255, 255, 255);
-    const textX = cx + 28;
-    const maxW = cardW - 30;
-    doc.text(s.fullName || '—', textX, cy + 14, { maxWidth: maxW });
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'italic');
-    doc.setTextColor(201, 162, 39);
-    doc.text(s.nickname ? `"${s.nickname}"` : '', textX, cy + 21, { maxWidth: maxW });
-    doc.setFont('helvetica', 'normal');
-    doc.setTextColor(160, 160, 170);
-    doc.text(`📍 ${s.location || s.state || 'Nigeria'}`, textX, cy + 29, { maxWidth: maxW });
-    doc.text(`📱 ${s.phone || '—'}`, textX, cy + 36, { maxWidth: maxW });
-    doc.text(`🌍 ${s.state || '—'}`, textX, cy + 43, { maxWidth: maxW });
-
-    cardOnPage++;
-    if (cardOnPage === cols * rows) {
-      doc.addPage();
-      pageNum++;
-      addHeader();
-      addFooter(pageNum);
-      y = margin + 30;
-      x = margin;
-      cardOnPage = 0;
-    }
-  });
-
-  doc.save('SPY-Civil-Engineering-Class-2019-Album.pdf');
-  showToast('✅ PDF Album downloaded!');
-}
-
-function exportWord() {
-  showToast('⏳ Generating Word Document...');
-  const rows = allClassmates.map(s => `
-    <tr>
-      <td style="padding:10px;border:1px solid #e2e0e5;text-align:center;">
-        <img src="${s.photoUrl || ''}" width="60" height="60" style="border-radius:50%;object-fit:cover;" onerror="this.style.display='none'"/>
-      </td>
-      <td style="padding:10px;border:1px solid #e2e0e5;font-weight:bold;">${s.fullName || '—'}</td>
-      <td style="padding:10px;border:1px solid #e2e0e5;color:#c9a227;">${s.nickname || '—'}</td>
-      <td style="padding:10px;border:1px solid #e2e0e5;">${s.phone || '—'}</td>
-      <td style="padding:10px;border:1px solid #e2e0e5;">${s.state || '—'}</td>
-      <td style="padding:10px;border:1px solid #e2e0e5;">${s.location || '—'}</td>
-    </tr>`).join('');
-
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"/>
-    <style>
-      body{font-family:Arial,sans-serif;margin:40px;color:#0a1628;}
-      h1{color:#0a1628;text-align:center;}
-      h2{color:#c9a227;text-align:center;}
-      .header{text-align:center;padding:20px;border-bottom:3px solid #c9a227;margin-bottom:30px;}
-      table{width:100%;border-collapse:collapse;font-size:12px;}
-      th{background:#0a1628;color:#c9a227;padding:10px;border:1px solid #0a1628;}
-      tr:nth-child(even){background:#f8f6f0;}
-      .footer{text-align:center;margin-top:40px;font-size:11px;color:#8b8a90;border-top:1px solid #e2e0e5;padding-top:20px;}
-    </style></head><body>
-    <div class="header">
-      <h1>ADAMAWA STATE POLYTECHNIC, YOLA</h1>
-      <h2>Department of Civil Engineering · College of Engineering Technology</h2>
-      <p style="font-size:14px;">Class of 2019 · Digital Album</p>
-    </div>
-    <table>
-      <thead><tr>
-        <th>Photo</th><th>Full Name</th><th>Nickname</th>
-        <th>Phone</th><th>State</th><th>Location</th>
-      </tr></thead>
-      <tbody>${rows}</tbody>
-    </table>
-    <div class="footer">
-      SPY Class of 2019 · CET Civil Engineering · Class Rep: Engr. Yahya Saleh<br/>
-      © 2026 Engr. Arabo Modibbo. All Rights Reserved.
-    </div>
-    </body></html>`;
-
-  const blob = new Blob(['\ufeff' + html], { type: 'application/msword' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = 'SPY-Civil-Engineering-Class-2019-Album.doc';
-  link.click();
-  showToast('✅ Word document downloaded!');
-}
-
-function openPrintView() {
-  showToast('📄 Opening print view...');
-  const printWin = window.open('', '_blank');
-  const cards = allClassmates.map(s => `
-    <div style="break-inside:avoid;display:inline-block;width:180px;border:1px solid #c9a227;border-radius:8px;padding:12px;margin:8px;text-align:center;background:#f8f6f0;">
-      <div style="width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid #c9a227;margin:0 auto 8px;">
-        <img src="${s.photoUrl || ''}" width="70" height="70" style="object-fit:cover;" onerror="this.style.display='none'"/>
-      </div>
-      <div style="font-weight:bold;font-size:12px;margin-bottom:3px;">${s.fullName || '—'}</div>
-      <div style="color:#c9a227;font-size:11px;font-style:italic;margin-bottom:4px;">${s.nickname ? '"'+s.nickname+'"' : ''}</div>
-      <div style="font-size:10px;color:#666;">📍 ${s.location || s.state || ''}</div>
-      <div style="font-size:10px;color:#666;">📱 ${s.phone || ''}</div>
-    </div>`).join('');
-
-  printWin.document.write(`<!DOCTYPE html><html><head>
-    <title>SPY Civil Engineering Class of 2019</title>
-    <style>
-      @media print { body { margin: 0; } }
-      body { font-family: Arial, sans-serif; margin: 20px; }
-      .header { text-align: center; border-bottom: 3px solid #c9a227; padding: 20px; margin-bottom: 20px; }
-      h1 { color: #0a1628; margin: 0 0 8px; }
-      .subtitle { color: #c9a227; font-size: 14px; }
-    </style>
-  </head><body>
-    <div class="header">
-      <h1>ADAMAWA STATE POLYTECHNIC, YOLA</h1>
-      <div class="subtitle">Department of Civil Engineering · CET · Class of 2019</div>
-    </div>
-    <div>${cards}</div>
-    <div style="text-align:center;margin-top:30px;font-size:11px;color:#888;border-top:1px solid #ddd;padding-top:12px;">
-      SPY Class of 2019 · Class Rep: Engr. Yahya Saleh · © 2026 Engr. Arabo Modibbo
-    </div>
-  </body></html>`);
-  printWin.document.close();
-  printWin.print();
-}
-
-/* ============================================================
-   TOAST
-   ============================================================ */
-function showToast(msg, duration = 3000) {
-  const toast = document.getElementById('toast');
-  const toastMsg = document.getElementById('toast-msg');
-  toastMsg.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), duration);
-}
-
-/* ============================================================
-   SCROLL REVEAL INIT (also called when switching to form page)
-   ============================================================ */
-function initScrollReveal() {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => {
-    if (!el.classList.contains('visible')) observer.observe(el);
-  });
-}
-
-/* ============================================================
-   MARQUEE — fill with class names & slogans
-   ============================================================ */
-function buildMarquee() {
-  const track = document.getElementById('marquee-track');
-  if (!track) return;
-  const items = [
-    '🎓 SPY Civil Engineering Class of 2019',
-    '🏗️ Building Bridges, Building Futures',
-    '⚡ CET — College of Engineering Technology',
-    '🌍 Scattered Across Nigeria, United Forever',
-    '📐 From Survey to Structure — We Delivered',
-    '🔧 Engineers by Degree, Engineers by Heart',
-    '🏆 Class Rep: Engr. Yahya Saleh',
-    '🎯 Class of 2019 — The Real Engineers',
-    '🇳🇬 Adamawa State Polytechnic, Yola',
-    '💛 Once CET, Always CET',
-  ];
-  // Double for seamless loop
-  const doubled = [...items, ...items];
-  track.innerHTML = doubled.map(item =>
-    `<div class="marquee-item"><div class="marquee-dot"></div><span>${item}</span></div>`
-  ).join('');
-}
-
-/* ============================================================
-   SHARE FUNCTIONS
-   ============================================================ */
-function shareWhatsApp() {
-  const text = encodeURIComponent(
-    '🎓 *SPY Civil Engineering Class of 2019 — Digital Album*\n\n' +
-    'Check out our class album and add your profile!\n\n' +
-    '📝 Fill the form: ' + FORM_URL + '\n\n' +
-    'Album by Engr. Arabo Modibbo · Class Rep: Engr. Yahya Saleh 🏗️'
-  );
-  window.open('https://wa.me/?text=' + text, '_blank');
-}
-
-function copyLink() {
-  const url = window.location.href;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).then(() => showToast('🔗 Link copied to clipboard!'));
-  } else {
-    const el = document.createElement('textarea');
-    el.value = url;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-    showToast('🔗 Link copied!');
-  }
-}
-
-function shareProfile(name, nickname, location) {
-  const text = encodeURIComponent(
-    `🎓 *${name}* ${nickname ? '("' + nickname + '")' : ''}\n` +
-    `📍 ${location}\n\n` +
-    `SPY Civil Engineering Class of 2019 · CET\n` +
-    `View the full class album 👆`
-  );
-  window.open('https://wa.me/?text=' + text, '_blank');
-}
-
-/* ============================================================
-   STATE DISTRIBUTION BARS (Dashboard)
-   ============================================================ */
-function buildStateBars() {
-  const el = document.getElementById('state-distribution');
-  if (!el) return;
-  const stateCount = {};
-  allClassmates.forEach(s => { if (s.state) stateCount[s.state] = (stateCount[s.state] || 0) + 1; });
-  const sorted = Object.entries(stateCount).sort((a,b) => b[1] - a[1]);
-  const max = sorted[0]?.[1] || 1;
-
-  el.innerHTML = sorted.map(([state, count]) => {
-    const pct = Math.round((count / max) * 100);
-    return `
-      <div style="flex:1;min-width:200px;">
-        <div class="stats-bar-wrap" style="margin:0 0 12px;">
-          <div class="stats-bar-label">
-            <span>🏙️ ${state}</span>
-            <span>${count} student${count !== 1 ? 's' : ''}</span>
-          </div>
-          <div class="stats-bar-track">
-            <div class="stats-bar-fill" style="width:0%" data-width="${pct}%"></div>
-          </div>
-        </div>
-      </div>`;
-  }).join('');
-
-  // Animate bars
-  setTimeout(() => {
-    el.querySelectorAll('.stats-bar-fill').forEach(bar => {
-      bar.style.width = bar.dataset.width;
-    });
-  }, 200);
-}
-
-/* ============================================================
-   ENHANCED SHOW PAGE — add form support + rebuild reveals
-   ============================================================ */
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const target = document.getElementById('page-' + id);
-  if (target) target.classList.add('active');
-
-  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(l => {
-    const txt = l.textContent.toLowerCase();
-    if ((id === 'home' && txt === 'home') ||
-        (id === 'dashboard' && txt === 'dashboard') ||
-        (id === 'classmates' && txt === 'classmates') ||
-        (id === 'gallery' && txt === 'gallery') ||
-        (id === 'reunion' && txt === 'reunion') ||
-        (id === 'export' && txt.includes('export')) ||
-        (id === 'form' && txt.includes('join'))) {
-      l.classList.add('active');
-    }
-  });
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  if (id === 'export') buildAlbumPreview();
-  if (id === 'dashboard') { buildDashboard(); buildStateBars(); }
-  if (id === 'form') setTimeout(initScrollReveal, 100);
-}
-
-/* ============================================================
-   ENHANCED OPEN PROFILE — with share buttons inside modal
-   ============================================================ */
-function openProfile(index) {
   const s = filteredClassmates[index];
   if (!s) return;
   const photo = s.photoUrl || PLACEHOLDER;
@@ -2783,51 +2296,28 @@ function openProfile(index) {
     ${s.quote ? `<div class="modal-quote">"${s.quote}"</div>` : ''}
     <div class="modal-details">
       <div class="detail-grid">
-        <div class="detail-item">
-          <div class="detail-label">📱 Phone</div>
-          <div class="detail-value">${s.phone || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">🌍 State</div>
-          <div class="detail-value">${s.state || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">📍 Location</div>
-          <div class="detail-value">${s.location || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">🎯 Future Ambition</div>
-          <div class="detail-value">${s.ambition || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">⚡ Skills / Talent</div>
-          <div class="detail-value">${s.skills || '—'}</div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">🎮 Hobby</div>
-          <div class="detail-value">${s.hobby || '—'}</div>
-        </div>
-        <div class="detail-item full">
-          <div class="detail-label">❤️ Best Friend in Class</div>
-          <div class="detail-value">${s.bestFriend || '—'}</div>
-        </div>
+        <div class="detail-item"><div class="detail-label">📱 Phone</div><div class="detail-value">${s.phone || '—'}</div></div>
+        <div class="detail-item"><div class="detail-label">🌍 State</div><div class="detail-value">${s.state || '—'}</div></div>
+        <div class="detail-item"><div class="detail-label">📍 Location</div><div class="detail-value">${s.location || '—'}</div></div>
+        <div class="detail-item"><div class="detail-label">🎯 Future Ambition</div><div class="detail-value">${s.ambition || '—'}</div></div>
+        <div class="detail-item"><div class="detail-label">⚡ Skills / Talent</div><div class="detail-value">${s.skills || '—'}</div></div>
+        <div class="detail-item"><div class="detail-label">🎮 Hobby</div><div class="detail-value">${s.hobby || '—'}</div></div>
+        <div class="detail-item full"><div class="detail-label">❤️ Best Friend in Class</div><div class="detail-value">${s.bestFriend || '—'}</div></div>
       </div>
     </div>
     <div class="modal-share-row">
-      <button class="modal-share-btn modal-share-wa"
-        onclick="shareProfile('${(s.fullName||'').replace(/'/g,"\\'")}','${(s.nickname||'').replace(/'/g,"\\'")}','${(s.location||'').replace(/'/g,"\\'")}')">
-        💬 Share Profile
-      </button>
-      <button class="modal-share-btn modal-share-copy" onclick="copyLink()">
-        🔗 Copy Link
-      </button>
+      <button class="modal-share-btn modal-share-wa" onclick="shareProfile('${(s.fullName||'').replace(/'/g,"\\'")}','${(s.nickname||'').replace(/'/g,"\\'")}','${(s.location||'').replace(/'/g,"\\'")}')">💬 Share Profile</button>
+      <button class="modal-share-btn modal-share-copy" onclick="copyLink()">🔗 Copy Link</button>
     </div>`;
   document.getElementById('profile-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
+function closeProfileModal() { document.getElementById('profile-modal').classList.remove('open'); document.body.style.overflow = ''; }
+function closeModal(e) { if (e.target === document.getElementById('profile-modal')) closeProfileModal(); }
+
 /* ============================================================
-   DASHBOARD — build with state bars
+   DASHBOARD & DISTRIBUTION BARS
    ============================================================ */
 function buildDashboard() {
   const total = allClassmates.length;
@@ -2847,24 +2337,20 @@ function buildDashboard() {
 
   buildStateBars();
 
-  // Dashboard quote rotation
   const rq = inspirationalQuotes[Math.floor(Math.random() * inspirationalQuotes.length)];
   const dqt = document.getElementById('dash-quote-text');
   const dqa = document.getElementById('dash-quote-author');
   if (dqt) dqt.textContent = '"' + rq.text + '"';
   if (dqa) dqa.textContent = '— ' + rq.author;
 
-  // Recently added
   const rg = document.getElementById('recent-grid');
   if (rg && allClassmates.length > 0) {
     const recent = allClassmates.slice(-6).reverse();
     rg.innerHTML = recent.map((s, i) => {
-      const globalIdx = allClassmates.length - 1 - i;
       const photo = s.photoUrl || PLACEHOLDER;
       return `<div class="student-card" onclick="showPage('classmates')">
         <div class="student-photo-wrap" style="height:160px;">
-          <img class="student-photo" src="${PLACEHOLDER}" data-src="${photo}"
-            onerror="this.src='${PLACEHOLDER}'" alt="${s.fullName}"/>
+          <img class="student-photo" src="${PLACEHOLDER}" data-src="${photo}" onerror="this.src='${PLACEHOLDER}'" alt="${s.fullName}"/>
           <div class="student-photo-overlay"></div>
           <div class="student-badge">New</div>
         </div>
@@ -2875,17 +2361,330 @@ function buildDashboard() {
         </div>
       </div>`;
     }).join('');
-    // Lazy load
+    
     rg.querySelectorAll('img[data-src]').forEach(img => {
-      const obs = new IntersectionObserver(e => {
-        e.forEach(en => { if (en.isIntersecting) { en.target.src = en.target.dataset.src; obs.unobserve(en.target); }});
-      });
+      const obs = new IntersectionObserver(e => { e.forEach(en => { if (en.isIntersecting) { en.target.src = en.target.dataset.src; obs.unobserve(en.target); }}); });
       obs.observe(img);
     });
   }
 }
 
+function buildStateBars() {
+  const el = document.getElementById('state-distribution');
+  if (!el) return;
+  const stateCount = {};
+  allClassmates.forEach(s => { if (s.state) stateCount[s.state] = (stateCount[s.state] || 0) + 1; });
+  const sorted = Object.entries(stateCount).sort((a,b) => b[1] - a[1]);
+  const max = sorted[0]?.[1] || 1;
 
+  el.innerHTML = sorted.map(([state, count]) => {
+    const pct = Math.round((count / max) * 100);
+    return `<div style="flex:1;min-width:200px;"><div class="stats-bar-wrap" style="margin:0 0 12px;"><div class="stats-bar-label"><span>🏙️ ${state}</span><span>${count} student${count !== 1 ? 's' : ''}</span></div><div class="stats-bar-track"><div class="stats-bar-fill" style="width:0%" data-width="${pct}%"></div></div></div></div>`;
+  }).join('');
+
+  setTimeout(() => {
+    el.querySelectorAll('.stats-bar-fill').forEach(bar => { bar.style.width = bar.dataset.width; });
+  }, 200);
+}
+
+/* ============================================================
+   CLASS HONORS PORTAL & CERTIFICATE GENERATION
+   ============================================================ */
+function buildHonorsPortal() {
+  const grid = document.getElementById('cert-recipients-grid');
+  if (!grid) return;
+  
+  grid.innerHTML = certifiedAwards.map((award, index) => `
+    <div class="student-card" style="cursor: default;">
+      <div class="student-photo-wrap" style="height: 180px; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, var(--navy-mid) 0%, var(--navy) 100%);">
+        <div style="font-size: 3.5rem; filter: drop-shadow(0 0 10px rgba(201,162,39,0.5));">🏆</div>
+        <div class="student-badge" style="background: #ff3366; color: #ffffff;">CERTIFIED</div>
+      </div>
+      <div class="student-info" style="text-align: center;">
+        <div class="student-name" style="color: var(--gold); font-size: 1.1rem;">${award.name}</div>
+        <div class="student-nickname" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 700; color: var(--white);">${award.awardTitle}</div>
+        <p style="font-size: 0.78rem; color: var(--gray-500); margin-top: 8px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; height: 36px;">${award.reason}</p>
+        
+        <div style="margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <button class="student-view-btn" onclick="openCertificateModal(${index})" style="margin-top: 0; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: var(--white);">👁️ View</button>
+          <button class="student-view-btn" onclick="downloadDirectCertificate(${index})" style="margin-top: 0; background: rgba(255,51,102,0.12); border-color: rgba(255,51,102,0.3); color: #ff3366;">📥 PDF</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+let activeCertIndex = 0;
+
+function openCertificateModal(index) {
+  activeCertIndex = index;
+  const award = certifiedAwards[index];
+  
+  document.getElementById('lbl-cert-name').textContent = award.name;
+  document.getElementById('lbl-cert-award-title').textContent = award.awardTitle;
+  document.getElementById('lbl-cert-reason').textContent = award.reason;
+  document.getElementById('lbl-cert-date').textContent = award.date;
+  
+  document.getElementById('lbl-cert-sig1').textContent = award.sig1;
+  document.getElementById('lbl-cert-sig1-title').textContent = award.sig1Title;
+  document.getElementById('lbl-cert-sig2').textContent = award.sig2;
+  document.getElementById('lbl-cert-sig2-title').textContent = award.sig2Title;
+  
+  document.getElementById('cert-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+  document.getElementById('cert-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeCertModalOutside(e) {
+  if (e.target === document.getElementById('cert-modal')) {
+    closeCertModal();
+  }
+}
+
+// Allows instant downloading of PDF straight from individual Honor directory cards
+async function downloadDirectCertificate(index) {
+  // Sync details silently behind the scenes into the template first
+  activeCertIndex = index;
+  const award = certifiedAwards[index];
+  
+  document.getElementById('lbl-cert-name').textContent = award.name;
+  document.getElementById('lbl-cert-award-title').textContent = award.awardTitle;
+  document.getElementById('lbl-cert-reason').textContent = award.reason;
+  document.getElementById('lbl-cert-date').textContent = award.date;
+  
+  document.getElementById('lbl-cert-sig1').textContent = award.sig1;
+  document.getElementById('lbl-cert-sig1-title').textContent = award.sig1Title;
+  document.getElementById('lbl-cert-sig2').textContent = award.sig2;
+  document.getElementById('lbl-cert-sig2-title').textContent = award.sig2Title;
+
+  await downloadCertificatePDF();
+}
+
+async function downloadCertificatePDF() {
+  showToast('⏳ Rendering high-resolution PDF certificate...');
+  const element = document.getElementById('certificate-render-target');
+  
+  try {
+    const canvas = await html2canvas(element, {
+      scale: 3, // High DPI scaling for perfect print output
+      useCORS: true,
+      logging: false,
+      backgroundColor: '#ffffff'
+    });
+    
+    const imgData = canvas.toDataURL('image/png');
+    const { jsPDF } = window.jspdf;
+    
+    // Create landscape A4 document (297mm x 210mm)
+    const pdf = new jsPDF('l', 'mm', 'a4');
+    pdf.addImage(imgData, 'PNG', 0, 0, 297, 210);
+    
+    const awardee = certifiedAwards[activeCertIndex];
+    const fileName = `${awardee.name.replace(/\s+/g, '_')}_Class_Award_Certificate.pdf`;
+    pdf.save(fileName);
+    showToast('🏆 Certificate successfully downloaded!');
+  } catch (error) {
+    console.error('Error generating certificate PDF:', error);
+    showToast('⚠️ Could not generate PDF. Please try again.');
+  }
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+function buildGallery(cat) {
+  const grid = document.getElementById('gallery-grid');
+  const empty = document.getElementById('gallery-empty');
+  if (!grid) return;
+
+  const realImages = galleryImages.filter(img => img.url && img.url !== 'PASTE_IMAGE_LINK_HERE' && img.url.startsWith('http'));
+  galleryFiltered = cat === 'all' ? [...realImages] : realImages.filter(img => img.category === cat);
+
+  if (galleryFiltered.length === 0) {
+    grid.innerHTML = '';
+    if (empty) {
+      empty.classList.remove('hidden');
+      if (realImages.length === 0) {
+        empty.innerHTML = `<div class="no-results-icon">📷</div><p style="font-weight:600;color:var(--gold);margin-bottom:8px;">No Gallery Photos Yet</p><p style="font-size:0.82rem;color:var(--gray-500);max-width:400px;margin:0 auto;line-height:1.7;">Admin: Please add image links to the <code style="background:rgba(255,255,255,0.1);padding:1px 5px;border-radius:3px;">galleryImages</code> array inside the code.</p>`;
+      }
+    }
+    return;
+  }
+  if (empty) empty.classList.add('hidden');
+
+  grid.innerHTML = galleryFiltered.map((img, i) => `<div class="gallery-item" onclick="openLightbox(${i})" data-cat="${img.category}"><img src="${PLACEHOLDER}" data-src="${img.url}" alt="${img.caption || img.category}" loading="lazy" style="width:100%;display:block;" onerror="this.src='${PLACEHOLDER}'"/><div class="gallery-item-overlay"><div class="gallery-item-cat">${img.category}</div></div></div>`).join('');
+
+  grid.querySelectorAll('img[data-src]').forEach(img => {
+    const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.src = e.target.dataset.src; obs.unobserve(e.target); }}); });
+    obs.observe(img);
+  });
+
+  buildGalleryCats();
+}
+
+function buildGalleryCats() {
+  const catsEl = document.getElementById('gallery-cats');
+  if (!catsEl) return;
+  const cats = [...new Set(galleryImages.map(g => g.category))];
+  const allBtn = catsEl.querySelector('[data-cat="all"]');
+  catsEl.innerHTML = ''; catsEl.appendChild(allBtn);
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'gallery-cat-btn'; btn.dataset.cat = cat; btn.textContent = cat;
+    btn.onclick = function() { filterGallery(cat, this); };
+    catsEl.appendChild(btn);
+  });
+}
+
+function filterGallery(cat, btn) { document.querySelectorAll('.gallery-cat-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); buildGallery(cat); }
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+function openLightbox(index) {
+  lightboxIndex = index; const img = galleryFiltered[index];
+  document.getElementById('lightbox-img').src = img.url;
+  document.getElementById('lightbox-caption').textContent = `${img.caption || ''} — ${img.category}`;
+  document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden';
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+function navLightbox(dir) {
+  lightboxIndex = (lightboxIndex + dir + galleryFiltered.length) % galleryFiltered.length;
+  const img = galleryFiltered[lightboxIndex];
+  document.getElementById('lightbox-img').src = img.url;
+  document.getElementById('lightbox-caption').textContent = `${img.caption || ''} — ${img.category}`;
+}
+document.addEventListener('keydown', e => {
+  if (document.getElementById('lightbox').classList.contains('open')) {
+    if (e.key === 'ArrowRight') navLightbox(1); if (e.key === 'ArrowLeft') navLightbox(-1); if (e.key === 'Escape') closeLightbox();
+  }
+  if (document.getElementById('profile-modal').classList.contains('open') && e.key === 'Escape') closeProfileModal();
+});
+
+/* ============================================================
+   COUNTDOWN TIMER
+   ============================================================ */
+function startCountdown() {
+  function update() {
+    const diff = REUNION_DATE - new Date();
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00'; document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00'; document.getElementById('cd-secs').textContent = '00'; return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24)); const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)); const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0'); document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0'); document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+  update(); setInterval(update, 1000);
+}
+
+/* ============================================================
+   ALBUM EXPORT
+   ============================================================ */
+function buildAlbumPreview() {
+  const preview = document.getElementById('album-preview-grid'); const empty = document.getElementById('album-preview-empty');
+  if (!preview) return;
+  if (allClassmates.length === 0) { if (empty) empty.style.display = 'block'; return; }
+  if (empty) empty.style.display = 'none';
+  preview.innerHTML = allClassmates.slice(0, 24).map(s => `<div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:12px;text-align:center;"><div style="width:60px;height:60px;border-radius:50%;overflow:hidden;margin:0 auto 8px;border:2px solid var(--gold);"><img src="${s.photoUrl || PLACEHOLDER}" style="width:100%;height:100%;object-fit:cover;" onerror="this.src='${PLACEHOLDER}'"/></div><div style="font-size:0.8rem;font-weight:600;color:var(--white);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.fullName}</div><div style="font-size:0.7rem;color:var(--gold);">${s.nickname || ''}</div></div>`).join('');
+}
+
+function exportPDF() {
+  showToast('⏳ Generating PDF Album...');
+  const { jsPDF } = window.jspdf; const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const pageW = 210, pageH = 297, margin = 15, cols = 3, rows = 4, cardW = (pageW - margin * 2 - (cols - 1) * 8) / cols, cardH = 60;
+  let x = margin, y = margin + 30, pageNum = 1, cardOnPage = 0;
+
+  function addHeader() {
+    doc.setFillColor(10, 22, 40); doc.rect(0, 0, pageW, 25, 'F'); doc.setTextColor(201, 162, 39); doc.setFontSize(11); doc.setFont('helvetica', 'bold');
+    doc.text('ADAMAWA STATE POLYTECHNIC, YOLA', pageW / 2, 9, { align: 'center' }); doc.setFontSize(8); doc.setFont('helvetica', 'normal'); doc.setTextColor(180, 180, 180);
+    doc.text('Civil Engineering Dept. | College of Engineering Technology | Class of 2019', pageW / 2, 15, { align: 'center' });
+    doc.setDrawColor(201, 162, 39); doc.setLineWidth(0.5); doc.line(margin, 22, pageW - margin, 22);
+  }
+  function addFooter(num) {
+    doc.setFontSize(7); doc.setTextColor(120, 120, 120); doc.text(`SPY Civil Engineering Class of 2019 | Class Rep: Engr. Yahya Saleh | © 2026 Engr. Arabo Modibbo`, pageW / 2, pageH - 6, { align: 'center' });
+    doc.text(`Page ${num}`, pageW - margin, pageH - 6, { align: 'right' });
+  }
+
+  addHeader(); addFooter(pageNum);
+  doc.setFontSize(18); doc.setFont('helvetica', 'bold'); doc.setTextColor(201, 162, 39); doc.text('CLASS OF 2019', pageW / 2, y, { align: 'center' }); y += 8;
+  doc.setFontSize(10); doc.setTextColor(255, 255, 255); doc.text('Department of Civil Engineering', pageW / 2, y, { align: 'center' }); y += 6;
+  doc.text('College of Engineering Technology (CET)', pageW / 2, y, { align: 'center' }); y += 15;
+
+  allClassmates.forEach((s, idx) => {
+    if (cardOnPage === cols * rows || (idx > 0 && cardOnPage === 0)) {
+      if (idx > 0) { doc.addPage(); pageNum++; addHeader(); addFooter(pageNum); y = margin + 30; x = margin; cardOnPage = 0; }
+    }
+    const col = cardOnPage % cols; const row = Math.floor(cardOnPage / cols); const cx = margin + col * (cardW + 8); const cy = y + row * (cardH + 6);
+    doc.setFillColor(17, 34, 64); doc.roundedRect(cx, cy, cardW, cardH, 3, 3, 'F'); doc.setDrawColor(201, 162, 39); doc.setLineWidth(0.3); doc.roundedRect(cx, cy, cardW, cardH, 3, 3, 'S');
+    doc.setFillColor(26, 58, 92); doc.circle(cx + 14, cy + cardH / 2, 11, 'F'); doc.setDrawColor(201, 162, 39); doc.setLineWidth(0.5); doc.circle(cx + 14, cy + cardH / 2, 11, 'S');
+    doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.setTextColor(255, 255, 255); const textX = cx + 28; const maxW = cardW - 30;
+    doc.text(s.fullName || '—', textX, cy + 14, { maxWidth: maxW }); doc.setFontSize(7); doc.setFont('helvetica', 'italic'); doc.setTextColor(201, 162, 39);
+    doc.text(s.nickname ? `"${s.nickname}"` : '', textX, cy + 21, { maxWidth: maxW }); doc.setFont('helvetica', 'normal'); doc.setTextColor(160, 160, 170);
+    doc.text(`📍 ${s.location || s.state || 'Nigeria'}`, textX, cy + 29, { maxWidth: maxW }); doc.text(`📱 ${s.phone || '—'}`, textX, cy + 36, { maxWidth: maxW }); doc.text(`🌍 ${s.state || '—'}`, textX, cy + 43, { maxWidth: maxW });
+    cardOnPage++;
+    if (cardOnPage === cols * rows && idx !== allClassmates.length - 1) {
+      doc.addPage(); pageNum++; addHeader(); addFooter(pageNum); y = margin + 30; x = margin; cardOnPage = 0;
+    }
+  });
+  doc.save('SPY-Civil-Engineering-Class-2019-Album.pdf'); showToast('✅ PDF Album downloaded!');
+}
+
+function exportWord() {
+  showToast('⏳ Generating Word Document...');
+  const rows = allClassmates.map(s => `<tr><td style="padding:10px;border:1px solid #e2e0e5;text-align:center;"><img src="${s.photoUrl || ''}" width="60" height="60" style="border-radius:50%;object-fit:cover;" onerror="this.style.display='none'"/></td><td style="padding:10px;border:1px solid #e2e0e5;font-weight:bold;">${s.fullName || '—'}</td><td style="padding:10px;border:1px solid #e2e0e5;color:#c9a227;">${s.nickname || '—'}</td><td style="padding:10px;border:1px solid #e2e0e5;">${s.phone || '—'}</td><td style="padding:10px;border:1px solid #e2e0e5;">${s.state || '—'}</td><td style="padding:10px;border:1px solid #e2e0e5;">${s.location || '—'}</td></tr>`).join('');
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"/><style>body{font-family:Arial,sans-serif;margin:40px;color:#0a1628;}h1{color:#0a1628;text-align:center;}h2{color:#c9a227;text-align:center;}.header{text-align:center;padding:20px;border-bottom:3px solid #c9a227;margin-bottom:30px;}table{width:100%;border-collapse:collapse;font-size:12px;}th{background:#0a1628;color:#c9a227;padding:10px;border:1px solid #0a1628;}tr:nth-child(even){background:#f8f6f0;}.footer{text-align:center;margin-top:40px;font-size:11px;color:#8b8a90;border-top:1px solid #e2e0e5;padding-top:20px;}</style></head><body><div class="header"><h1>ADAMAWA STATE POLYTECHNIC, YOLA</h1><h2>Department of Civil Engineering · College of Engineering Technology</h2><p style="font-size:14px;">Class of 2019 · Digital Album</p></div><table><thead><tr><th>Photo</th><th>Full Name</th><th>Nickname</th><th>Phone</th><th>State</th><th>Location</th></tr></thead><tbody>${rows}</tbody></table><div class="footer">SPY Class of 2019 · CET Civil Engineering · Class Rep: Engr. Yahya Saleh<br/>© 2026 Engr. Arabo Modibbo. All Rights Reserved.</div></body></html>`;
+  const blob = new Blob(['\ufeff' + html], { type: 'application/msword' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'SPY-Civil-Engineering-Class-2019-Album.doc'; link.click(); showToast('✅ Word document downloaded!');
+}
+
+function openPrintView() {
+  showToast('📄 Opening print view...');
+  const printWin = window.open('', '_blank');
+  const cards = allClassmates.map(s => `<div style="break-inside:avoid;display:inline-block;width:180px;border:1px solid #c9a227;border-radius:8px;padding:12px;margin:8px;text-align:center;background:#f8f6f0;"><div style="width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid #c9a227;margin:0 auto 8px;"><img src="${s.photoUrl || ''}" width="70" height="70" style="object-fit:cover;" onerror="this.style.display='none'"/></div><div style="font-weight:bold;font-size:12px;margin-bottom:3px;">${s.fullName || '—'}</div><div style="color:#c9a227;font-size:11px;font-style:italic;margin-bottom:4px;">${s.nickname ? '"'+s.nickname+'"' : ''}</div><div style="font-size:10px;color:#666;">📍 ${s.location || s.state || ''}</div><div style="font-size:10px;color:#666;">📱 ${s.phone || ''}</div></div>`).join('');
+  printWin.document.write(`<!DOCTYPE html><html><head><title>SPY Civil Engineering Class of 2019</title><style>@media print { body { margin: 0; } } body { font-family: Arial, sans-serif; margin: 20px; } .header { text-align: center; border-bottom: 3px solid #c9a227; padding: 20px; margin-bottom: 20px; } h1 { color: #0a1628; margin: 0 0 8px; } .subtitle { color: #c9a227; font-size: 14px; }</style></head><body><div class="header"><h1>ADAMAWA STATE POLYTECHNIC, YOLA</h1><div class="subtitle">Department of Civil Engineering · CET · Class of 2019</div></div><div>${cards}</div><div style="text-align:center;margin-top:30px;font-size:11px;color:#888;border-top:1px solid #ddd;padding-top:12px;">SPY Class of 2019 · Class Rep: Engr. Yahya Saleh · © 2026 Engr. Arabo Modibbo</div></body></html>`);
+  printWin.document.close(); printWin.print();
+}
+
+/* ============================================================
+   TOAST & MARQUEE & UTILS
+   ============================================================ */
+function showToast(msg, duration = 3000) {
+  const toast = document.getElementById('toast'); document.getElementById('toast-msg').textContent = msg;
+  toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), duration);
+}
+
+function initScrollReveal() {
+  const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }}); }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => { if (!el.classList.contains('visible')) observer.observe(el); });
+}
+
+function buildMarquee() {
+  const track = document.getElementById('marquee-track'); if (!track) return;
+  const items = ['🎓 SPY Civil Engineering Class of 2019', '🏗️ Building Bridges, Building Futures', '⚡ CET — College of Engineering Technology', '🌍 Scattered Across Nigeria, United Forever', '📐 From Survey to Structure — We Delivered', '🔧 Engineers by Degree, Engineers by Heart', '🏆 Class Rep: Engr. Yahya Saleh', '🎯 Class of 2019 — The Real Engineers', '🇳🇬 Adamawa State Polytechnic, Yola', '💛 Once CET, Always CET'];
+  const doubled = [...items, ...items];
+  track.innerHTML = doubled.map(item => `<div class="marquee-item"><div class="marquee-dot"></div><span>${item}</span></div>`).join('');
+}
+
+function shareWhatsApp() {
+  const text = encodeURIComponent('🎓 *SPY Civil Engineering Class of 2019 — Digital Album*\n\nCheck out our class album and add your profile!\n\n📝 Fill the form: ' + FORM_URL + '\n\nAlbum by Engr. Arabo Modibbo · Class Rep: Engr. Yahya Saleh 🏗️');
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
+
+function copyLink() {
+  const url = window.location.href;
+  if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => showToast('🔗 Link copied to clipboard!'));
+  else { const el = document.createElement('textarea'); el.value = url; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); showToast('🔗 Link copied!'); }
+}
+
+function shareProfile(name, nickname, location) {
+  const text = encodeURIComponent(`🎓 *${name}* ${nickname ? '("' + nickname + '")' : ''}\n📍 ${location}\n\nSPY Civil Engineering Class of 2019 · CET\nView the full class album 👆`);
+  window.open('https://wa.me/?text=' + text, '_blank');
+}
 </script>
 </body>
 </html>
